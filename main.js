@@ -5,17 +5,24 @@ function registerWorker(getJobs) {
         const msg = e.data.msg
         if (msg == 'ready') {
             let nextJob = null
+            let inProgress = 0
             for (let job of getJobs()) {
                 if (job.status == "waiting") {
                     nextJob = job
                     job.status = "progress"
                     document.getElementById("result-" + job.id).innerHTML = 'simming'
                     break
+                } else if (job.status == "progress") {
+                    inProgress = inProgress + 1
                 }
             }
 
             if (nextJob == null) { 
-                document.getElementById("startButton").classList.remove("disabled")
+                if (inProgress < 1) {
+                    document.getElementById("startButton").classList.remove("disabled")
+                    addTrends()
+                    console.log("All Jobs completed")
+                }
                 return 
             }
             worker.postMessage({msg: nextJob.msg, id: nextJob.id, inputData: nextJob.request})
@@ -24,7 +31,7 @@ function registerWorker(getJobs) {
             const id = e.data.id
             for (let job of getJobs()) {
                 if (job.id == id) {
-                    job.status == "complete"
+                    job.status = "complete"
                     break
                 }
             }
@@ -37,6 +44,18 @@ function registerWorker(getJobs) {
 
 function clearValues() {
     for (let node of document.querySelectorAll(".dps-value")) { node.innerHTML = "" }
+    for (let node of document.querySelectorAll(".trend-value")) { node.innerHTML = "" }
+}
+
+function addTrends() {
+    let rows = document.querySelectorAll("#compareTable tbody tr")
+    for (let row of rows) {
+        let values = row.querySelectorAll("td.dps-value")
+        let first = parseInt(values[0].innerHTML.replace(/,/g, ''))
+        let last = parseInt(values[3].innerHTML.replace(/,/g, ''))
+        let amnt = (last - first) / first * 100
+        row.querySelector("td.trend-value").innerHTML = amnt.toFixed(1)
+    }
 }
 
 function startSim(encounterDuration, simIterations, workerCount, jobs) {
@@ -160,6 +179,34 @@ function main() {
         DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
     )
 
+    let druidBalancePreRaid = makePlayer(
+        "BalancePreRaid",
+        "RaceTauren", 
+        "ClassDruid", 
+        DruidBalancePreRaidEquipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+    )
+    let druidBalanceP1 = makePlayer(
+        "BalanceP1",
+        "RaceTauren", 
+        "ClassDruid", 
+        DruidBalanceP1Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+    )
+    let druidBalanceP2 = makePlayer(
+        "BalanceP1",
+        "RaceTauren", 
+        "ClassDruid", 
+        DruidBalanceP2Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+    )
+
     let druidFeralPreRaid = makePlayer(
         "FeralPreRaid",
         "RaceTauren", 
@@ -214,6 +261,33 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions
     )
+    let hunterSurvivalPreRaid = makePlayer(
+        "SurvivalPreRaid",
+        "RaceOrc", 
+        "ClassHunter", 
+        HunterSurvivalPreRaidEquipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+    )
+    let hunterSurvivalP1 = makePlayer(
+        "SurvivalPreRaid",
+        "RaceOrc", 
+        "ClassHunter", 
+        HunterSurvivalP1Equipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+    )
+    let hunterSurvivalP2 = makePlayer(
+        "SurvivalPreRaid",
+        "RaceOrc", 
+        "ClassHunter", 
+        HunterSurvivalP2Equipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+    )
 
     let mageConsumes = DefaultCasterConsumes
     mageConsumes.defaultConjured = "ConjuredDarkRune"
@@ -227,7 +301,7 @@ function main() {
         DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
     )
     let mageArcaneP1 = makePlayer(
-        "ArcanePreRaid",
+        "ArcaneP1",
         "RaceTroll",
         "ClassMage",
         MageArcaneP1Equipment,
@@ -236,7 +310,7 @@ function main() {
         DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
     )
     let mageArcaneP2 = makePlayer(
-        "ArcanePreRaid",
+        "ArcaneP2",
         "RaceTroll",
         "ClassMage",
         MageArcaneP2Equipment,
@@ -244,7 +318,87 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
     )
-
+    let mageFirePreRaid = makePlayer(
+        "FirePreRaid",
+        "RaceTroll",
+        "ClassMage",
+        MageFirePreRaidEquipment,
+        mageConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+    )
+    let mageFireP1 = makePlayer(
+        "FireP1",
+        "RaceTroll",
+        "ClassMage",
+        MageFireP1Equipment,
+        mageConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+    )
+    let mageFireP2 = makePlayer(
+        "FireP2",
+        "RaceTroll",
+        "ClassMage",
+        MageFireP2Equipment,
+        mageConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+    )
+    let paladinRetPreRaid = makePlayer(
+        "RetPreRaid",
+        "RaceBloodElf",
+        "ClassPaladin",
+        PaladinRetPreRaidEquipment,
+        DefaultMeleeConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+    )
+    let paladinRetP1 = makePlayer(
+        "RetP1",
+        "RaceBloodElf",
+        "ClassPaladin",
+        PaladinRetP1Equipment,
+        DefaultMeleeConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+    )
+    let paladinRetP2 = makePlayer(
+        "RetP2",
+        "RaceBloodElf",
+        "ClassPaladin",
+        PaladinRetP2Equipment,
+        DefaultMeleeConsumes,
+        makeWeights(),
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+    )
+    let shamanElementalPreRaid = makePlayer(
+        "ElementalPreRaid",
+        "RaceOrc", 
+        "ClassShaman", 
+        ShamanElementalPreRaidEquipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+    )
+    let shamanElementalP1 = makePlayer(
+        "ElementalP1",
+        "RaceOrc", 
+        "ClassShaman", 
+        ShamanElementalP1Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+    )
+    let shamanElementalP2 = makePlayer(
+        "ElementalP2",
+        "RaceOrc", 
+        "ClassShaman", 
+        ShamanElementalP2Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+    )
     let shamanEnhancePreRaid = makePlayer(
         "EnhancePreRaid",
         "RaceOrc", 
@@ -255,7 +409,7 @@ function main() {
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
     )
     let shamanEnhanceP1 = makePlayer(
-        "EnhancePreRaid",
+        "EnhanceP1",
         "RaceOrc", 
         "ClassShaman", 
         ShamanEnhanceP1Equipment, 
@@ -264,7 +418,7 @@ function main() {
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
     )
     let shamanEnhanceP2 = makePlayer(
-        "EnhancePreRaid",
+        "EnhanceP2",
         "RaceOrc", 
         "ClassShaman", 
         ShamanEnhanceP2Equipment, 
@@ -303,6 +457,63 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions
     )
+    let warlockDemonologyPreRaid = makePlayer(
+        "DemonologyPreRaid",
+        "RaceOrc", 
+        "ClassWarlock", 
+        WarlockDemonologyPreRaidEquipment, 
+        warlockConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+    )
+    let warlockDemonologyP1 = makePlayer(
+        "DemonologyP1",
+        "RaceOrc", 
+        "ClassWarlock", 
+        WarlockDemonologyP1Equipment, 
+        warlockConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+    )
+    let warlockDemonologyP2 = makePlayer(
+        "DemonologyP2",
+        "RaceOrc", 
+        "ClassWarlock", 
+        WarlockDemonologyP2Equipment, 
+        warlockConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+    )
+    let warriorArmsPreRaid = makePlayer(
+        "ArmsPreRaid",
+        "RaceOrc", 
+        "ClassWarrior", 
+        WarriorArmsPreRaidEquipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+    )
+    let warriorArmsP1 = makePlayer(
+        "ArmsPr1",
+        "RaceOrc", 
+        "ClassWarrior", 
+        WarriorArmsP1Equipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+    )
+    let warriorArmsP2 = makePlayer(
+        "ArmsP2",
+        "RaceOrc", 
+        "ClassWarrior", 
+        WarriorArmsP2Equipment, 
+        DefaultMeleeConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+    )
+    warriorArmsP2.warrior.talents.poleaxeSpecialization = 0
+    warriorArmsP2.warrior.talents.swordSpecialization = 5
+    warriorArmsP2.talentsString = "3022032023330105102012213231251-305-2033"
 
     let warriorFuryPreRaid = makePlayer(
         "FuryPreRaid",
@@ -331,6 +542,33 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
     )
+    let shadowPriestPreRaid = makePlayer(
+        "ShadowPreRaid",
+        "RaceTroll", 
+        "ClassPriest", 
+        PriestShadowPreRaidEquipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+    )
+    let shadowPriestP1 = makePlayer(
+        "ShadowP1",
+        "RaceTroll", 
+        "ClassPriest", 
+        PriestShadowP1Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+    )
+    let shadowPriestP2 = makePlayer(
+        "ShadowP2",
+        "RaceTroll", 
+        "ClassPriest", 
+        PriestShadowP2Equipment, 
+        DefaultCasterConsumes, 
+        makeWeights(),
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+    )
 
     let specs = [
         {
@@ -357,6 +595,17 @@ function main() {
         },
         {
             cls: "Druid",
+            path: "balance_druid",
+            name: "Balance",
+            players: [
+                {player: druidBalancePreRaid, stats: false},
+                {player: druidBalanceP1, stats: false},
+                {player: druidBalanceP2, stats: false},
+                {player: druidBalanceP2, stats: true}
+            ]
+        },
+        {
+            cls: "Druid",
             path: "feral_druid",
             name: "Feral",
             players: [
@@ -369,12 +618,23 @@ function main() {
         {
             cls: "Hunter",
             path: "hunter",
-            name: "MM",
+            name: "Marksman",
             players: [
                 {player: hunterMMPreRaid, stats: false},
                 {player: hunterMMP1, stats: false},
                 {player: hunterMMP2, stats: false},
                 {player: hunterMMP2, stats: true}
+            ]
+        },
+        {
+            cls: "Hunter",
+            path: "hunter",
+            name: "Survival",
+            players: [
+                {player: hunterSurvivalPreRaid, stats: false},
+                {player: hunterSurvivalP1, stats: false},
+                {player: hunterSurvivalP2, stats: false},
+                {player: hunterSurvivalP2, stats: true}
             ]
         },
         {
@@ -386,6 +646,39 @@ function main() {
                 {player: mageArcaneP1, stats: false},
                 {player: mageArcaneP2, stats: false},
                 {player: mageArcaneP2, stats: true}
+            ]
+        },
+        {
+            cls: "Mage",
+            path: "mage",
+            name: "Fire",
+            players: [
+                {player: mageFirePreRaid, stats: false},
+                {player: mageFireP1, stats: false},
+                {player: mageFireP2, stats: false},
+                {player: mageFireP2, stats: true}
+            ]
+        },
+        {
+            cls: "Paladin",
+            path: "retribution_paladin",
+            name: "Retribution",
+            players: [
+                {player: paladinRetPreRaid, stats: false},
+                {player: paladinRetP1, stats: false},
+                {player: paladinRetP2, stats: false},
+                {player: paladinRetP2, stats: true}
+            ]
+        },
+        {
+            cls: "Priest",
+            path: "shadow_priest",
+            name: "Shadow",
+            players: [
+                {player: shadowPriestPreRaid, stats: false},
+                {player: shadowPriestP1, stats: false},
+                {player: shadowPriestP2, stats: false},
+                {player: shadowPriestP2, stats: true}
             ]
         },
         {
@@ -412,6 +705,17 @@ function main() {
         },
         {
             cls: "Shaman",
+            path: "elemental_shaman",
+            name: "Elemental",
+            players: [
+                {player: shamanElementalPreRaid, stats: false},
+                {player: shamanElementalP1, stats: false},
+                {player: shamanElementalP2, stats: false},
+                {player: shamanElementalP2, stats: true}
+            ]
+        },
+        {
+            cls: "Shaman",
             path: "enhancement_shaman",
             name: "Enhancement",
             players: [
@@ -430,6 +734,28 @@ function main() {
                 {player: warlockAfflictionP1, stats: false},
                 {player: warlockAfflictionP2, stats: false},
                 {player: warlockAfflictionP2, stats: true}
+            ]
+        },
+        {
+            cls: "Warlock",
+            name: "Demonology",
+            path: "warlock",
+            players: [
+                {player: warlockDemonologyPreRaid, stats: false},
+                {player: warlockDemonologyP1, stats: false},
+                {player: warlockDemonologyP2, stats: false},
+                {player: warlockDemonologyP2, stats: true}
+            ]
+        },
+        {
+            cls: "Warrior",
+            path: "warrior",
+            name: "Arms",
+            players: [
+                {player: warriorArmsPreRaid, stats: false},
+                {player: warriorArmsP1, stats: false},
+                {player: warriorArmsP2, stats: false},
+                {player: warriorArmsP2, stats: true}
             ]
         },
         {
@@ -468,6 +794,9 @@ function main() {
         cell.classList.add("info-value")
         cell.classList.add(spec.cls)
         cell.innerHTML = spec.name
+
+        cell = row.insertCell(2)
+        cell.classList.add("trend-value")
 
         settingsCell = settingsRow.insertCell(1)
         settingsCell.classList.add("info-value")
@@ -512,6 +841,9 @@ function main() {
         let workerCount = parseInt(document.getElementById("workerCount").value)
         document.getElementById("startButton").classList.add("disabled")
         clearValues()
+        for (let job of jobs) {
+            job.status = "waiting"
+        }
         startSim(encounterDuration, simIterations, workerCount, jobs)
     }
 }
