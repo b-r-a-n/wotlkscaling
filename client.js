@@ -49,7 +49,6 @@ function makeWowsimsImport(settings, buffs, debuffs, player, encounter, ep) {
     config.debuffs = debuffs
     config.player = player
     config.encounter = encounter
-    config.epWeights = ep
     return config
 }
 

@@ -154,7 +154,7 @@ function main() {
         "UnholyP2",
         "RaceOrc", 
         "ClassDeathknight", 
-        DKUnholyP1Equipment, 
+        DKUnholyP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
