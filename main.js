@@ -493,10 +493,16 @@ function main() {
             settingsCell.classList.add("json-value")
             settingsCell.innerHTML = "json"
             settingsCell.dataset.json = settingsJSON
-            settingsCell.onclick = (e) => {
-                navigator.clipboard.writeText(e.target.dataset.json)
-                alert("Copied settings. Paste into Wowsims import.")
-                window.open("https://wowsims.github.io/wotlk/" + spec.path)
+            settingsCell.onclick = async (e) => {
+                try {
+                    await navigator.clipboard.writeText(e.target.dataset.json)
+                    alert("Copied settings. Paste into Wowsims import.")
+                    window.open("https://wowsims.github.io/wotlk/" + spec.path)
+                } catch(err) {
+                    console.log(err)
+                    alert("Failed to copy settings!")
+
+                }
             }
         }
     }
