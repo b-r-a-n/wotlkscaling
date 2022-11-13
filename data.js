@@ -1,0 +1,3614 @@
+const DefaultSettings = {
+    iterations: 100,
+    phase: 1,
+    showDamageMetrics: true,
+    faction: "Horde",
+}
+
+const DefaultTarget = {
+    level: 83,
+    mobType: "MobTypeUnknown",
+    stats: [
+        0,0,0,0,0,0,0,0,0,0,0,640,0,0,0,0,0,0,0,0,10643,0,0,0,0,0,0,0,16950147,0,0,0,0,0
+    ],
+    minBaseDamage: 38068,
+    swingSpeed: 0.75,
+}
+
+const DefaultEncounter = {
+    duration: 150,
+    durationVariation: 5,
+    executeProportion20: 0.2,
+    executeProportion25: 0.25,
+    executeProportion35: 0.35,
+    targets: [DefaultTarget],
+}
+
+const DefaultDebuffs = {
+  ebonPlaguebringer: true,
+  totemOfWrath: true,
+  faerieFire: "TristateEffectImproved",
+  earthAndMoon: true,
+  heartOfTheCrusader: true,
+  judgementOfWisdom: true,
+  shadowMastery: true,
+  bloodFrenzy: true,
+  mangle: true,
+  sunderArmor: true
+}
+
+const DefaultBuffs = {
+    giftOfTheWild: "TristateEffectImproved",
+    arcaneBrilliance: true,
+    divineSpirit: true,
+    strengthOfEarthTotem: "TristateEffectImproved",
+    abominationsMight: true,
+    leaderOfThePack: "TristateEffectImproved",
+    icyTalons: true,
+    swiftRetribution: true,
+    elementalOath: true,
+    sanctifiedRetribution: true,
+    swiftRetribution: true,
+    totemOfWrath: true,
+    wrathOfAirTotem: true,
+    bloodlust: true
+}
+
+const DefaultPlayerBuffs = {
+    blessingOfKings: true,
+    blessingOfMight: "TristateEffectImproved",
+    blessingOfWisdom: "TristateEffectImproved",
+    judgementsOfTheWise: true,
+    vampiricTouch: true,
+}
+
+const RogueCombatTalents = {
+	malice:          5,
+	ruthlessness:    3,
+	bloodSpatter:    2,
+	lethality:       5,
+	vilePoisons:     2,
+	improvedPoisons: 3,
+
+	improvedSinisterStrike:  2,
+	dualWieldSpecialization: 5,
+	improvedSliceAndDice:    2,
+	precision:               5,
+	endurance:               1,
+	closeQuartersCombat:     5,
+	lightningReflexes:       3,
+	aggression:              5,
+	bladeFlurry:             true,
+	weaponExpertise:         2,
+	bladeTwisting:           2,
+	vitality:                3,
+	adrenalineRush:          true,
+	combatPotency:           5,
+	surpriseAttacks:         true,
+	savageCombat:            2,
+	preyOnTheWeak:           5,
+	killingSpree:            true,
+}
+
+const RogueAssassinationTalents = {
+	malice:           5,
+	ruthlessness:     3,
+	puncturingWounds: 3,
+	lethality:        5,
+	vilePoisons:      3,
+	improvedPoisons:  5,
+	fleetFooted:      2,
+	coldBlood:        true,
+	sealFate:         5,
+	murder:           2,
+	overkill:         true,
+	focusedAttacks:   3,
+	findWeakness:     3,
+	masterPoisoner:   3,
+	mutilate:         true,
+	cutToTheChase:    5,
+	hungerForBlood:   true,
+
+	dualWieldSpecialization: 5,
+	precision:               5,
+	closeQuartersCombat:     3,
+
+	relentlessStrikes: 5,
+	opportunity:       2,
+}
+
+const DKFrostTalents = {
+  improvedIcyTouch: 3,
+  runicPowerMastery: 2,
+  blackIce: 2,
+  nervesOfColdSteel: 3,
+  icyTalons: 5,
+  annihilation: 3,
+  killingMachine: 5,
+  chillOfTheGrave: 2,
+  endlessWinter: 2,
+  glacierRot: 3,
+  improvedIcyTalons: true,
+  mercilessCombat:2,
+  rime: 3,
+  threatOfThassarian: 3,
+  bloodOfTheNorth: 3,
+  unbreakableArmor: true,
+  frostStrike: true,
+  guileOfGorefiend: 3,
+  tundraStalker: 5,
+  howlingBlast: true,
+
+  viciousStrikes: 2,
+  virulence: 3,
+  epidemic: 2,
+  ravenousDead: 3,
+  necrosis: 5,
+  bloodCakedBlade: 3,
+}
+
+const DKUnholyTalents = {
+  improvedIcyTouch: 3,
+  runicPowerMastery: 2,
+  blackIce: 4,
+  nervesOfColdSteel: 3,
+  icyTalons: 5,
+  chillOfTheGrave: 2,
+
+  viciousStrikes: 2,
+  virulence: 3,
+  epidemic: 2,
+  ravenousDead: 3,
+  necrosis: 5,
+  bloodCakedBlade: 3,
+  nightOfTheDead: 2,
+  unholyBlight: true,
+  impurity: 5,
+  dirge: 5,
+  masterOfGhouls: true,
+  ghoulFrenzy: true,
+  desolation: 5,
+  cryptFever: 3,
+  boneShield: true,
+  wanderingPlague: 3,
+  ebonPlaguebringer: 3,
+  rageOfRivendare: 5,
+  summonGargoyle: true,
+}
+
+const MageArcaneTalents = {
+  arcaneSubtlety: 2,
+  arcaneFocus: 3,
+  arcaneConcentration: 5,
+  magicAttunement: 1,
+  spellImpact: 3,
+  studentOfTheMind: 3,
+  focusMagic: true,
+  arcaneMeditation: 3,
+  tormentTheWeak: 3,
+  presenceOfMind: true,
+  arcaneMind: 5,
+  arcaneInstability: 3,
+  arcanePotency: 2,
+  arcaneEmpowerment: 3,
+  arcanePower: true,
+  arcaneFlows: 2,
+  mindMastery: 5,
+  missileBarrage: 5,
+  netherwindPresence: 3,
+  spellPower: 2,
+
+  incineration: 3,
+  improvedFrostbolt: 2,
+  iceFloes: 3,
+  iceShards: 3,
+  precision: 3,
+  icyVeins: true
+}
+
+const ShamanEnhanceTalents = {
+  concussion: 5,
+  callOfFlame: 3,
+  elementalDevastation: 3,
+  elementalFocus: true,
+  elementalFury: 5,
+  improvedFireNova: 2,
+
+  enhancingTotems: 3,
+  ancestralKnowledge: 4,
+  thunderingStrikes: 5,
+  elementalWeapons: 3,
+  shamanisticFocus: true,
+  flurry: 5,
+  improvedWindfuryTotem: 2,
+  spiritWeapons: true,
+  mentalDexterity: 3,
+  unleashedRage:3,
+  weaponMastery: 3,
+  dualWieldSpecialization: 3,
+  dualWield: true,
+  stormstrike: true,
+  staticShock: 3,
+  lavaLash: true,
+  mentalQuickness: 3,
+  shamanisticRage: true,
+  maelstromWeapon: 5,
+  feralSpirit: true
+}
+
+const WarriorFuryTalents = {
+  improvedHeroicStrike: 3,
+  deflection: 2,
+  ironWill: 2,
+  tacticalMastery: 3,
+  angerManagement: true,
+  impale: 2,
+  deepWounds: 3,
+  twoHandedWeaponSpecialization: 3,
+  
+  armoredToTheTeeth: 3,
+  cruelty: 5,
+  unbridledWrath: 5,
+  improvedCleave: 3,
+  dualWieldSpecialization: 5,
+  improvedExecute: 2,
+  precision: 3,
+  deathWish: true,
+  flurry: 5,
+  intensifyRage: 3,
+  bloodthirst: true,
+  improvedWhirlwind: 2,
+  improvedBerserkerStance: 5,
+  bloodsurge: 3,
+  unendingFury: 5,
+  titansGrip: true
+}
+
+const RogueAssassinationGlyphs = {
+    major1: 45768,
+    major2: 45767,
+    major3: 45761
+}
+
+const RogueCombatGlyphs = {
+    major1: 45762,
+    major2: 45767,
+    major3: 42969
+}
+
+const RogueAssassinationPreRaidEquipment = {
+    "items": [
+        {
+            "id": 42550,
+            "enchant": 3817,
+            "gems": [
+            41398,
+            40058
+            ]
+        },
+        {
+            "id": 40678
+        },
+        {
+            "id": 43481,
+            "enchant": 3808
+        },
+        {
+            "id": 38614,
+            "enchant": 3605
+        },
+        {
+            "id": 39558,
+            "enchant": 3832,
+            "gems": [
+            40003,
+            42702
+            ]
+        },
+        {
+            "id": 34448,
+            "enchant": 3845,
+            "gems": [
+            40003,
+            0
+            ]
+        },
+        {
+            "id": 39560,
+            "enchant": 3604,
+            "gems": [
+            40058,
+            0
+            ]
+        },
+        {
+            "id": 40694,
+            "gems": [
+            40003,
+            40003
+            ]
+        },
+        {
+            "id": 37644,
+            "enchant": 3823
+        },
+        {
+            "id": 34575,
+            "enchant": 3606,
+            "gems": [
+            40003
+            ]
+        },
+        {
+            "id": 40586
+        },
+        {
+            "id": 37642
+        },
+        {
+            "id": 40684
+        },
+        {
+            "id": 44253
+        },
+        {
+            "id": 37856,
+            "enchant": 3789
+        },
+        {
+            "id": 37667,
+            "enchant": 3789
+        },
+        {
+            "id": 43612
+        }
+    ]
+} 
+
+const RogueAssassinationP1Equipment = {
+ "items": [
+        {
+          "id": 40499,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            40003
+          ]
+        },
+        {
+          "id": 40502,
+          "enchant": 3808,
+          "gems": [
+            40003
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 40539,
+          "enchant": 3832,
+          "gems": [
+            40003
+          ]
+        },
+        {
+          "id": 39765,
+          "enchant": 3845,
+          "gems": [
+            40003,
+            0
+          ]
+        },
+        {
+          "id": 40496,
+          "enchant": 3604,
+          "gems": [
+            40053,
+            0
+          ]
+        },
+        {
+          "id": 40260,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 40500,
+          "enchant": 3823,
+          "gems": [
+            40003,
+            40003
+          ]
+        },
+        {
+          "id": 39701,
+          "enchant": 3606
+        },
+        {
+          "id": 40074
+        },
+        {
+          "id": 40474
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 44253
+        },
+        {
+          "id": 39714,
+          "enchant": 3789
+        },
+        {
+          "id": 40386,
+          "enchant": 3789
+        },
+        {
+          "id": 40385
+        }
+      ]
+}
+
+const RogueAssassinationP2Equipment = {
+          "items": [
+        {
+          "id": 46125,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39999
+          ]
+        },
+        {
+          "id": 45517,
+          "gems": [
+            40034
+          ]
+        },
+        {
+          "id": 45245,
+          "enchant": 3808,
+          "gems": [
+            40034,
+            39999
+          ]
+        },
+        {
+          "id": 46032,
+          "enchant": 3605,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45473,
+          "enchant": 3832,
+          "gems": [
+            39999,
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45611,
+          "enchant": 3845,
+          "gems": [
+            45987,
+            0
+          ]
+        },
+        {
+          "id": 46124,
+          "enchant": 3604,
+          "gems": [
+            39999,
+            0
+          ]
+        },
+        {
+          "id": 46095,
+          "gems": [
+            39999,
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45536,
+          "enchant": 3823,
+          "gems": [
+            39999,
+            39999,
+            40003
+          ]
+        },
+        {
+          "id": 45564,
+          "enchant": 3606,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 46048,
+          "gems": [
+            36766
+          ]
+        },
+        {
+          "id": 45608,
+          "gems": [
+            36766
+          ]
+        },
+        {
+          "id": 45609
+        },
+        {
+          "id": 46038
+        },
+        {
+          "id": 45484,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 45607,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 45296,
+          "gems": [
+            39999
+          ]
+        }
+      ]
+}
+
+const RogueCombatPreRaidEquipment = {
+"items": [
+        {
+          "id": 42550,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            40014
+          ]
+        },
+        {
+          "id": 40678
+        },
+        {
+          "id": 37139,
+          "enchant": 3808,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 34241,
+          "enchant": 3605,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 39558,
+          "enchant": 3832,
+          "gems": [
+            39999,
+            40014
+          ]
+        },
+        {
+          "id": 34448,
+          "enchant": 3845,
+          "gems": [
+            39999,
+            0
+          ]
+        },
+        {
+          "id": 39560,
+          "enchant": 3604,
+          "gems": [
+            40014,
+            0
+          ]
+        },
+        {
+          "id": 40694,
+          "gems": [
+            42702,
+            39999
+          ]
+        },
+        {
+          "id": 37644,
+          "enchant": 3823
+        },
+        {
+          "id": 34575,
+          "enchant": 3606,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 40586
+        },
+        {
+          "id": 37642
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 44253
+        },
+        {
+          "id": 37693,
+          "enchant": 3789
+        },
+        {
+          "id": 37856,
+          "enchant": 3789
+        },
+        {
+          "id": 44504,
+          "gems": [
+            40053
+          ]
+        }
+      ]
+}
+
+const RogueCombatP1Equipment = {
+    "items": [
+        {
+          "id": 40499,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 40502,
+          "enchant": 3808,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 40539,
+          "enchant": 3832,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 39765,
+          "enchant": 3845,
+          "gems": [
+            39999,
+            0
+          ]
+        },
+        {
+          "id": 40541,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40205,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 44011,
+          "enchant": 3823,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 39701,
+          "enchant": 3606
+        },
+        {
+          "id": 40074
+        },
+        {
+          "id": 40474
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 44253
+        },
+        {
+          "id": 40383,
+          "enchant": 3789
+        },
+        {
+          "id": 39714,
+          "enchant": 3789
+        },
+        {
+          "id": 40385
+        }
+      ]
+}
+
+const RogueCombatP2Equipment = {
+      "items": [
+        {
+          "id": 46125,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39999
+          ]
+        },
+        {
+          "id": 45517,
+          "gems": [
+            42702
+          ]
+        },
+        {
+          "id": 45245,
+          "enchant": 3808,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 46032,
+          "enchant": 3605,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 46123,
+          "enchant": 3832,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45869,
+          "enchant": 3845,
+          "gems": [
+            39999,
+            0
+          ]
+        },
+        {
+          "id": 45325,
+          "enchant": 3604,
+          "gems": [
+            39999,
+            0
+          ]
+        },
+        {
+          "id": 46095,
+          "gems": [
+            39999,
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45536,
+          "enchant": 3823,
+          "gems": [
+            39999,
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45232,
+          "enchant": 3606,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 46048,
+          "gems": [
+            36766
+          ]
+        },
+        {
+          "id": 45608,
+          "gems": [
+            36766
+          ]
+        },
+        {
+          "id": 45609
+        },
+        {
+          "id": 45931
+        },
+        {
+          "id": 45132,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 45494,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 45296,
+          "gems": [
+            39999
+          ]
+        }
+      ]
+}
+
+const DKFrostPreRaidEquipment = {
+"items": [
+        {
+          "id": 41386,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            49110
+          ]
+        },
+        {
+          "id": 42645,
+          "gems": [
+            42142
+          ]
+        },
+        {
+          "id": 34388,
+          "enchant": 3808,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 37647,
+          "enchant": 3831
+        },
+        {
+          "id": 39617,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 41355,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39618,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 37171,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 37193,
+          "enchant": 3823,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 44306,
+          "enchant": 3606,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 42642,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 44935
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 41383,
+          "enchant": 3370
+        },
+        {
+          "id": 43611,
+          "enchant": 3368
+        },
+        {
+          "id": 40715
+        }
+      ]
+}
+
+const DKFrostP1Equipment = {
+ "items": [
+        {
+          "id": 44006,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40557,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3831
+        },
+        {
+          "id": 40550,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 40330,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40552,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40278,
+          "gems": [
+            39996,
+            42142
+          ]
+        },
+        {
+          "id": 40556,
+          "enchant": 3823,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 40591,
+          "enchant": 3606
+        },
+        {
+          "id": 39401
+        },
+        {
+          "id": 40075
+        },
+        {
+          "id": 40256
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 40189,
+          "enchant": 3370
+        },
+        {
+          "id": 40189,
+          "enchant": 3368
+        },
+        {
+          "id": 40207
+        }
+      ]
+}
+
+const DKFrostP2Equipment = {
+ "items": [
+        {
+          "id": 45472,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 45459,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46037,
+          "enchant": 3808,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45588,
+          "enchant": 3831,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46111,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 45663,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 46113,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 45241,
+          "gems": [
+            39996,
+            39996,
+            42142
+          ]
+        },
+        {
+          "id": 45134,
+          "enchant": 3823,
+          "gems": [
+            39996,
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 45599,
+          "enchant": 3606,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45534,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 45469
+        },
+        {
+          "id": 45609
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 46097,
+          "enchant": 3370,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46097,
+          "enchant": 3368,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 45254
+        }
+      ]
+}
+
+const DKUnholyPreRaidEquipment = {
+   "items": [
+        {
+          "id": 41386,
+          "enchant": 3817,
+          "gems": [
+            41400,
+            49110
+          ]
+        },
+        {
+          "id": 37397
+        },
+        {
+          "id": 37627,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 37647,
+          "enchant": 3831
+        },
+        {
+          "id": 39617,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 41355,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39618,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40688,
+          "gems": [
+            39996,
+            42142
+          ]
+        },
+        {
+          "id": 37193,
+          "enchant": 3823,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 44306,
+          "enchant": 3606,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 37642
+        },
+        {
+          "id": 44935
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 41383,
+          "enchant": 3368
+        },
+        {
+          "id": 40703,
+          "enchant": 3790
+        },
+        {
+          "id": 40867
+        }
+      ]
+}
+
+const DKUnholyP1Equipment = {
+      "items": [
+        {
+          "id": 44006,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 39421
+        },
+        {
+          "id": 40557,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3831
+        },
+        {
+          "id": 40550,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 40330,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40347,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40278,
+          "gems": [
+            42142,
+            42142
+          ]
+        },
+        {
+          "id": 40294,
+          "enchant": 3823
+        },
+        {
+          "id": 39706,
+          "enchant": 3606,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 39401
+        },
+        {
+          "id": 40075
+        },
+        {
+          "id": 37390
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 40402,
+          "enchant": 3368
+        },
+        {
+          "id": 40491,
+          "enchant": 3368
+        },
+        {
+          "id": 42620
+        }
+      ]
+}
+
+const DruidFeralPreRaidEquipment = {
+ "items": [
+        {
+          "id": 42550,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39996
+          ]
+        },
+        {
+          "id": 40678
+        },
+        {
+          "id": 37139,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 37840,
+          "enchant": 3605
+        },
+        {
+          "id": 37219,
+          "enchant": 3832
+        },
+        {
+          "id": 44203,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 37409,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40694,
+          "gems": [
+            49110,
+            39996
+          ]
+        },
+        {
+          "id": 37644,
+          "enchant": 3823
+        },
+        {
+          "id": 44297,
+          "enchant": 3606
+        },
+        {
+          "id": 37642
+        },
+        {
+          "id": 37624
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 37166
+        },
+        {
+          "id": 37883,
+          "enchant": 3827
+        },
+        {},
+        {
+          "id": 40713
+        }
+      ]
+}
+
+const DruidFeralP1Equipment = {
+        "items": [
+        {
+          "id": 40473,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39996
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40494,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 40539,
+          "enchant": 3832,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 39765,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40541,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40205,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 44011,
+          "enchant": 3823,
+          "gems": [
+            39996,
+            49110
+          ]
+        },
+        {
+          "id": 40243,
+          "enchant": 3606,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 40474
+        },
+        {
+          "id": 40717
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 40256
+        },
+        {
+          "id": 40388,
+          "enchant": 3789
+        },
+        {},
+        {
+          "id": 39757
+        }
+      ]
+}
+
+const DruidFeralP2Equipment = {
+        "items": [
+        {
+          "id": 46161,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39996
+          ]
+        },
+        {
+          "id": 45945,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46157,
+          "enchant": 3808,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46032,
+          "enchant": 3605,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 46159,
+          "enchant": 3832,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45869,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 46158,
+          "enchant": 3604,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 46095,
+          "gems": [
+            42142,
+            42142,
+            42142
+          ]
+        },
+        {
+          "id": 45536,
+          "enchant": 3823,
+          "gems": [
+            39996,
+            39996,
+            49110
+          ]
+        },
+        {
+          "id": 45564,
+          "enchant": 3606,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45608,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46048,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 45609
+        },
+        {
+          "id": 45931
+        },
+        {
+          "id": 45613,
+          "enchant": 3789,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {},
+        {
+          "id": 39757
+        }
+      ]
+}
+
+const HunterMMPreRaidEquipment = {
+        "items": [
+        {
+          "id": 42551,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42143
+          ]
+        },
+        {
+          "id": 40678
+        },
+        {
+          "id": 37373,
+          "enchant": 3808
+        },
+        {
+          "id": 43566,
+          "enchant": 3605
+        },
+        {
+          "id": 39579,
+          "enchant": 3832,
+          "gems": [
+            39997,
+            49110
+          ]
+        },
+        {
+          "id": 37170,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39582,
+          "enchant": 3604,
+          "gems": [
+            40014,
+            0
+          ]
+        },
+        {
+          "id": 37407,
+          "enchant": 3601,
+          "gems": [
+            42143
+          ]
+        },
+        {
+          "id": 37669,
+          "enchant": 3823
+        },
+        {
+          "id": 37167,
+          "enchant": 3606,
+          "gems": [
+            42143,
+            39997
+          ]
+        },
+        {
+          "id": 37685
+        },
+        {
+          "id": 42642,
+          "gems": [
+            40044
+          ]
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 44253
+        },
+        {
+          "id": 44249,
+          "enchant": 3827
+        },
+        {},
+        {
+          "id": 37191,
+          "enchant": 3608
+        }
+      ]
+}
+
+const HunterMMP1Equipment = {
+        "items": [
+        {
+          "id": 40543,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42143
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            42143
+          ]
+        },
+        {
+          "id": 40507,
+          "enchant": 3808,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 43998,
+          "enchant": 3832,
+          "gems": [
+            42143,
+            39997
+          ]
+        },
+        {
+          "id": 40282,
+          "enchant": 3845,
+          "gems": [
+            39997,
+            0
+          ]
+        },
+        {
+          "id": 40541,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40275,
+          "enchant": 3601,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 40506,
+          "enchant": 3823,
+          "gems": [
+            39997,
+            49110
+          ]
+        },
+        {
+          "id": 40549,
+          "enchant": 3606
+        },
+        {
+          "id": 40074
+        },
+        {
+          "id": 40474
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 44253
+        },
+        {
+          "id": 40388,
+          "enchant": 3827
+        },
+        {},
+        {
+          "id": 40385,
+          "enchant": 3608
+        }
+      ]
+}
+
+const HunterMMP2Equipment = {
+      "items": [
+        {
+          "id": 46143,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42143
+          ]
+        },
+        {
+          "id": 45517,
+          "gems": [
+            42143
+          ]
+        },
+        {
+          "id": 45300,
+          "enchant": 3808,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 46032,
+          "enchant": 3605,
+          "gems": [
+            39997,
+            39997
+          ]
+        },
+        {
+          "id": 46141,
+          "enchant": 3832,
+          "gems": [
+            42143,
+            39997
+          ]
+        },
+        {
+          "id": 45454,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 45444,
+          "enchant": 3604,
+          "gems": [
+            39997,
+            39997,
+            0
+          ]
+        },
+        {
+          "id": 45467,
+          "enchant": 3601,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 45536,
+          "enchant": 3823,
+          "gems": [
+            49110,
+            39997,
+            39997
+          ]
+        },
+        {
+          "id": 45562,
+          "enchant": 3606,
+          "gems": [
+            39997,
+            39997
+          ]
+        },
+        {
+          "id": 45608,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 46322,
+          "gems": [
+            39997
+          ]
+        },
+        {
+          "id": 46038
+        },
+        {
+          "id": 45931
+        },
+        {
+          "id": 45498,
+          "enchant": 3827
+        },
+        {},
+        {
+          "id": 45570,
+          "enchant": 3608
+        }
+      ]
+}
+
+const MageArcanePreRaidEquipment = {
+        "items": [
+        {
+          "id": 42553,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            40049
+          ]
+        },
+        {
+          "id": 39472
+        },
+        {
+          "id": 37673,
+          "enchant": 3810,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 41610,
+          "enchant": 3722
+        },
+        {
+          "id": 39492,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            40049
+          ]
+        },
+        {
+          "id": 37361,
+          "enchant": 2332,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39495,
+          "enchant": 3604,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 40696,
+          "gems": [
+            40049,
+            40026
+          ]
+        },
+        {
+          "id": 37854,
+          "enchant": 3719
+        },
+        {
+          "id": 44202,
+          "enchant": 3606,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 40585
+        },
+        {
+          "id": 37694
+        },
+        {
+          "id": 37873
+        },
+        {
+          "id": 40682
+        },
+        {
+          "id": 37360,
+          "enchant": 3854
+        },
+        {},
+        {
+          "id": 37238
+        }
+      ]
+}
+
+const MageArcaneP1Equipment = {
+      "items": [
+        {
+          "id": 40416,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            39998
+          ]
+        },
+        {
+          "id": 44661,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 40419,
+          "enchant": 3810,
+          "gems": [
+            40051
+          ]
+        },
+        {
+          "id": 44005,
+          "enchant": 3722,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 44002,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            39998
+          ]
+        },
+        {
+          "id": 44008,
+          "enchant": 2332,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 40415,
+          "enchant": 3604,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 40561,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 40417,
+          "enchant": 3719,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 40558,
+          "enchant": 3606
+        },
+        {
+          "id": 40719
+        },
+        {
+          "id": 40399
+        },
+        {
+          "id": 39229
+        },
+        {
+          "id": 40255
+        },
+        {
+          "id": 40396,
+          "enchant": 3834
+        },
+        {
+          "id": 40273
+        },
+        {
+          "id": 39426
+        }
+      ]
+}
+
+const MageArcaneP2Equipment = {
+      "items": [
+        {
+          "id": 46129,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            39998
+          ]
+        },
+        {
+          "id": 45243,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 46134,
+          "enchant": 3810,
+          "gems": [
+            40051
+          ]
+        },
+        {
+          "id": 45618,
+          "enchant": 3722,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 46130,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            39998
+          ]
+        },
+        {
+          "id": 45446,
+          "enchant": 2332,
+          "gems": [
+            39998,
+            39998
+          ]
+        },
+        {
+          "id": 45665,
+          "enchant": 3604,
+          "gems": [
+            40026,
+            40051,
+            0
+          ]
+        },
+        {
+          "id": 45619,
+          "gems": [
+            40049,
+            40049,
+            39998
+          ]
+        },
+        {
+          "id": 46133,
+          "enchant": 3719,
+          "gems": [
+            39998,
+            39998
+          ]
+        },
+        {
+          "id": 45135,
+          "enchant": 3606,
+          "gems": [
+            39998,
+            40026
+          ]
+        },
+        {
+          "id": 46046,
+          "gems": [
+            40049
+          ]
+        },
+        {
+          "id": 45495,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 45518
+        },
+        {
+          "id": 45490
+        },
+        {
+          "id": 45620,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 45271
+        },
+        {
+          "id": 39712
+        }
+      ]
+}
+
+const ShamanEnhancePreRaidEquipment = {
+        "items": [
+        {
+          "id": 43311,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42156
+          ]
+        },
+        {
+          "id": 40678
+        },
+        {
+          "id": 37373,
+          "enchant": 3808
+        },
+        {
+          "id": 37840,
+          "enchant": 3605
+        },
+        {
+          "id": 39597,
+          "enchant": 3832,
+          "gems": [
+            40053,
+            40088
+          ]
+        },
+        {
+          "id": 43131,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39601,
+          "enchant": 3604,
+          "gems": [
+            40053,
+            0
+          ]
+        },
+        {
+          "id": 37407,
+          "gems": [
+            42156
+          ]
+        },
+        {
+          "id": 37669,
+          "enchant": 3823
+        },
+        {
+          "id": 37167,
+          "enchant": 3606,
+          "gems": [
+            40053,
+            42156
+          ]
+        },
+        {
+          "id": 37685
+        },
+        {
+          "id": 37642
+        },
+        {
+          "id": 37390
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 41384,
+          "enchant": 3789
+        },
+        {
+          "id": 40704,
+          "enchant": 3789
+        },
+        {
+          "id": 33507
+        }
+      ]
+}
+
+const ShamanEnhanceP1Equipment = {
+      "items": [
+        {
+          "id": 40543,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            40014
+          ]
+        },
+        {
+          "id": 44661,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 40524,
+          "enchant": 3808,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 40523,
+          "enchant": 3832,
+          "gems": [
+            40003,
+            40014
+          ]
+        },
+        {
+          "id": 40282,
+          "enchant": 3845,
+          "gems": [
+            42702,
+            0
+          ]
+        },
+        {
+          "id": 40520,
+          "enchant": 3604,
+          "gems": [
+            42154,
+            0
+          ]
+        },
+        {
+          "id": 40275,
+          "gems": [
+            42156
+          ]
+        },
+        {
+          "id": 40522,
+          "enchant": 3823,
+          "gems": [
+            39999,
+            42156
+          ]
+        },
+        {
+          "id": 40367,
+          "enchant": 3606,
+          "gems": [
+            40058
+          ]
+        },
+        {
+          "id": 40474
+        },
+        {
+          "id": 40074
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 37390
+        },
+        {
+          "id": 39763,
+          "enchant": 3789
+        },
+        {
+          "id": 39468,
+          "enchant": 3789
+        },
+        {
+          "id": 40322
+        }
+      ]
+}
+
+const ShamanEnhanceP2Equipment = {
+        "items": [
+        {
+          "id": 46212,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            39999
+          ]
+        },
+        {
+          "id": 45133,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 46203,
+          "enchant": 3808,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 45873,
+          "enchant": 3605
+        },
+        {
+          "id": 45473,
+          "enchant": 3832,
+          "gems": [
+            40014,
+            40029,
+            39999
+          ]
+        },
+        {
+          "id": 45611,
+          "enchant": 3845,
+          "gems": [
+            42702,
+            0
+          ]
+        },
+        {
+          "id": 46200,
+          "enchant": 3604,
+          "gems": [
+            40053,
+            0
+          ]
+        },
+        {
+          "id": 45553,
+          "gems": [
+            36766,
+            40029,
+            42156
+          ]
+        },
+        {
+          "id": 46208,
+          "enchant": 3823,
+          "gems": [
+            39999,
+            39999
+          ]
+        },
+        {
+          "id": 45244,
+          "enchant": 3606,
+          "gems": [
+            36766,
+            39999
+          ]
+        },
+        {
+          "id": 45456,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 46046,
+          "gems": [
+            40014
+          ]
+        },
+        {
+          "id": 45609
+        },
+        {
+          "id": 45522
+        },
+        {
+          "id": 45612,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 46097,
+          "enchant": 3789,
+          "gems": [
+            39999
+          ]
+        },
+        {
+          "id": 40322
+        }
+      ]
+}
+
+const WarlockAfflictionPreRaidEquipment = {
+        "items": [
+        {
+          "id": 44910,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            39998
+          ]
+        },
+        {
+          "id": 42647,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 34210,
+          "enchant": 3810,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 41610,
+          "enchant": 3722
+        },
+        {
+          "id": 39497,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 37361,
+          "enchant": 2332,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 42113,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40696,
+          "gems": [
+            40051,
+            39998
+          ]
+        },
+        {
+          "id": 34181,
+          "enchant": 3719,
+          "gems": [
+            39998,
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 44202,
+          "enchant": 3606,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 43253,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 37694
+        },
+        {
+          "id": 40682
+        },
+        {
+          "id": 37873
+        },
+        {
+          "id": 45085,
+          "enchant": 3834
+        },
+        {
+          "id": 40698
+        },
+        {
+          "id": 34348,
+          "gems": [
+            39998
+          ]
+        }
+      ]
+}
+
+const WarlockAfflictionP1Equipment = {
+        "items": [
+        {
+          "id": 40421,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            40051
+          ]
+        },
+        {
+          "id": 44661,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 40424,
+          "enchant": 3810,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 44005,
+          "enchant": 3722,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 40423,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 44008,
+          "enchant": 2332,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 40420,
+          "enchant": 3604,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 40561,
+          "gems": [
+            39998
+          ]
+        },
+        {
+          "id": 40560,
+          "enchant": 3719
+        },
+        {
+          "id": 40558,
+          "enchant": 3606
+        },
+        {
+          "id": 40399
+        },
+        {
+          "id": 40719
+        },
+        {
+          "id": 40432
+        },
+        {
+          "id": 40255
+        },
+        {
+          "id": 40396,
+          "enchant": 3834
+        },
+        {
+          "id": 39766
+        },
+        {
+          "id": 39712
+        }
+      ]
+}
+
+const WarlockAfflictionP2Equipment = {
+        "items": [
+        {
+          "id": 45150,
+          "enchant": 3820,
+          "gems": [
+            41285,
+            40026
+          ]
+        },
+        {
+          "id": 45133,
+          "gems": [
+            40051
+          ]
+        },
+        {
+          "id": 46068,
+          "enchant": 3810,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 45618,
+          "enchant": 3722,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 46137,
+          "enchant": 3832,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 45446,
+          "enchant": 2332,
+          "gems": [
+            39998,
+            0
+          ]
+        },
+        {
+          "id": 45665,
+          "enchant": 3604,
+          "gems": [
+            40026,
+            40051,
+            0
+          ]
+        },
+        {
+          "id": 45557,
+          "gems": [
+            40026,
+            39998,
+            39998
+          ]
+        },
+        {
+          "id": 46139,
+          "enchant": 3719,
+          "gems": [
+            40026,
+            40051
+          ]
+        },
+        {
+          "id": 45135,
+          "enchant": 3606,
+          "gems": [
+            39998,
+            40051
+          ]
+        },
+        {
+          "id": 45495,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 46046,
+          "gems": [
+            40051
+          ]
+        },
+        {
+          "id": 40432
+        },
+        {
+          "id": 45518
+        },
+        {
+          "id": 45620,
+          "enchant": 3834,
+          "gems": [
+            40026
+          ]
+        },
+        {
+          "id": 45271
+        },
+        {
+          "id": 45257
+        }
+      ]
+}
+
+const WarriorFuryPreRaidEquipment = {
+        "items": [
+        {
+          "id": 41386,
+          "enchant": 3817,
+          "gems": [
+            41398,
+            42702
+          ]
+        },
+        {
+          "id": 42645,
+          "gems": [
+            40003
+          ]
+        },
+        {
+          "id": 44195,
+          "enchant": 3808
+        },
+        {
+          "id": 37647,
+          "enchant": 3605
+        },
+        {
+          "id": 39606,
+          "enchant": 3832,
+          "gems": [
+            40003,
+            40003
+          ]
+        },
+        {
+          "id": 44203,
+          "enchant": 3845,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 39609,
+          "enchant": 3604,
+          "gems": [
+            40037,
+            0
+          ]
+        },
+        {
+          "id": 40694,
+          "gems": [
+            42149,
+            42149
+          ]
+        },
+        {
+          "id": 44205,
+          "enchant": 3823
+        },
+        {
+          "id": 44306,
+          "enchant": 3606,
+          "gems": [
+            40037,
+            40037
+          ]
+        },
+        {
+          "id": 42642,
+          "gems": [
+            42149
+          ]
+        },
+        {
+          "id": 37642
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 40684
+        },
+        {
+          "id": 37852,
+          "enchant": 3789
+        },
+        {
+          "id": 37852,
+          "enchant": 3789
+        },
+        {
+          "id": 37191
+        }
+      ]
+}
+
+const WarriorFuryP1Equipment = {
+        "items": [
+        {
+          "id": 44006,
+          "enchant": 3817,
+          "gems": [
+            41285,
+            42702
+          ]
+        },
+        {
+          "id": 44664,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 40530,
+          "enchant": 3808,
+          "gems": [
+            40037
+          ]
+        },
+        {
+          "id": 40403,
+          "enchant": 3605
+        },
+        {
+          "id": 40539,
+          "enchant": 3832,
+          "gems": [
+            42142
+          ]
+        },
+        {
+          "id": 39765,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 40541,
+          "enchant": 3604,
+          "gems": [
+            0
+          ]
+        },
+        {
+          "id": 40205,
+          "gems": [
+            42142
+          ]
+        },
+        {
+          "id": 40529,
+          "enchant": 3823,
+          "gems": [
+            39996,
+            40022
+          ]
+        },
+        {
+          "id": 40591,
+          "enchant": 3606
+        },
+        {
+          "id": 43993,
+          "gems": [
+            42142
+          ]
+        },
+        {
+          "id": 40717
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 40256
+        },
+        {
+          "id": 40384,
+          "enchant": 3789
+        },
+        {
+          "id": 40384,
+          "enchant": 3789
+        },
+        {
+          "id": 40385
+        }
+      ]
+}
+
+const WarriorFuryP2Equipment = {
+        "items": [
+        {
+          "id": 46151,
+          "enchant": 3817,
+          "gems": [
+            41285,
+            42142
+          ]
+        },
+        {
+          "id": 45459,
+          "gems": [
+            49110
+          ]
+        },
+        {
+          "id": 46149,
+          "enchant": 3808,
+          "gems": [
+            40037
+          ]
+        },
+        {
+          "id": 46032,
+          "enchant": 3605,
+          "gems": [
+            39996,
+            40037
+          ]
+        },
+        {
+          "id": 46146,
+          "enchant": 3832,
+          "gems": [
+            42142,
+            39996
+          ]
+        },
+        {
+          "id": 39765,
+          "enchant": 3845,
+          "gems": [
+            39996,
+            0
+          ]
+        },
+        {
+          "id": 46148,
+          "enchant": 3604,
+          "gems": [
+            40014,
+            0
+          ]
+        },
+        {
+          "id": 46095,
+          "gems": [
+            39996,
+            39996,
+            42142
+          ]
+        },
+        {
+          "id": 45536,
+          "enchant": 3823,
+          "gems": [
+            40037,
+            39996,
+            40022
+          ]
+        },
+        {
+          "id": 40591,
+          "enchant": 3606
+        },
+        {
+          "id": 45608,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 46322,
+          "gems": [
+            39996
+          ]
+        },
+        {
+          "id": 42987
+        },
+        {
+          "id": 45931
+        },
+        {
+          "id": 45516,
+          "enchant": 3789,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45516,
+          "enchant": 3789,
+          "gems": [
+            39996,
+            39996
+          ]
+        },
+        {
+          "id": 45296,
+          "gems": [
+            39996
+          ]
+        }
+      ]
+}
+
+const WarriorFuryGlyphs = {
+  major1: 43432,
+  major2: 43418,
+  major3: 43416,
+  minor1: 43395,
+  minor2: 43396,
+  minor3: 43397
+}
+
+const WarlockAfflictionGlyphs = {
+  major1: 50077,
+  major2: 45785,
+  major3: 45779,
+  minor1: 43394,
+  minor2: 43390,
+  minor3: 43393
+}
+
+const DKFrostGlyphs = {
+    major1: 43547,
+    major2: 43543,
+    major3: 45805,
+    minor1: 43544,
+    minor2: 43672,
+    minor3: 43673
+}
+
+const DKUnholyGlyphs = {
+    major1: 43549,
+    major2: 45804,
+    major3: 43542,
+    minor1: 43544,
+    minor2: 43672,
+    minor3: 43673
+}
+
+const DruidFeralGlyphs = {
+    major1: 40902,
+    major2: 45604,
+    major3: 40901,
+    minor1: 43674,
+    minor2: 43335,
+    minor3: 43331
+}
+
+const HunterMMGlyphs = {
+    major1: 42912,
+    major2: 42914,
+    major3: 45625,
+    minor1: 43351,
+    minor2: 43338,
+    minor3: 43350
+}
+
+const MageArcaneGlyphs = {
+    major1: 44955,
+    major2: 42735,
+    major3: 42751,
+    minor1: 43364,
+    minor2: 43360,
+    minor3: 44920
+}
+
+const ShamanEnhanceGlyphs = {
+  major1: 41539,
+  major2: 41532,
+  major3: 45771
+}
+
+const DruidFeralTalents = {
+  ferocity: 5,
+  feralInstinct: 3,
+  savageFury: 2,
+  feralSwiftness: 2,
+  survivalInstincts: true,
+  sharpenedClaws: 3,
+  shreddingAttacks: 2,
+  predatoryStrikes: 3,
+  primalFury: 2,
+  primalPrecision: 2,
+  feralCharge: true,
+  heartOfTheWild: 5,
+  survivalOfTheFittest: 3,
+  leaderOfThePack: true,
+  improvedLeaderOfThePack: 2,
+  protectorOfThePack: 2,
+  predatoryInstincts: 3,
+  kingOfTheJungle: 3,
+  mangle: true,
+  rendAndTear: 5,
+  primalGore: true,
+  berserk: true,
+  
+  improvedMarkOfTheWild: 2,
+  furor: 5,
+  naturalist: 5,
+  naturalShapeshifter: 3,
+  omenOfClarity: true,
+  masterShapeshifter: 2
+}
+
+const HunterMMTalents = {
+  improvedAspectOfTheHawk: 5,
+  focusedFire: 2,
+
+  focusedAim: 3,
+  lethalShots: 5,
+  carefulAim: 3,
+  improvedHuntersMark: 3,
+  mortalShots: 5,
+  goForTheThroat: 1,
+  improvedArcaneShot: 3,
+  aimedShot: true,
+  readiness: true,
+  barrage: 3,
+  combatExperience: 2,
+  rangedWeaponSpecialization: 3,
+  piercingShots: 3,
+  improvedBarrage: 3,
+  masterMarksman: 5,
+  wildQuiver: 3,
+  silencingShot: true,
+  markedForDeath: 5,
+  chimeraShot: true,
+
+  improvedTracking: 5,
+  survivalInstincts: 2
+}
+
+const WarlockAfflictionTalents = {
+  improvedCurseOfAgony: 2,
+  suppression: 3,
+  improvedCorruption: 5,
+  soulSiphon: 2,
+  felConcentration: 3,
+  nightfall: 2,
+  empoweredCorruption: 3,
+  shadowEmbrace: 5,
+  siphonLife: true,
+  improvedFelhunter: 2,
+  shadowMastery: 5,
+  eradication: 3,
+  contagion: 5,
+  malediction: 3,
+  deathsEmbrace: 3,
+  unstableAffliction: true, 
+  pandemic: true,
+  everlastingAffliction: 5,
+  haunt: true,
+
+  improvedShadowBolt: 5,
+  bane: 5,
+  ruin: 5,
+  intensity: 1,
+}
+
+const DefaultMeleeConsumes = {
+    prepopPotion: "PotionOfSpeed",
+    defaultPotion: "PotionOfSpeed",
+    flask: "FlaskOfEndlessRage",
+    food: "FoodFishFeast",
+    thermalSapper: true,
+    fillerExplosive: "ExplosiveSaroniteBomb"
+}
+
+const DefaultCasterConsumes = {
+    prepopPotion: "PotionOfSpeed",
+    defaultPotion: "PotionOfSpeed",
+    flask: "FlaskOfTheFrostWyrm",
+    food: "FoodFirecrackerSalmon",
+    thermalSapper: true,
+    fillerExplosive: "ExplosiveSaroniteBomb"
+}
+
+const RogueAssassinationApplyOptions = function(player) {
+    player.rogue = {}
+    player.rogue.rotation = {
+        tricksOfTheTradeFrequency: "Maintain",
+        envenomEnergyThreshold: 60,
+    }
+    player.rogue.talents = RogueAssassinationTalents
+    player.talentsString = "005303005352100520103331051-005005003-502"
+    player.rogue.options = {
+        mhImbue: "DeadlyPoison",
+        ohImbue: "InstantPoison",
+        applyPoisonsManually: false,
+        startingOverkillDuration: 15,
+    }
+    return player
+}
+
+const RogueCombatApplyOptions = function(player) {
+    player.rogue = {}
+    player.rogue.rotation = {
+        tricksOfTheTradeFrequency: "Maintain",
+        minimumComboPointsPrimaryFinisher: 3,
+    }
+    player.rogue.talents = RogueCombatTalents
+    player.talentsString = "00532000523-0252051050035010223100501251"
+    player.rogue.options = {
+        mhImbue: "InstantPoison",
+        ohImbue: "DeadlyPoison",
+        applyPoisonsManually: false,
+        startingOverkillDuration: 0,
+    }
+    return player
+}
+
+const DKFrostApplyOptions = function(player) {
+    player.deathknight = {}
+    player.deathknight.rotation = {
+        frostRotationType: "SingleTarget",
+        useEmpowerRuneWeapon: true,
+        bloodRuneFiller: "BloodBoil",
+        startingPresence: "Unholy",
+        avgAmsSuccessRate: 0.5,
+        avgAmsHit: 5000,
+        useGargoyle: true
+    }
+    player.deathknight.talents = DKFrostTalents
+    player.talentsString = "-32002350352203012300033101351-230200305003"
+    player.deathknight.options = {
+        petUptime: 1,
+        precastHornOfWinter: true
+    }
+    return player
+}
+
+const DKUnholyApplyOptions = function(player) {
+    player.deathknight = {}
+    player.deathknight.rotation = {
+        frostRotationType: "SingleTarget",
+        useEmpowerRuneWeapon: true,
+        bloodRuneFiller: "BloodBoil",
+        startingPresence: "Unholy",
+        avgAmsSuccessRate: 0.5,
+        avgAmsHit: 5000,
+        useGargoyle: true
+    }
+    player.deathknight.talents = DKUnholyTalents
+    player.talentsString = "-320043500002-2300303050032152000150013133051"
+    player.deathknight.options = {
+        petUptime: 1,
+        precastHornOfWinter: true
+    }
+    return player
+}
+
+const DruidFeralApplyOptions = function(player) {
+  player.feralDruid = {}
+  player.feralDruid.rotation = {
+    bearWeaveType: "Lacerate",
+    maintainFaerieFire: true,
+    minCombosForRip: 5,
+    useRake: true,
+    biteTime: 10,
+    minCombosForBite: 5,
+    berserkBiteThresh: 30,
+    maxRoarOffset: 14
+  }
+  player.feralDruid.talents = DruidFeralTalents
+  player.talentsString = "-503202132322010053120230310511-205503012"
+  player.feralDruid.options = {
+    latencyMs: 100,
+  }
+  return player
+}
+
+const HunterMMApplyOptions = function(player) {
+  player.hunter = {}
+  player.hunter.rotation = {
+    type: "SingleTarget",
+    sting: "SerpentSting",
+    trapWeave: true,
+    timeToTrapWeaveMs: 2000,
+    customRotation: {
+      spells: [
+        {
+          spell: 5
+        },
+        {
+          spell: 7
+        },
+        {
+          spell: 9
+        },
+        {
+          spell: 8
+        },
+        {
+          spell: 10
+        },
+        {
+          spell: 3
+        },
+        {
+          spell: 2
+        },
+        {
+          spell: 1
+        }
+      ]
+    },
+    viperStartManaPercent: 0.1,
+    viperStopManaPercent: 0.3
+  },
+  player.talentsString = "502-035335131030013233035031051-5000002"
+  player.hunter.talents = HunterMMTalents
+  player.hunter.options = {
+    ammo: "SaroniteRazorheads",
+    petType: "Wolf",
+    petTalents: {
+      cobraReflexes: 2,
+      dive: true,
+      boarsSpeed: true,
+      spikedCollar: 3,
+      cullingTheHerd: 3,
+      wildHunt: 1,
+      spidersBite: 3,
+      rabid: true,
+      callOfTheWild: true
+    },
+    petUptime: 1,
+    sniperTrainingUptime: 0.8,
+    useHuntersMark: true
+  }
+  return player
+}
+
+const MageArcaneApplyOptions = function(player) {
+  player.mage = {}
+  player.mage.rotation = {
+    minBlastBeforeMissiles: 4,
+    num4StackBlastsToMissilesGamble: 12,
+    num4StackBlastsToEarlyMissiles: 6,
+    extraBlastsDuringFirstAp: 2
+  }
+  player.mage.talents = MageArcaneTalents
+  player.talentsString = "23000513310033015032310250532-03-023303001"
+  player.mage.options = {
+    armor: "MoltenArmor",
+    focusMagicPercentUptime: 99,
+  }
+  return player
+}
+
+const ShamanEnhanceApplyOptions = function(player) {
+  player.enhancementShaman = {}
+  player.enhancementShaman.rotation = {
+    totems: {
+      earth: "StrengthOfEarthTotem",
+      air: "WindfuryTotem",
+      fire: "MagmaTotem",
+      water: "ManaSpringTotem",
+      useFireElemental: true,
+    },
+    rotationType: "Priority",
+    lightningboltWeave: true,
+    maelstromweaponMinStack: 3,
+    weaveReactionTime: 100,
+    weaveFlameShock: true
+  }
+  player.enhancementShaman.talents = ShamanEnhanceTalents
+  player.talentsString = "053030152-30405003105021333031131031051"
+  player.enhancementShaman.options = {
+    shield: "LightningShield",
+    bloodlust: true,
+    syncType: "SyncMainhandOffhandSwings",
+    imbueMh: "WindfuryWeapon",
+    imbueOh: "FlametongueWeapon",
+  }
+  return player
+}
+
+const WarlockAfflictionApplyOptions = function(player) {
+  player.warlock = {}
+  player.distanceFromTarget = 25
+  player.warlock.rotation = {
+    preset: "Automatic",
+    curse: "Agony",
+    primarySpell: "ShadowBolt",
+    secondaryDot: "UnstableAffliction",
+    corruption: true,
+    detonateSeed: true,
+    specSpell: "Haunt",
+  }
+  player.warlock.talents = WarlockAfflictionTalents
+  player.talentsString = "2350002030023510253500331151--550000051"
+  player.warlock.options = {
+    armor: "FelArmor",
+    summon: "Felhunter",
+    weaponImbue: "GrandSpellstone"
+  }
+  return player
+}
+
+const WarriorFuryApplyOptions = function(player) {
+  player.warrior = {}
+  player.warrior.rotation = {
+    useRend: true,
+    useMs: true,
+    prioritizeWw: true,
+    sunderArmor: "SunderArmorHelpStack",
+    hsRageThreshold: 60,
+    msRageThreshold: 35,
+    rendRageThresholdBelow: 70,
+    slamRageThreshold: 15,
+    useHsDuringExecute: true,
+    useBtDuringExecute: true,
+    spamExecute: true,
+    useWwDuringExecute: true,
+    useSlamOverExecute: true,
+  }
+  player.warrior.talents = WarriorFuryTalents
+  player.talentsString = "32002301233-305053000520310053120500351"
+  player.warrior.options = {
+    shout: "WarriorShoutCommanding"
+  }
+  return player
+}
