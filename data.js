@@ -1,6 +1,7 @@
 const DefaultSettings = {
-    iterations: 100,
-    phase: 1,
+    iterations: 300,
+    randomSeed: 0,
+    phase: 2,
     showDamageMetrics: true,
     faction: "Horde",
 }
@@ -803,7 +804,7 @@ const RogueCombatP1Equipment = {
 }
 
 const RogueCombatP2Equipment = {
-      "items": [
+        "items": [
         {
           "id": 46125,
           "enchant": 3817,
@@ -819,10 +820,9 @@ const RogueCombatP2Equipment = {
           ]
         },
         {
-          "id": 45245,
+          "id": 46127,
           "enchant": 3808,
           "gems": [
-            39999,
             39999
           ]
         },
@@ -851,7 +851,7 @@ const RogueCombatP2Equipment = {
           ]
         },
         {
-          "id": 45325,
+          "id": 46124,
           "enchant": 3604,
           "gems": [
             39999,
@@ -859,7 +859,7 @@ const RogueCombatP2Equipment = {
           ]
         },
         {
-          "id": 46095,
+          "id": 45555,
           "gems": [
             39999,
             39999,
@@ -876,11 +876,8 @@ const RogueCombatP2Equipment = {
           ]
         },
         {
-          "id": 45232,
-          "enchant": 3606,
-          "gems": [
-            39999
-          ]
+          "id": 45162,
+          "enchant": 3606
         },
         {
           "id": 46048,
@@ -6022,7 +6019,7 @@ const WarlockDemonologyTalents = {
   demonicEmpowerment: true,
   demonicKnowledge: 3,
   demonicTactics: 5,
-  decimation: 22,
+  decimation: 2,
   summonFelguard: true,
   nemesis: 3,
   demonicPact: 5,

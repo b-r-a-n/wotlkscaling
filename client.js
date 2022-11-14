@@ -41,7 +41,7 @@ function makeWeights() {
     return epWeights
 }
 
-function makeWowsimsImport(settings, buffs, debuffs, player, encounter, ep) {
+function makeWowsimsImport(settings, buffs, debuffs, player, encounter) {
     var config = {}
     config.settings = settings
     config.raidBuffs = buffs
@@ -76,5 +76,9 @@ function makeWowsimsRequestForPlayer(player) {
 }
 
 function makeWowsimsImportForPlayer(player) {
-    return makeWowsimsImport(DefaultSettings, DefaultBuffs, DefaultDebuffs, player, DefaultEncounter, makeWeights())
+    let settings = {}
+    settings.iterations = DefaultSettings.iterations
+    settings.phase = 2
+    settings.faction = "Horde"
+    return makeWowsimsImport(settings, DefaultBuffs, DefaultDebuffs, player, DefaultEncounter, makeWeights())
 }

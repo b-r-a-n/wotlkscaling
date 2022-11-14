@@ -37,8 +37,13 @@ addEventListener('message', async (e) => {
         let gearStats = output.raidStats.parties[0].players[0].gearStats
         let bonusStats = []
         for (let stat of gearStats) {
-            bonusStats.push(stat * 0.12)
+            bonusStats.push((stat * 0.12).toFixed(0))
         }
+        postMessage({
+            msg: 'bonusStats',
+            outputData: bonusStats,
+            id: id
+        })
         let request = e.data.inputData
         request.raid.parties[0].players[0].bonusStats = bonusStats
         outputData = raidSimJson(JSON.stringify(request, null, 2))

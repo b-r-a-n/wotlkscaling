@@ -21,7 +21,6 @@ function registerWorker(getJobs) {
                 if (inProgress < 1) {
                     document.getElementById("startButton").classList.remove("disabled")
                     addTrends()
-                    console.log("All Jobs completed")
                 }
                 return 
             }
@@ -37,6 +36,13 @@ function registerWorker(getJobs) {
             }
             let element = document.getElementById("result-" + id)
             element.innerHTML = formatter.format(Math.round(e.data.outputData.raidMetrics.dps.avg))
+        }
+        if (msg == 'bonusStats') {
+            const id = e.data.id
+            let element = document.getElementById("config-" + id)
+            let json = JSON.parse(element.dataset.json)
+            json.player.bonusStats = e.data.outputData
+            element.dataset.json = JSON.stringify(json, null, 2)
         }
     }
     return worker
@@ -814,7 +820,6 @@ function main() {
             cell = row.insertCell(-1)
             cell.id = "result-" + jobID
             cell.classList.add("dps-value")
-            jobID = jobID + 1
             
             settingsCell = settingsRow.insertCell(-1)
             let settings = makeWowsimsImportForPlayer(player)
@@ -822,6 +827,9 @@ function main() {
             settingsCell.classList.add("json-value")
             settingsCell.innerHTML = "json"
             settingsCell.dataset.json = settingsJSON
+            settingsCell.id = "config-" + jobID
+
+            jobID = jobID + 1
             settingsCell.onclick = async (e) => {
                 try {
                     await navigator.clipboard.writeText(e.target.dataset.json)
