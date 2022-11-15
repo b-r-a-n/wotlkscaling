@@ -268,7 +268,7 @@ const WarriorArmsTalents = {
 
 const WarriorFuryTalents = {
   improvedHeroicStrike: 3,
-  deflection: 2,
+  improvedRend: 2,
   ironWill: 2,
   tacticalMastery: 3,
   angerManagement: true,
@@ -292,6 +292,69 @@ const WarriorFuryTalents = {
   bloodsurge: 3,
   unendingFury: 5,
   titansGrip: true
+}
+
+const WarriorFuryCooldowns = {
+   "cooldowns": [
+        {
+          "id": {
+            "tag": -1,
+            "spellId": 2825
+          },
+          "timings": [
+            0
+          ]
+        },
+        {
+          "id": {
+            "spellId": 54758
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "itemId": 42641
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "spellId": 12292
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "spellId": 1719
+          },
+          "timings": [
+            7
+          ]
+        },
+        {
+          "id": {
+            "tag": -1,
+            "spellId": 64382
+          },
+          "timings": [
+            0
+          ]
+        },
+        {
+          "id": {
+            "spellId": 33697
+          },
+          "timings": [
+            3
+          ]
+        }
+      ]
 }
 
 const RogueAssassinationGlyphs = {
@@ -2914,7 +2977,7 @@ const WarriorFuryPreRaidEquipment = {
           "id": 41386,
           "enchant": 3817,
           "gems": [
-            41398,
+            41285,
             42702
           ]
         },
@@ -2937,7 +3000,7 @@ const WarriorFuryPreRaidEquipment = {
           "enchant": 3832,
           "gems": [
             40003,
-            40003
+            40034
           ]
         },
         {
@@ -2958,8 +3021,8 @@ const WarriorFuryPreRaidEquipment = {
         {
           "id": 40694,
           "gems": [
-            42149,
-            42149
+            42142,
+            42142
           ]
         },
         {
@@ -2970,14 +3033,14 @@ const WarriorFuryPreRaidEquipment = {
           "id": 44306,
           "enchant": 3606,
           "gems": [
-            40037,
-            40037
+            40088,
+            42142
           ]
         },
         {
           "id": 42642,
           "gems": [
-            42149
+            40037
           ]
         },
         {
@@ -3006,17 +3069,17 @@ const WarriorFuryPreRaidEquipment = {
 const WarriorFuryP1Equipment = {
         "items": [
         {
-          "id": 44006,
+          "id": 40528,
           "enchant": 3817,
           "gems": [
-            41285,
-            42702
+            41398,
+            39996
           ]
         },
         {
           "id": 44664,
           "gems": [
-            39996
+            42142
           ]
         },
         {
@@ -3034,14 +3097,13 @@ const WarriorFuryP1Equipment = {
           "id": 40539,
           "enchant": 3832,
           "gems": [
-            42142
+            40003
           ]
         },
         {
-          "id": 39765,
+          "id": 40733,
           "enchant": 3845,
           "gems": [
-            39996,
             0
           ]
         },
@@ -3053,17 +3115,17 @@ const WarriorFuryP1Equipment = {
           ]
         },
         {
-          "id": 40205,
+          "id": 40317,
           "gems": [
             42142
           ]
         },
         {
-          "id": 40529,
+          "id": 40318,
           "enchant": 3823,
           "gems": [
-            39996,
-            40022
+            42702,
+            40037
           ]
         },
         {
@@ -3077,7 +3139,7 @@ const WarriorFuryP1Equipment = {
           ]
         },
         {
-          "id": 40717
+          "id": 40474
         },
         {
           "id": 42987
@@ -3105,21 +3167,21 @@ const WarriorFuryP2Equipment = {
           "id": 46151,
           "enchant": 3817,
           "gems": [
-            41285,
-            42142
+            41398,
+            39996
           ]
         },
         {
-          "id": 45459,
+          "id": 45517,
           "gems": [
-            49110
+            39996
           ]
         },
         {
           "id": 46149,
           "enchant": 3808,
           "gems": [
-            40037
+            39996
           ]
         },
         {
@@ -3127,22 +3189,22 @@ const WarriorFuryP2Equipment = {
           "enchant": 3605,
           "gems": [
             39996,
-            40037
+            40038
           ]
         },
         {
           "id": 46146,
           "enchant": 3832,
           "gems": [
-            42142,
-            39996
+            39996,
+            42702
           ]
         },
         {
-          "id": 39765,
+          "id": 45611,
           "enchant": 3845,
           "gems": [
-            39996,
+            40037,
             0
           ]
         },
@@ -3150,15 +3212,15 @@ const WarriorFuryP2Equipment = {
           "id": 46148,
           "enchant": 3604,
           "gems": [
-            40014,
+            40058,
             0
           ]
         },
         {
           "id": 46095,
           "gems": [
-            39996,
-            39996,
+            42154,
+            42142,
             42142
           ]
         },
@@ -3166,9 +3228,9 @@ const WarriorFuryP2Equipment = {
           "id": 45536,
           "enchant": 3823,
           "gems": [
-            40037,
             39996,
-            40022
+            39996,
+            39996
           ]
         },
         {
@@ -3182,7 +3244,7 @@ const WarriorFuryP2Equipment = {
           ]
         },
         {
-          "id": 46322,
+          "id": 45534,
           "gems": [
             39996
           ]
@@ -5764,7 +5826,7 @@ const DruidBalanceGlyphs = {
 const WarriorFuryGlyphs = {
   major1: 43432,
   major2: 43418,
-  major3: 43416,
+  major3: 43423,
   minor1: 43395,
   minor2: 43396,
   minor3: 43397
@@ -6586,23 +6648,22 @@ const WarriorFuryApplyOptions = function(player) {
   player.warrior.rotation = {
     useRend: true,
     useMs: true,
-    prioritizeWw: true,
-    sunderArmor: "SunderArmorHelpStack",
-    hsRageThreshold: 60,
+    hsRageThreshold: 30,
     msRageThreshold: 35,
-    rendRageThresholdBelow: 70,
-    slamRageThreshold: 15,
+    rendRageThresholdBelow: 100,
+    slamRageThreshold: 25,
     useHsDuringExecute: true,
     useBtDuringExecute: true,
     spamExecute: true,
     useWwDuringExecute: true,
-    useSlamOverExecute: true,
+    rendHealthThresholdAbove: 20,
   }
   player.warrior.talents = WarriorFuryTalents
-  player.talentsString = "32002301233-305053000520310053120500351"
+  player.talentsString = "30202301233-305053000520310053120500351"
   player.warrior.options = {
-    shout: "WarriorShoutCommanding"
+    useRecklessness: true
   }
+  player.cooldowns = WarriorFuryCooldowns
   return player
 }
 

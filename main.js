@@ -521,12 +521,15 @@ function main() {
     warriorArmsP2.warrior.talents.swordSpecialization = 5
     warriorArmsP2.talentsString = "3022032023330105102012213231251-305-2033"
 
+    let warriorConsumes = DefaultMeleeConsumes
+    warriorConsumes.food = "FoodDragonfinFilet"
+
     let warriorFuryPreRaid = makePlayer(
         "FuryPreRaid",
         "RaceOrc", 
         "ClassWarrior", 
         WarriorFuryPreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
     )
@@ -535,7 +538,7 @@ function main() {
         "RaceOrc", 
         "ClassWarrior", 
         WarriorFuryP1Equipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
     )
@@ -544,7 +547,7 @@ function main() {
         "RaceOrc", 
         "ClassWarrior", 
         WarriorFuryP2Equipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
     )
