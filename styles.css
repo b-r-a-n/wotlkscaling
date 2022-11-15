@@ -13,23 +13,23 @@ a:link {
 a:hover, a:active {
     color: yellow;
 }
-.compare-table {
-    line-height: 24px;
+.compare-table, .change-table {
+    line-height: 28px;
     border-collapse: collapse;
 }
-.compare-table thead {
+.compare-table thead, .change-table thead {
     border: 1px solid #444444;
     background-color: #222222;
     color: #eeeeee
 }
-.compare-table tbody {
+.compare-table tbody, .change-table tbody {
     border: 1px solid #444444;
 }
-.compare-table th {
+.compare-table th, .change-table th {
     text-align: center;
     border: 1px solid #444444;
 }
-.compre-table td {
+.compare-table td, .change-table td {
     padding: 0px 6px 0px;
 }
 
@@ -85,16 +85,43 @@ a:hover, a:active {
     cursor: pointer;
 }
 
+.change-table td {
+    border: 1px solid #333;
+}
+
 .json-value:hover {
     background-color: #333333;
 }
 
 .info-value {
     min-width: 125px;
-    overflow: hidden;
     white-space: nowrap;
     border: 1px solid #333;
     text-align: center;
+}
+
+.info-value sup {
+    color: gold;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #000;
+    color: #eee;
+    text-align: center;
+    padding: 6px 4px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 .trend-value {

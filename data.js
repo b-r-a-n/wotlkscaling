@@ -1,3 +1,7 @@
+const CommunityContributedConfigs = {
+  "WarriorFury": "Improved sim configurations provided by Beanna from Fight Club",
+}
+
 const DefaultSettings = {
     iterations: 300,
     randomSeed: 0,

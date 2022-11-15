@@ -802,7 +802,13 @@ function main() {
         cell = row.insertCell(1)
         cell.classList.add("info-value")
         cell.classList.add(spec.cls)
-        cell.innerHTML = spec.name
+        let attributionText = CommunityContributedConfigs[spec.cls+spec.name]
+        if (attributionText != undefined) {
+            cell.innerHTML = spec.name +"<sup>*</sup><span class='tooltiptext'>" + attributionText + "</span>"
+            cell.classList.add("tooltip")
+        } else {
+            cell.innerHTML = spec.name
+        }
 
         cell = row.insertCell(2)
         cell.classList.add("trend-value")
