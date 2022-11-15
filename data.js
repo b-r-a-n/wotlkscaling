@@ -45,6 +45,7 @@ const DefaultDebuffs = {
 const DefaultBuffs = {
     giftOfTheWild: "TristateEffectImproved",
     arcaneBrilliance: true,
+    devotionAura: "TristateEffectImproved",
     divineSpirit: true,
     strengthOfEarthTotem: "TristateEffectImproved",
     abominationsMight: true,
