@@ -1,6 +1,7 @@
 const CommunityContributedConfigs = {
   "WarriorFury": "Improved sim configurations provided by Beanna from Fight Club",
-  "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club"
+  "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club",
+  "WarlockAffliction": "Improved sim configurations provided by Whiskeypig, Neem|eth",
 }
 
 const DefaultSettings = {
@@ -51,6 +52,7 @@ const DefaultBuffs = {
     strengthOfEarthTotem: "TristateEffectImproved",
     abominationsMight: true,
     leaderOfThePack: "TristateEffectImproved",
+    powerWordFortitude: "TristateEffectImproved",
     icyTalons: true,
     swiftRetribution: true,
     elementalOath: true,
@@ -2869,117 +2871,117 @@ const WarlockAfflictionP1Equipment = {
 }
 
 const WarlockAfflictionP2Equipment = {
-        "items": [
-        {
-          "id": 45150,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            40026
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46068,
-          "enchant": 3810,
-          "gems": [
-            39998,
-            40051
-          ]
-        },
-        {
-          "id": 45618,
-          "enchant": 3722,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 46137,
-          "enchant": 3832,
-          "gems": [
-            39998,
-            40051
-          ]
-        },
-        {
-          "id": 45446,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3604,
-          "gems": [
-            40026,
-            40051,
-            0
-          ]
-        },
-        {
-          "id": 45557,
-          "gems": [
-            40026,
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 46139,
-          "enchant": 3719,
-          "gems": [
-            40026,
-            40051
-          ]
-        },
-        {
-          "id": 45135,
-          "enchant": 3606,
-          "gems": [
-            39998,
-            40051
-          ]
-        },
-        {
-          "id": 45495,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 40432
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 45620,
-          "enchant": 3834,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 45271
-        },
-        {
-          "id": 45257
-        }
+  "items": [
+    {
+      "id": 45497,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        39998
       ]
+    },
+    {
+      "id": 45243,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46136,
+      "enchant": 3810,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45618,
+      "enchant": 3722,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 46137,
+      "enchant": 1144,
+      "gems": [
+        39998,
+        40051
+      ]
+    },
+    {
+      "id": 45446,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        40026,
+        40051,
+        0
+      ]
+    },
+    {
+      "id": 45619,
+      "gems": [
+        40049,
+        40049,
+        39998
+      ]
+    },
+    {
+      "id": 45488,
+      "enchant": 3719,
+      "gems": [
+        39998,
+        40051,
+        40026
+      ]
+    },
+    {
+      "id": 45135,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        40051
+      ]
+    },
+    {
+      "id": 45495,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45466
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 45620,
+      "enchant": 3834,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 45617
+    },
+    {
+      "id": 45511
+    }
+  ]
 }
 
 const WarriorFuryPreRaidEquipment = {

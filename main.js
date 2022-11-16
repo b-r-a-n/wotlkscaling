@@ -435,7 +435,8 @@ function main() {
     let warlockConsumes = DefaultCasterConsumes
     warlockConsumes.petFood = "PetFoodSpicedMammothTreats"
     warlockConsumes.prepopPotion = "PotionOfWildMagic"
-    warlockConsumes.defaultPotion = "PotionOfWildMagic"
+    warlockConsumes.defaultPotion = "PotionOfSpeed"
+    warlockConsumes.defaultConjured = "ConjuredDarkRune"
     let warlockAfflictionPreRaid = makePlayer(
         "AfflictionPreRaid",
         "RaceOrc", 
