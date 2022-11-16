@@ -1,5 +1,6 @@
 const CommunityContributedConfigs = {
   "WarriorFury": "Improved sim configurations provided by Beanna from Fight Club",
+  "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club"
 }
 
 const DefaultSettings = {
@@ -244,6 +245,7 @@ const ShamanEnhanceTalents = {
 
 const WarriorArmsTalents = {
   improvedHeroicStrike: 3,
+  improvedRend: 2,
   improvedCharge: 2,
   tacticalMastery: 3,
   improvedOverpower: 2,
@@ -261,7 +263,7 @@ const WarriorArmsTalents = {
   juggernaut: true,
   improvedMortalStrike: 3,
   unrelentingAssault: 2,
-  suddenDeath: 2,
+  suddenDeath: 3,
   endlessRage: true,
   bloodFrenzy: 2,
   wreckingCrew: 5,
@@ -269,6 +271,10 @@ const WarriorArmsTalents = {
 
   armoredToTheTeeth: 3,
   cruelty: 5,
+
+  improvedBloodrage: 2,
+  improvedThunderClap: 3,
+  incite: 3,
 }
 
 const WarriorFuryTalents = {
@@ -5672,115 +5678,119 @@ const WarriorArmsP1Equipment = {
 }
 
 const WarriorArmsP2Equipment = {
-        "items": [
-        {
-          "id": 46151,
-          "enchant": 3817,
-          "gems": [
-            41285,
-            42142
-          ]
-        },
-        {
-          "id": 45459,
-          "gems": [
-            49110
-          ]
-        },
-        {
-          "id": 46149,
-          "enchant": 3808,
-          "gems": [
-            40037
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39996,
-            40037
-          ]
-        },
-        {
-          "id": 46146,
-          "enchant": 3832,
-          "gems": [
-            42142,
-            39996
-          ]
-        },
-        {
-          "id": 39765,
-          "enchant": 3845,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46148,
-          "enchant": 3604,
-          "gems": [
-            40014,
-            0
-          ]
-        },
-        {
-          "id": 46095,
-          "gems": [
-            39996,
-            39996,
-            42142
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            40037,
-            39996,
-            40022
-          ]
-        },
-        {
-          "id": 40591,
-          "enchant": 3606
-        },
-        {
-          "id": 45608,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46322,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 42987
-        },
-        {
-          "id": 45931
-        },
-        {
-          "id": 45516,
-          "enchant": 3789,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {},
-        {
-          "id": 45296,
-          "gems": [
-            39996
-          ]
-        }
+  "items": [
+    {
+      "id": 46151,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42153
       ]
+    },
+    {
+      "id": 45459,
+      "gems": [
+        40002
+      ]
+    },
+    {
+      "id": 46149,
+      "enchant": 3808,
+      "gems": [
+        42153
+      ]
+    },
+    {
+      "id": 46032,
+      "enchant": 3605,
+      "gems": [
+        39996,
+        40037
+      ]
+    },
+    {
+      "id": 46146,
+      "enchant": 3832,
+      "gems": [
+        42153,
+        39996
+      ]
+    },
+    {
+      "id": 45663,
+      "enchant": 3845,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 46148,
+      "enchant": 3604,
+      "gems": [
+        40037,
+        0
+      ]
+    },
+    {
+      "id": 45241,
+      "gems": [
+        49110,
+        40037,
+        40002
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        39996,
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45599,
+      "enchant": 3606,
+      "gems": [
+        40002,
+        40002
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        40002
+      ]
+    },
+    {
+      "id": 46322,
+      "gems": [
+        40002
+      ]
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 45931
+    },
+    {
+      "id": 45533,
+      "enchant": 3789,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {},
+    {
+      "id": 45296,
+      "gems": [
+        40002
+      ]
+    }
+  ]
 }
 
 const WarriorArmsGlyphs = {
@@ -6678,9 +6688,8 @@ const WarriorArmsApplyOptions = function(player) {
     useRend: true,
     useMs: true,
     prioritizeWw: true,
-    sunderArmor: "SunderArmorHelpStack",
-    hsRageThreshold: 60,
-    msRageThreshold: 35,
+    hsRageThreshold: 40,
+    msRageThreshold: 30,
     rendRageThresholdBelow: 70,
     slamRageThreshold: 15,
     useHsDuringExecute: true,

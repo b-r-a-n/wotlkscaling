@@ -490,12 +490,15 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
     )
+
+    let warriorConsumes = DefaultMeleeConsumes
+    warriorConsumes.food = "FoodDragonfinFilet"
     let warriorArmsPreRaid = makePlayer(
         "ArmsPreRaid",
         "RaceOrc", 
         "ClassWarrior", 
         WarriorArmsPreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
     )
@@ -504,7 +507,7 @@ function main() {
         "RaceOrc", 
         "ClassWarrior", 
         WarriorArmsP1Equipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
     )
@@ -513,16 +516,10 @@ function main() {
         "RaceOrc", 
         "ClassWarrior", 
         WarriorArmsP2Equipment, 
-        DefaultMeleeConsumes, 
+        warriorConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
     )
-    warriorArmsP2.warrior.talents.poleaxeSpecialization = 0
-    warriorArmsP2.warrior.talents.swordSpecialization = 5
-    warriorArmsP2.talentsString = "3022032023330105102012213231251-305-2033"
-
-    let warriorConsumes = DefaultMeleeConsumes
-    warriorConsumes.food = "FoodDragonfinFilet"
 
     let warriorFuryPreRaid = makePlayer(
         "FuryPreRaid",
