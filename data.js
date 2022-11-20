@@ -3,6 +3,8 @@ const CommunityContributedConfigs = {
   "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club",
   "WarlockAffliction": "Improved sim configurations provided by Whiskeypig, Neem|eth",
   "RogueAssassination": "Improved sim configurations provided by hexa",
+  "HunterMarksman": "Improved sim configurations provided by Anthrax",
+  "HunterSurvival": "Improved simconfigurations provided by Anthrax",
 }
 
 const DefaultSettings = {
@@ -1874,96 +1876,96 @@ const HunterMMPreRaidEquipment = {
 }
 
 const HunterMMP1Equipment = {
-        "items": [
-        {
-          "id": 40543,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42143
-          ]
-        },
-        {
-          "id": 44664,
-          "gems": [
-            42143
-          ]
-        },
-        {
-          "id": 40507,
-          "enchant": 3808,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 43998,
-          "enchant": 3832,
-          "gems": [
-            42143,
-            39997
-          ]
-        },
-        {
-          "id": 40282,
-          "enchant": 3845,
-          "gems": [
-            39997,
-            0
-          ]
-        },
-        {
-          "id": 40541,
-          "enchant": 3604,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 40275,
-          "enchant": 3601,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 40506,
-          "enchant": 3823,
-          "gems": [
-            39997,
-            49110
-          ]
-        },
-        {
-          "id": 40549,
-          "enchant": 3606
-        },
-        {
-          "id": 40074
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 40684
-        },
-        {
-          "id": 44253
-        },
-        {
-          "id": 40388,
-          "enchant": 3827
-        },
-        {},
-        {
-          "id": 40385,
-          "enchant": 3608
-        }
+  "items": [
+    {
+      "id": 40543,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        39997
       ]
+    },
+    {
+      "id": 44664,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 40507,
+      "enchant": 3808,
+      "gems": [
+        42143
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 43998,
+      "enchant": 3832,
+      "gems": [
+        42143,
+        42143
+      ]
+    },
+    {
+      "id": 40282,
+      "enchant": 3845,
+      "gems": [
+        39997,
+        0
+      ]
+    },
+    {
+      "id": 40541,
+      "enchant": 3604,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 40275,
+      "enchant": 3601,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 40506,
+      "enchant": 3823,
+      "gems": [
+        39997,
+        42702
+      ]
+    },
+    {
+      "id": 40549,
+      "enchant": 3606
+    },
+    {
+      "id": 40074
+    },
+    {
+      "id": 40474
+    },
+    {
+      "id": 40684
+    },
+    {
+      "id": 44253
+    },
+    {
+      "id": 40388,
+      "enchant": 3827
+    },
+    {},
+    {
+      "id": 40385,
+      "enchant": 3608
+    }
+  ]
 }
 
 const HunterMMP2Equipment = {
@@ -3686,96 +3688,95 @@ const HunterSurvivalPreRaidEquipment = {
 }
 
 const HunterSurvivalP1Equipment = {
-      "items": [
-        {
-          "id": 40505,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42143
-          ]
-        },
-        {
-          "id": 44664,
-          "gems": [
-            42143
-          ]
-        },
-        {
-          "id": 40507,
-          "enchant": 3808,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 43998,
-          "enchant": 3832,
-          "gems": [
-            42143,
-            39997
-          ]
-        },
-        {
-          "id": 40282,
-          "enchant": 3845,
-          "gems": [
-            39997,
-            0
-          ]
-        },
-        {
-          "id": 40541,
-          "enchant": 3604,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 39762,
-          "enchant": 3601,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 40331,
-          "enchant": 3823,
-          "gems": [
-            39997,
-            49110
-          ]
-        },
-        {
-          "id": 40549,
-          "enchant": 3606
-        },
-        {
-          "id": 40074
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 40684
-        },
-        {
-          "id": 44253
-        },
-        {
-          "id": 40388,
-          "enchant": 3827
-        },
-        {},
-        {
-          "id": 40385,
-          "enchant": 3608
-        }
+  "items": [
+    {
+      "id": 40543,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        40044
       ]
+    },
+    {
+      "id": 44664,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 40507,
+      "enchant": 3808,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 40503,
+      "enchant": 3832,
+      "gems": [
+        42143,
+        42143
+      ]
+    },
+    {
+      "id": 40282,
+      "enchant": 3845,
+      "gems": [
+        39997,
+        0
+      ]
+    },
+    {
+      "id": 40541,
+      "enchant": 3604,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 39762,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 40331,
+      "enchant": 3823,
+      "gems": [
+        42143,
+        42702
+      ]
+    },
+    {
+      "id": 40549,
+      "enchant": 3606
+    },
+    {
+      "id": 40074
+    },
+    {
+      "id": 40474
+    },
+    {
+      "id": 39257
+    },
+    {
+      "id": 44253
+    },
+    {
+      "id": 40388,
+      "enchant": 3827
+    },
+    {},
+    {
+      "id": 40385,
+      "enchant": 3608
+    }
+  ]
 }
 
 const MageFirePreRaidEquipment = {
@@ -4389,114 +4390,116 @@ const WarlockDemonologyP2Equipment = {
 }
 
 const  HunterSurvivalP2Equipment = {
-        "items": [
-        {
-          "id": 46143,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42143
-          ]
-        },
-        {
-          "id": 45517,
-          "gems": [
-            42143
-          ]
-        },
-        {
-          "id": 45300,
-          "enchant": 3808,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 46141,
-          "enchant": 3832,
-          "gems": [
-            42143,
-            39997
-          ]
-        },
-        {
-          "id": 45454,
-          "enchant": 3845,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 45444,
-          "enchant": 3604,
-          "gems": [
-            39997,
-            39997,
-            0
-          ]
-        },
-        {
-          "id": 45553,
-          "enchant": 3601,
-          "gems": [
-            39997,
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            49110,
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 45244,
-          "enchant": 3606,
-          "gems": [
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 45608,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46322,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46038
-        },
-        {
-          "id": 44253
-        },
-        {
-          "id": 40388,
-          "enchant": 3827
-        },
-        {},
-        {
-          "id": 45570,
-          "enchant": 3608
-        }
+  "items": [
+    {
+      "id": 45610,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42702
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 45300,
+      "enchant": 3808,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 46032,
+      "enchant": 3605,
+      "gems": [
+        42143,
+        40043
+      ]
+    },
+    {
+      "id": 45473,
+      "enchant": 3832,
+      "gems": [
+        39997,
+        39997,
+        42143
+      ]
+    },
+    {
+      "id": 45108,
+      "enchant": 3845,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 45444,
+      "enchant": 3604,
+      "gems": [
+        42143,
+        39997,
+        0
+      ]
+    },
+    {
+      "id": 45467,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        39997,
+        39997,
+        39997
+      ]
+    },
+    {
+      "id": 45244,
+      "enchant": 3606,
+      "gems": [
+        39997,
+        39997
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 45456,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 44253
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 46033,
+      "enchant": 3827,
+      "gems": [
+        39997,
+        39997
+      ]
+    },
+    {},
+    {
+      "id": 45570,
+      "enchant": 3608
+    }
+  ]
 }
 
 const DruidBalanceP2Equipment = {
@@ -5895,15 +5898,24 @@ const DruidFeralGlyphs = {
 
 const HunterMMGlyphs = {
     major1: 42912,
-    major2: 42914,
+    major2: 45733,
     major3: 45625,
     minor1: 43351,
     minor2: 43338,
     minor3: 43350
 }
 
+const HunterMMGlyphsP2 = {
+    major1: 42912,
+    major2: 45733,
+    major3: 42914,
+    minor1: 43351,
+    minor2: 43338,
+    minor3: 43350
+}
+
 const HunterSurvivalGlyphs = {
-  major1: 42912,
+  major1: 45733,
   major2: 45731,
   major3: 45732,
   minor1: 43351,
@@ -5998,7 +6010,7 @@ const DruidFeralTalents = {
   masterShapeshifter: 2
 }
 
-const HunterMMTalents = {
+const HunterMMTalentsP0 = {
   improvedAspectOfTheHawk: 5,
   focusedFire: 2,
 
@@ -6008,8 +6020,8 @@ const HunterMMTalents = {
   improvedHuntersMark: 3,
   mortalShots: 5,
   goForTheThroat: 1,
-  improvedArcaneShot: 3,
   aimedShot: true,
+  improvedStings: 3,
   readiness: true,
   barrage: 3,
   combatExperience: 2,
@@ -6023,16 +6035,49 @@ const HunterMMTalents = {
   chimeraShot: true,
 
   improvedTracking: 5,
+  trapMastery: 3,
+  survivalInstincts: 2
+}
+
+const HunterMMTalentsP2 = {
+  improvedAspectOfTheHawk: 5,
+  focusedFire: 2,
+
+  focusedAim: 1,
+  lethalShots: 5,
+  carefulAim: 3,
+  improvedHuntersMark: 3,
+  mortalShots: 5,
+  goForTheThroat: 1,
+  aimedShot: true,
+  improvedStings: 3,
+  readiness: true,
+  barrage: 3,
+  combatExperience: 2,
+  rangedWeaponSpecialization: 3,
+  piercingShots: 3,
+  improvedBarrage: 3,
+  masterMarksman: 5,
+  wildQuiver: 3,
+  silencingShot: true,
+  improvedSteadyShot: 2,
+  markedForDeath: 5,
+  chimeraShot: true,
+
+  improvedTracking: 5,
+  trapMastery: 3,
   survivalInstincts: 2
 }
 
 const HunterSurvivalTalents = {
-  focusedAim: 1,
+  improvedAspectOfTheHawk: 3,
+  
+  focusedAim: 3,
   lethalShots: 5,
   carefulAim: 3,
   mortalShots: 5,
   goForTheThroat: 1,
-  aimedShot: true,
+
   improvedTracking: 5,
   trapMastery: 3,
   survivalInstincts: 2,
@@ -6045,12 +6090,38 @@ const HunterSurvivalTalents = {
   resourcefulness: 3,
   exposeWeakness: 2,
   wyvernSting: true,
-  thrillOfTheHunt: 3,
   masterTactician: 5,
   noxiousStings: 3,
   blackArrow: true,
   sniperTraining: 3,
-  huntingParty: 1,
+  explosiveShot: true
+}
+
+const HunterSurvivalTalentsP1 = {
+  improvedAspectOfTheHawk: 5,
+  focusedFire: 1,
+  
+  lethalShots: 5,
+  carefulAim: 3,
+  mortalShots: 5,
+  goForTheThroat: 1,
+
+  improvedTracking: 5,
+  trapMastery: 3,
+  survivalInstincts: 2,
+  survivalist: 5,
+  tNT: 3,
+  lockAndLoad: 3,
+  hunterVsWild: 3,
+  killerInstinct: 3,
+  lightningReflexes: 5,
+  resourcefulness: 3,
+  exposeWeakness: 2,
+  wyvernSting: true,
+  masterTactician: 5,
+  noxiousStings: 3,
+  blackArrow: true,
+  sniperTraining: 3,
   explosiveShot: true
 }
 
@@ -6425,46 +6496,54 @@ const DruidFeralApplyOptions = function(player) {
   return player
 }
 
-const HunterSurvivalApplyOptions = function(player) {
+const HunterSurvivalApplyOptions = function(player, phase) {
   player.hunter = {}
   player.hunter.rotation = {
-    type: "SingleTarget",
+    type: "Custom",
     sting: "SerpentSting",
     trapWeave: true,
     timeToTrapWeaveMs: 2000,
     customRotation: {
       spells: [
         {
-          spell: 5
+          spell: 7
         },
         {
-          spell: 7
+          spell: 10 
+        },
+        {
+          spell: 13
+        },
+        {
+          spell: 11
+        },
+        {
+          spell: 5
         },
         {
           spell: 9
         },
         {
-          spell: 8
-        },
-        {
-          spell: 10
-        },
-        {
           spell: 3
         },
         {
-          spell: 2
+          spell: 4
         },
         {
           spell: 1
         }
       ]
     },
-    viperStartManaPercent: 0.1,
-    viperStopManaPercent: 0.3
-  },
-  player.talentsString = "-015305101-5000032500033330532135301311"
-  player.hunter.talents = HunterSurvivalTalents
+    viperStartManaPercent: 0.05,
+    viperStopManaPercent: 0.2
+  }
+  if (phase == 0) {
+    player.talentsString = "3-0353051-5000032500033330532105301301"
+    player.hunter.talents = HunterSurvivalTalents
+  } else {
+    player.talentsString = "501-0053051-5000032500033330532105301301"
+    player.hunter.talents = HunterSurvivalTalentsP1
+  }
   player.hunter.options = {
     ammo: "SaroniteRazorheads",
     petType: "Wolf",
@@ -6483,50 +6562,152 @@ const HunterSurvivalApplyOptions = function(player) {
     sniperTrainingUptime: 0.8,
     useHuntersMark: true
   }
+  player.cooldowns = {
+    "cooldowns": [
+      {
+        "id": {
+          "spellId": 33697
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 3045
+        },
+        "timings": [
+          1.5,
+          15.9
+        ]
+      },
+      {
+        "id": {
+          "spellId": 23989
+        },
+        "timings": [
+          4.5
+        ]
+      },
+      {
+        "id": {
+          "tag": -1,
+          "spellId": 2825
+        },
+        "timings": [
+          0
+        ]
+      },
+      {
+        "id": {
+          "spellId": 54758
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "itemId": 22788
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 53434
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 34026
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 53401
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "itemId": 40211
+        },
+        "timings": [
+          61.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 64495
+        },
+        "timings": [
+          1.5
+        ]
+      }
+    ]
+  }
   return player
 
 }
 
-const HunterMMApplyOptions = function(player) {
+const HunterMMApplyOptions = function(player, phase) {
   player.hunter = {}
   player.hunter.rotation = {
-    type: "SingleTarget",
+    type: "Custom",
     sting: "SerpentSting",
     trapWeave: true,
     timeToTrapWeaveMs: 2000,
     customRotation: {
-      spells: [
+      "spells": [
         {
-          spell: 5
+          "spell": 7
         },
         {
-          spell: 7
+          "spell": 10
         },
         {
-          spell: 9
+          "spell": 5
         },
         {
-          spell: 8
+          "spell": 9
         },
         {
-          spell: 10
+          "spell": 3
         },
         {
-          spell: 3
+          "spell": 11
         },
         {
-          spell: 2
+          "spell": 4
         },
         {
-          spell: 1
+          "spell": 2
+        },
+        {
+          "spell": 1
         }
       ]
     },
-    viperStartManaPercent: 0.1,
-    viperStopManaPercent: 0.3
-  },
-  player.talentsString = "502-035335131030013233035031051-5000002"
-  player.hunter.talents = HunterMMTalents
+    viperStartManaPercent: 0.05,
+    viperStopManaPercent: 0.2
+  }
+  if (phase < 2) {
+    player.talentsString = "502-035335101030013233035031051-5000032"
+    player.hunter.talents = HunterMMTalentsP0
+  } else {
+    player.talentsString = "502-015335101030013233035031251-5000032"
+    player.hunter.talents = HunterMMTalentsP2
+  }
   player.hunter.options = {
     ammo: "SaroniteRazorheads",
     petType: "Wolf",
@@ -6544,6 +6725,100 @@ const HunterMMApplyOptions = function(player) {
     petUptime: 1,
     sniperTrainingUptime: 0.8,
     useHuntersMark: true
+  }
+  player.cooldowns = {
+    "cooldowns": [
+      {
+        "id": {
+          "spellId": 33697
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 3045
+        },
+        "timings": [
+          1.5,
+          15.9
+        ]
+      },
+      {
+        "id": {
+          "spellId": 23989
+        },
+        "timings": [
+          4.5
+        ]
+      },
+      {
+        "id": {
+          "tag": -1,
+          "spellId": 2825
+        },
+        "timings": [
+          0
+        ]
+      },
+      {
+        "id": {
+          "spellId": 54758
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "itemId": 22788
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 53434
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 34026
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 53401
+        },
+        "timings": [
+          1.5
+        ]
+      },
+      {
+        "id": {
+          "itemId": 40211
+        },
+        "timings": [
+          61.5
+        ]
+      },
+      {
+        "id": {
+          "spellId": 64495
+        },
+        "timings": [
+          1.5
+        ]
+      }
+    ]
   }
   return player
 }

@@ -240,32 +240,36 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions
     )
+    let hunterConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
+    hunterConsumes.food = "FoodBlackenedDragonfin"
+    hunterConsumes.petFood = "PetFoodSpicedMammothTreats"
+    hunterConsumes.defaultConjured = "ConjuredFlameCap"
     let hunterMMPreRaid = makePlayer(
         "MMPreRaid",
         "RaceOrc", 
         "ClassHunter", 
         HunterMMPreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 0
     )
     let hunterMMP1 = makePlayer(
         "MMPreRaid",
         "RaceOrc", 
         "ClassHunter", 
         HunterMMP1Equipment, 
-        DefaultMeleeConsumes, 
+        hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 1
     )
     let hunterMMP2 = makePlayer(
         "MMPreRaid",
         "RaceOrc", 
         "ClassHunter", 
         HunterMMP2Equipment, 
-        DefaultMeleeConsumes, 
+        hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 2
     )
     let hunterSurvivalPreRaid = makePlayer(
         "SurvivalPreRaid",
@@ -274,7 +278,7 @@ function main() {
         HunterSurvivalPreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 0
     )
     let hunterSurvivalP1 = makePlayer(
         "SurvivalPreRaid",
@@ -283,7 +287,7 @@ function main() {
         HunterSurvivalP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 1
     )
     let hunterSurvivalP2 = makePlayer(
         "SurvivalPreRaid",
@@ -292,7 +296,7 @@ function main() {
         HunterSurvivalP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 2
     )
 
     let mageConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))

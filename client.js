@@ -18,7 +18,7 @@ const slotIdToIndex = {
     17: 16
 }
 
-function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, glyphs, profession1, profession2, applyOptions) {
+function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, glyphs, profession1, profession2, applyOptions, phase) {
     var player = {}
     player.name = name
     player.race = race
@@ -30,7 +30,7 @@ function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, g
     player.glyphs = glyphs
     player.profession1 = profession1
     player.profession2 = profession2
-    player = applyOptions(player)
+    player = applyOptions(player, phase)
     return player
 }
 
