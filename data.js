@@ -2,6 +2,7 @@ const CommunityContributedConfigs = {
   "WarriorFury": "Improved sim configurations provided by Beanna from Fight Club",
   "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club",
   "WarlockAffliction": "Improved sim configurations provided by Whiskeypig, Neem|eth",
+  "RogueAssassination": "Improved sim configurations provided by hexa",
 }
 
 const DefaultSettings = {
@@ -472,220 +473,218 @@ const RogueAssassinationPreRaidEquipment = {
 } 
 
 const RogueAssassinationP1Equipment = {
- "items": [
-        {
-          "id": 40499,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42702
-          ]
-        },
-        {
-          "id": 44664,
-          "gems": [
-            40003
-          ]
-        },
-        {
-          "id": 40502,
-          "enchant": 3808,
-          "gems": [
-            40003
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 40539,
-          "enchant": 3832,
-          "gems": [
-            40003
-          ]
-        },
-        {
-          "id": 39765,
-          "enchant": 3845,
-          "gems": [
-            40003,
-            0
-          ]
-        },
-        {
-          "id": 40496,
-          "enchant": 3604,
-          "gems": [
-            40053,
-            0
-          ]
-        },
-        {
-          "id": 40260,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 40500,
-          "enchant": 3823,
-          "gems": [
-            40003,
-            40003
-          ]
-        },
-        {
-          "id": 39701,
-          "enchant": 3606
-        },
-        {
-          "id": 40074
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 40684
-        },
-        {
-          "id": 44253
-        },
-        {
-          "id": 39714,
-          "enchant": 3789
-        },
-        {
-          "id": 40386,
-          "enchant": 3789
-        },
-        {
-          "id": 40385
-        }
+  "items": [
+    {
+      "id": 40499,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42702
       ]
+    },
+    {
+      "id": 44664,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 40502,
+      "enchant": 3808,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 40539,
+      "enchant": 3832,
+      "gems": [
+        40003
+      ]
+    },
+    {
+      "id": 40186,
+      "enchant": 3845,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 40496,
+      "enchant": 3604,
+      "gems": [
+        40058,
+        0
+      ]
+    },
+    {
+      "id": 40205,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 40500,
+      "enchant": 3823,
+      "gems": [
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 40243,
+      "enchant": 3606,
+      "gems": [
+        40052
+      ]
+    },
+    {
+      "id": 40074
+    },
+    {
+      "id": 40474
+    },
+    {
+      "id": 40684
+    },
+    {
+      "id": 44253
+    },
+    {
+      "id": 39714,
+      "enchant": 3789
+    },
+    {
+      "id": 40386,
+      "enchant": 3789
+    },
+    {
+      "id": 40385
+    }
+  ]
 }
 
 const RogueAssassinationP2Equipment = {
-          "items": [
-        {
-          "id": 46125,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            39999
-          ]
-        },
-        {
-          "id": 45517,
-          "gems": [
-            40034
-          ]
-        },
-        {
-          "id": 45245,
-          "enchant": 3808,
-          "gems": [
-            40034,
-            39999
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45473,
-          "enchant": 3832,
-          "gems": [
-            39999,
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45611,
-          "enchant": 3845,
-          "gems": [
-            45987,
-            0
-          ]
-        },
-        {
-          "id": 46124,
-          "enchant": 3604,
-          "gems": [
-            39999,
-            0
-          ]
-        },
-        {
-          "id": 46095,
-          "gems": [
-            39999,
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            39999,
-            39999,
-            40003
-          ]
-        },
-        {
-          "id": 45564,
-          "enchant": 3606,
-          "gems": [
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 46048,
-          "gems": [
-            36766
-          ]
-        },
-        {
-          "id": 45608,
-          "gems": [
-            36766
-          ]
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 46038
-        },
-        {
-          "id": 45484,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 45607,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 45296,
-          "gems": [
-            39999
-          ]
-        }
+  "items": [
+    {
+      "id": 46125,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        39999
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 45245,
+      "enchant": 3808,
+      "gems": [
+        40003,
+        40003
+      ]
+    },
+    {
+      "id": 45461,
+      "enchant": 3605,
+      "gems": [
+        40053
+      ]
+    },
+    {
+      "id": 45473,
+      "enchant": 3832,
+      "gems": [
+        40053,
+        49110,
+        39999
+      ]
+    },
+    {
+      "id": 45611,
+      "enchant": 3845,
+      "gems": [
+        40053,
+        0
+      ]
+    },
+    {
+      "id": 46124,
+      "enchant": 3604,
+      "gems": [
+        39999,
+        0
+      ]
+    },
+    {
+      "id": 46095,
+      "gems": [
+        39999,
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        39999,
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45564,
+      "enchant": 3606,
+      "gems": [
+        40003,
+        40003
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 45456,
+      "gems": [
+        36766
+      ]
+    },
+    {
+      "id": 45609
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 45484,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45484,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45570
+    }
+  ]
 }
 
 const RogueCombatPreRaidEquipment = {
@@ -6263,6 +6262,43 @@ const RogueAssassinationApplyOptions = function(player) {
         ohImbue: "InstantPoison",
         applyPoisonsManually: false,
         startingOverkillDuration: 15,
+    }
+    player.cooldowns = {
+      "cooldowns": [
+        {
+          "id": {
+            "tag": -1,
+            "spellId": 2825
+          },
+          "timings": [
+            0
+          ]
+        },
+        {
+          "id": {
+            "spellId": 33697
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "spellId": 54758
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "itemId": 42641
+          },
+          "timings": [
+            3
+          ]
+        }
+      ]
     }
     return player
 }

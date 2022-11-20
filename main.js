@@ -295,7 +295,7 @@ function main() {
         DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions
     )
 
-    let mageConsumes = DefaultCasterConsumes
+    let mageConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
     mageConsumes.defaultConjured = "ConjuredDarkRune"
     let mageArcanePreRaid = makePlayer(
         "ArcanePreRaid",
@@ -432,7 +432,7 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
     )
-    let warlockConsumes = DefaultCasterConsumes
+    let warlockConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
     warlockConsumes.petFood = "PetFoodSpicedMammothTreats"
     warlockConsumes.prepopPotion = "PotionOfWildMagic"
     warlockConsumes.defaultPotion = "PotionOfSpeed"
@@ -492,7 +492,7 @@ function main() {
         DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
     )
 
-    let warriorConsumes = DefaultMeleeConsumes
+    let warriorConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
     warriorConsumes.food = "FoodDragonfinFilet"
     let warriorArmsPreRaid = makePlayer(
         "ArmsPreRaid",
