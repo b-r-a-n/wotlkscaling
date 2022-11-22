@@ -553,12 +553,16 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
     )
+    let shadowPriestConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
+    shadowPriestConsumes.food = "FoodFishFeast"
+    shadowPriestConsumes.defaultPotion = "PotionOfSpeed"
+    shadowPriestConsumes.prepopPotion = "PotionOfWildMagic"
     let shadowPriestPreRaid = makePlayer(
         "ShadowPreRaid",
         "RaceTroll", 
         "ClassPriest", 
         PriestShadowPreRaidEquipment, 
-        DefaultCasterConsumes, 
+        shadowPriestConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
     )
@@ -567,7 +571,7 @@ function main() {
         "RaceTroll", 
         "ClassPriest", 
         PriestShadowP1Equipment, 
-        DefaultCasterConsumes, 
+        shadowPriestConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
     )
@@ -576,7 +580,7 @@ function main() {
         "RaceTroll", 
         "ClassPriest", 
         PriestShadowP2Equipment, 
-        DefaultCasterConsumes, 
+        shadowPriestConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
     )

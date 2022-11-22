@@ -4,7 +4,8 @@ const CommunityContributedConfigs = {
   "WarlockAffliction": "Improved sim configurations provided by Whiskeypig, Neem|eth",
   "RogueAssassination": "Improved sim configurations provided by hexa",
   "HunterMarksman": "Improved sim configurations provided by Anthrax",
-  "HunterSurvival": "Improved simconfigurations provided by Anthrax",
+  "HunterSurvival": "Improved sim configurations provided by Anthrax",
+  "PriestShadow": "Imrpoved sim configurations provided by Linelo",
 }
 
 const DefaultSettings = {
@@ -5292,208 +5293,209 @@ const PriestShadowPreRaidEquipment = {
 
 const PriestShadowP1Equipment = {      
   "items": [
-        {
-          "id": 40562,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            39998
-          ]
-        },
-        {
-          "id": 44661,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 40459,
-          "enchant": 3810,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 44005,
-          "enchant": 3722,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 44002,
-          "enchant": 1144,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 44008,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 40454,
-          "enchant": 3604,
-          "gems": [
-            40049,
-            0
-          ]
-        },
-        {
-          "id": 40561,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 40560,
-          "enchant": 3719
-        },
-        {
-          "id": 40558,
-          "enchant": 3606
-        },
-        {
-          "id": 40719
-        },
-        {
-          "id": 40399
-        },
-        {
-          "id": 40255
-        },
-        {
-          "id": 40432
-        },
-        {
-          "id": 40395,
-          "enchant": 3834
-        },
-        {
-          "id": 40273
-        },
-        {
-          "id": 39712
-        }
+    {
+      "id": 40562,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        39998
       ]
+    },
+    {
+      "id": 44661,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 40459,
+      "enchant": 3810,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 44005,
+      "enchant": 3722,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 44002,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 44008,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 40454,
+      "enchant": 3604,
+      "gems": [
+        40049,
+        0
+      ]
+    },
+    {
+      "id": 40561,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 40560,
+      "enchant": 3719
+    },
+    {
+      "id": 40558,
+      "enchant": 3606
+    },
+    {
+      "id": 40399
+    },
+    {
+      "id": 40719
+    },
+    {
+      "id": 40255
+    },
+    {},
+    {
+      "id": 40395,
+      "enchant": 3834
+    },
+    {
+      "id": 40273
+    },
+    {
+      "id": 39712
+    }
+  ]
 }
 
 const PriestShadowP2Equipment = {
-        "items": [
-        {
-          "id": 46172,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            39998
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46165,
-          "enchant": 3810,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45618,
-          "enchant": 3722,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 46168,
-          "enchant": 1144,
-          "gems": [
-            40026,
-            40051
-          ]
-        },
-        {
-          "id": 45446,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3604,
-          "gems": [
-            40026,
-            40049,
-            0
-          ]
-        },
-        {
-          "id": 45557,
-          "gems": [
-            40026,
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 46170,
-          "enchant": 3719,
-          "gems": [
-            39998,
-            40051
-          ]
-        },
-        {
-          "id": 45537,
-          "enchant": 3606,
-          "gems": [
-            39998,
-            40026
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 45495,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 40432
-        },
-        {
-          "id": 45620,
-          "enchant": 3834,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 45617
-        },
-        {
-          "id": 45511
-        }
+  "items": [
+    {
+      "id": 46172,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        45883
       ]
+    },
+    {
+      "id": 45133,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 46165,
+      "enchant": 3810,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45618,
+      "enchant": 3722,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46168,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45446,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        40026,
+        40051,
+        0
+      ]
+    },
+    {
+      "id": 45557,
+      "gems": [
+        40026,
+        39998,
+        40049
+      ]
+    },
+    {
+      "id": 46170,
+      "enchant": 3719,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45135,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45495,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 45466
+    },
+    {
+      "id": 45620,
+      "enchant": 3834,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 45617
+    },
+    {
+      "id": 45294,
+      "gems": [
+        39998
+      ]
+    }
+  ]
 }
 
 const WarriorArmsPreRaidEquipment = {
@@ -5813,7 +5815,7 @@ const WarriorArmsGlyphs = {
 const PriestShadowGlyphs = {
   major1: 42407,
   major2: 42415,
-  major3: 45753,
+  major3: 42414,
   minor1: 43371,
   minor2: 43372,
   minor3: 43374
@@ -6306,6 +6308,37 @@ const ShamanElementalTalents = {
 }
 
 const PriestShadowTalents = {
+  twinDisciplines: 5,
+  improvedInnerFire: 3, 
+  improvedPowerWordFortitude: 2,
+  meditation: 3,
+  innerFocus: true,
+
+  spiritTap: 3,
+  improvedSpiritTap: 2,
+  darkness: 5,
+  improvedShadowWordPain: 2,
+  shadowFocus: 3,
+  improvedMindBlast: 4,
+  mindFlay: true,
+  veiledShadows: 2, 
+  shadowReach: 2,
+  shadowWeaving: 3,
+  vampiricEmbrace: true,
+  focusedMind: 3,
+  mindMelt: 2,
+  improvedDevouringPlague: 3,
+  shadowform: true,
+  shadowPower: 5,
+  improvedShadowform: 2, 
+  misery: 3,
+  vampiricTouch: true,
+  painAndSuffering: 3,
+  twistedFaith: 5,
+  dispersion: true
+}
+
+const PriestShadowTalentsP2 = {
   twinDisciplines: 5,
   improvedInnerFire: 3, 
   improvedPowerWordFortitude: 2,
@@ -6948,14 +6981,20 @@ const ShamanEnhanceApplyOptions = function(player) {
   return player
 }
 
-const PriestShadowApplyOptions = function(player) {
+const PriestShadowApplyOptions = function(player, phase) {
   player.shadowPriest = {}
   player.shadowPriest.rotation = {
     rotationType: "Ideal"
   }
-  player.talentsString = "05032031--325023051223010323151301351"
-  player.shadowPriest.talents = PriestShadowTalents
+  if (phase < 2) {
+    player.talentsString = "05032031--325023041223010323152301351"
+    player.shadowPriest.talents = PriestShadowTalents
+  } else {
+    player.talentsString = "05032031--325023051223010323151301351"
+    player.shadowPriest.talents = PriestShadowTalentsP2
+  }
   player.shadowPriest.options = {
+    armor: "InnerFire",
     useShadowfiend: true,
     useMindBlast: true,
     useShadowWordDeath: true
