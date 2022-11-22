@@ -129,12 +129,15 @@ function main() {
         makeWeights(),
         DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions
     )
+    let dkConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
+    dkConsumes.food = "FoodDragonfinFilet"
+    dkConsumes.petFood = "PetFoodSpicedMammothTreats"
     let dkFrostPreRaid = makePlayer(
         "FrostPreRaid",
         "RaceOrc", 
         "ClassDeathknight", 
         DKFrostPreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
     )
@@ -143,7 +146,7 @@ function main() {
         "RaceOrc", 
         "ClassDeathknight", 
         DKFrostP1Equipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
     )
@@ -152,7 +155,7 @@ function main() {
         "RaceOrc", 
         "ClassDeathknight", 
         DKFrostP2Equipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
     )
@@ -162,7 +165,7 @@ function main() {
         "RaceOrc", 
         "ClassDeathknight", 
         DKUnholyPreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
     )
@@ -171,7 +174,7 @@ function main() {
         "RaceOrc", 
         "ClassDeathknight", 
         DKUnholyP1Equipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
     )
@@ -180,7 +183,7 @@ function main() {
         "RaceOrc", 
         "ClassDeathknight", 
         DKUnholyP2Equipment, 
-        DefaultMeleeConsumes, 
+        dkConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
     )

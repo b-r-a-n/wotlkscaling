@@ -5,7 +5,8 @@ const CommunityContributedConfigs = {
   "RogueAssassination": "Improved sim configurations provided by hexa",
   "HunterMarksman": "Improved sim configurations provided by Anthrax",
   "HunterSurvival": "Improved sim configurations provided by Anthrax",
-  "PriestShadow": "Imrpoved sim configurations provided by Linelo",
+  "PriestShadow": "Improved sim configurations provided by Linelo",
+  "DeathKnightFrost": "Improved sim configurations provided by Frosst",
 }
 
 const DefaultSettings = {
@@ -131,9 +132,14 @@ const RogueAssassinationTalents = {
 }
 
 const DKFrostTalents = {
+  butchery: 2,
+  subversion: 3,
+  bladedArmor: 5,
+  darkConviction: 5,
+
   improvedIcyTouch: 3,
   runicPowerMastery: 2,
-  blackIce: 2,
+  blackIce: 5,
   nervesOfColdSteel: 3,
   icyTalons: 5,
   annihilation: 3,
@@ -151,13 +157,6 @@ const DKFrostTalents = {
   guileOfGorefiend: 3,
   tundraStalker: 5,
   howlingBlast: true,
-
-  viciousStrikes: 2,
-  virulence: 3,
-  epidemic: 2,
-  ravenousDead: 3,
-  necrosis: 5,
-  bloodCakedBlade: 3,
 }
 
 const DKUnholyTalents = {
@@ -6491,15 +6490,17 @@ const DKFrostApplyOptions = function(player) {
     player.deathknight = {}
     player.deathknight.rotation = {
         frostRotationType: "SingleTarget",
+        armyOfTheDead: "PreCast",
+        useDeathAndDecay: true,
+        btGhoulFrenzy: true,
         useEmpowerRuneWeapon: true,
         bloodRuneFiller: "BloodBoil",
         startingPresence: "Unholy",
-        avgAmsSuccessRate: 0.5,
-        avgAmsHit: 5000,
+        oblitDelayDuration: 1100,
         useGargoyle: true
     }
     player.deathknight.talents = DKFrostTalents
-    player.talentsString = "-32002350352203012300033101351-230200305003"
+    player.talentsString = "23050005-32005350352203012300033101351"
     player.deathknight.options = {
         petUptime: 1,
         precastHornOfWinter: true
