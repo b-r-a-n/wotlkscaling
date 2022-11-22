@@ -1969,112 +1969,116 @@ const HunterMMP1Equipment = {
 }
 
 const HunterMMP2Equipment = {
-      "items": [
-        {
-          "id": 46143,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42143
-          ]
-        },
-        {
-          "id": 45517,
-          "gems": [
-            42143
-          ]
-        },
-        {
-          "id": 45300,
-          "enchant": 3808,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 46141,
-          "enchant": 3832,
-          "gems": [
-            42143,
-            39997
-          ]
-        },
-        {
-          "id": 45454,
-          "enchant": 3845,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 45444,
-          "enchant": 3604,
-          "gems": [
-            39997,
-            39997,
-            0
-          ]
-        },
-        {
-          "id": 45467,
-          "enchant": 3601,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            49110,
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 45562,
-          "enchant": 3606,
-          "gems": [
-            39997,
-            39997
-          ]
-        },
-        {
-          "id": 45608,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46322,
-          "gems": [
-            39997
-          ]
-        },
-        {
-          "id": 46038
-        },
-        {
-          "id": 45931
-        },
-        {
-          "id": 45498,
-          "enchant": 3827
-        },
-        {},
-        {
-          "id": 45570,
-          "enchant": 3608
-        }
+  "items": [
+    {
+      "id": 46143,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42143
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 45300,
+      "enchant": 3808,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 46032,
+      "enchant": 3605,
+      "gems": [
+        42143,
+        40043
+      ]
+    },
+    {
+      "id": 46141,
+      "enchant": 3832,
+      "gems": [
+        39997,
+        39997
+      ]
+    },
+    {
+      "id": 45869,
+      "enchant": 3845,
+      "gems": [
+        40044,
+        0
+      ]
+    },
+    {
+      "id": 45444,
+      "enchant": 3604,
+      "gems": [
+        42143,
+        42702,
+        0
+      ]
+    },
+    {
+      "id": 45467,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        39997,
+        39997,
+        39997
+      ]
+    },
+    {
+      "id": 45562,
+      "enchant": 3606,
+      "gems": [
+        39997,
+        39997
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 46048,
+      "gems": [
+        39997
+      ]
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 45931
+    },
+    {
+      "id": 45613,
+      "enchant": 3827,
+      "gems": [
+        39997,
+        39997
+      ]
+    },
+    {},
+    {
+      "id": 45570,
+      "enchant": 3608
+    }
+  ]
 }
 
 const MageArcanePreRaidEquipment = {
@@ -6058,9 +6062,10 @@ const HunterMMTalentsP2 = {
   piercingShots: 3,
   improvedBarrage: 3,
   masterMarksman: 5,
+  rapidRecuperation: 1,
   wildQuiver: 3,
   silencingShot: true,
-  improvedSteadyShot: 2,
+  improvedSteadyShot: 1,
   markedForDeath: 5,
   chimeraShot: true,
 
@@ -6118,6 +6123,35 @@ const HunterSurvivalTalentsP1 = {
   resourcefulness: 3,
   exposeWeakness: 2,
   wyvernSting: true,
+  masterTactician: 5,
+  noxiousStings: 3,
+  blackArrow: true,
+  sniperTraining: 3,
+  explosiveShot: true
+}
+
+const HunterSurvivalTalentsP2 = {
+  improvedAspectOfTheHawk: 5,
+  focusedFire: 1,
+  
+  lethalShots: 5,
+  carefulAim: 3,
+  mortalShots: 5,
+  goForTheThroat: 1,
+
+  improvedTracking: 5,
+  trapMastery: 3,
+  survivalInstincts: 2,
+  survivalist: 5,
+  tNT: 3,
+  lockAndLoad: 3,
+  hunterVsWild: 3,
+  killerInstinct: 3,
+  lightningReflexes: 5,
+  resourcefulness: 3,
+  exposeWeakness: 1,
+  wyvernSting: true,
+  thrillOfTheHunt: 1,
   masterTactician: 5,
   noxiousStings: 3,
   blackArrow: true,
@@ -6540,9 +6574,12 @@ const HunterSurvivalApplyOptions = function(player, phase) {
   if (phase == 0) {
     player.talentsString = "3-0353051-5000032500033330532105301301"
     player.hunter.talents = HunterSurvivalTalents
-  } else {
+  } else if (phase == 1) {
     player.talentsString = "501-0053051-5000032500033330532105301301"
     player.hunter.talents = HunterSurvivalTalentsP1
+  } else {
+    player.talentsString = "501-0053051-5000032500033330531115301301"
+    player.hunter.talents = HunterSurvivalTalentsP2
   }
   player.hunter.options = {
     ammo: "SaroniteRazorheads",
@@ -6705,7 +6742,7 @@ const HunterMMApplyOptions = function(player, phase) {
     player.talentsString = "502-035335101030013233035031051-5000032"
     player.hunter.talents = HunterMMTalentsP0
   } else {
-    player.talentsString = "502-015335101030013233035031251-5000032"
+    player.talentsString = "502-015335101030013233035131151-5000032"
     player.hunter.talents = HunterMMTalentsP2
   }
   player.hunter.options = {
