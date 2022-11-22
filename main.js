@@ -74,7 +74,8 @@ function startSim(encounterDuration, simIterations, workerCount, jobs) {
     }
 }
 
-function main() {
+async function main() {
+    let db = await loadDB()
     let rogueAssassinationPreRaid = makePlayer(
         "AssassinationPreRaid",
         "RaceOrc", 
@@ -82,7 +83,8 @@ function main() {
         RogueAssassinationPreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions
+        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions,
+        db
     )
     let rogueAssassinationP1 = makePlayer(
         "AssassinationP1",
@@ -91,7 +93,8 @@ function main() {
         RogueAssassinationP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions
+        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions,
+        db
     )
     let rogueAssassinationP2 = makePlayer(
         "AssassinationP2",
@@ -100,7 +103,8 @@ function main() {
         RogueAssassinationP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions
+        DefaultPlayerBuffs, RogueAssassinationGlyphs, "Engineering", "Jewelcrafting", RogueAssassinationApplyOptions,
+        db
     )
     let rogueCombatPreRaid = makePlayer(
         "CombatPreRaid",
@@ -109,7 +113,8 @@ function main() {
         RogueCombatPreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions
+        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions,
+        db
     )
     let rogueCombatP1 = makePlayer(
         "CombatP1",
@@ -118,7 +123,8 @@ function main() {
         RogueCombatP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions
+        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions,
+        db
     )
     let rogueCombatP2 = makePlayer(
         "CombatP2",
@@ -127,7 +133,8 @@ function main() {
         RogueCombatP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions
+        DefaultPlayerBuffs, RogueCombatGlyphs, "Engineering", "Jewelcrafting", RogueCombatApplyOptions,
+        db
     )
     let dkConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
     dkConsumes.food = "FoodDragonfinFilet"
@@ -139,7 +146,8 @@ function main() {
         DKFrostPreRaidEquipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
+        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions,
+        db
     )
     let dkFrostP1 = makePlayer(
         "FrostP1",
@@ -148,7 +156,8 @@ function main() {
         DKFrostP1Equipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
+        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions,
+        db
     )
     let dkFrostP2 = makePlayer(
         "FrostP2",
@@ -157,7 +166,8 @@ function main() {
         DKFrostP2Equipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions
+        DefaultPlayerBuffs, DKFrostGlyphs, "Engineering", "Jewelcrafting", DKFrostApplyOptions,
+        db
     )
 
     let dkUnholyPreRaid = makePlayer(
@@ -167,7 +177,8 @@ function main() {
         DKUnholyPreRaidEquipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
+        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions,
+        db
     )
     let dkUnholyP1 = makePlayer(
         "UnholyP1",
@@ -176,7 +187,8 @@ function main() {
         DKUnholyP1Equipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
+        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions,
+        db
     )
     let dkUnholyP2 = makePlayer(
         "UnholyP2",
@@ -185,7 +197,8 @@ function main() {
         DKUnholyP2Equipment, 
         dkConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions
+        DefaultPlayerBuffs, DKUnholyGlyphs, "Engineering", "Jewelcrafting", DKUnholyApplyOptions,
+        db
     )
 
     let druidBalancePreRaid = makePlayer(
@@ -195,7 +208,8 @@ function main() {
         DruidBalancePreRaidEquipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
+        db
     )
     let druidBalanceP1 = makePlayer(
         "BalanceP1",
@@ -204,7 +218,8 @@ function main() {
         DruidBalanceP1Equipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
+        db
     )
     let druidBalanceP2 = makePlayer(
         "BalanceP1",
@@ -213,7 +228,8 @@ function main() {
         DruidBalanceP2Equipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions
+        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
+        db
     )
 
     let druidFeralPreRaid = makePlayer(
@@ -223,7 +239,8 @@ function main() {
         DruidFeralPreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions
+        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions,
+        db
     )
     let druidFeralP1 = makePlayer(
         "FeralP1",
@@ -232,7 +249,8 @@ function main() {
         DruidFeralP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions
+        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions,
+        db
     )
     let druidFeralP2 = makePlayer(
         "FeralP2",
@@ -241,7 +259,8 @@ function main() {
         DruidFeralP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions
+        DefaultPlayerBuffs, DruidFeralGlyphs, "Engineering", "Jewelcrafting", DruidFeralApplyOptions,
+        db
     )
     let hunterConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
     hunterConsumes.food = "FoodBlackenedDragonfin"
@@ -254,7 +273,8 @@ function main() {
         HunterMMPreRaidEquipment, 
         hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 0
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 
+        db, 0
     )
     let hunterMMP1 = makePlayer(
         "MMPreRaid",
@@ -263,7 +283,8 @@ function main() {
         HunterMMP1Equipment, 
         hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 1
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 
+        db, 1
     )
     let hunterMMP2 = makePlayer(
         "MMPreRaid",
@@ -272,7 +293,8 @@ function main() {
         HunterMMP2Equipment, 
         hunterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 2
+        DefaultPlayerBuffs, HunterMMGlyphs, "Engineering", "Jewelcrafting", HunterMMApplyOptions, 
+        db, 2
     )
     let hunterSurvivalPreRaid = makePlayer(
         "SurvivalPreRaid",
@@ -281,7 +303,8 @@ function main() {
         HunterSurvivalPreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 0
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 
+        db, 0
     )
     let hunterSurvivalP1 = makePlayer(
         "SurvivalPreRaid",
@@ -290,7 +313,8 @@ function main() {
         HunterSurvivalP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 1
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 
+        db, 1
     )
     let hunterSurvivalP2 = makePlayer(
         "SurvivalPreRaid",
@@ -299,7 +323,8 @@ function main() {
         HunterSurvivalP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 2
+        DefaultPlayerBuffs, HunterSurvivalGlyphs, "Engineering", "Jewelcrafting", HunterSurvivalApplyOptions, 
+        db, 2
     )
 
     let mageConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
@@ -311,7 +336,8 @@ function main() {
         MageArcanePreRaidEquipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
+        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions,
+        db
     )
     let mageArcaneP1 = makePlayer(
         "ArcaneP1",
@@ -320,7 +346,8 @@ function main() {
         MageArcaneP1Equipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
+        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions,
+        db
     )
     let mageArcaneP2 = makePlayer(
         "ArcaneP2",
@@ -329,7 +356,8 @@ function main() {
         MageArcaneP2Equipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions
+        DefaultPlayerBuffs, MageArcaneGlyphs, "Engineering", "Tailoring", MageArcaneApplyOptions,
+        db
     )
     let mageFirePreRaid = makePlayer(
         "FirePreRaid",
@@ -338,7 +366,8 @@ function main() {
         MageFirePreRaidEquipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions,
+        db
     )
     let mageFireP1 = makePlayer(
         "FireP1",
@@ -347,7 +376,8 @@ function main() {
         MageFireP1Equipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions,
+        db
     )
     let mageFireP2 = makePlayer(
         "FireP2",
@@ -356,7 +386,8 @@ function main() {
         MageFireP2Equipment,
         mageConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions
+        DefaultPlayerBuffs, MageFireGlyphs, "Engineering", "Tailoring", MageFireApplyOptions,
+        db
     )
     let paladinRetPreRaid = makePlayer(
         "RetPreRaid",
@@ -365,7 +396,8 @@ function main() {
         PaladinRetPreRaidEquipment,
         DefaultMeleeConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions,
+        db
     )
     let paladinRetP1 = makePlayer(
         "RetP1",
@@ -374,7 +406,8 @@ function main() {
         PaladinRetP1Equipment,
         DefaultMeleeConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions,
+        db
     )
     let paladinRetP2 = makePlayer(
         "RetP2",
@@ -383,7 +416,8 @@ function main() {
         PaladinRetP2Equipment,
         DefaultMeleeConsumes,
         makeWeights(),
-        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions
+        DefaultPlayerBuffs, PaladinRetGlyphs, "Engineering", "Tailoring", PaladinRetApplyOptions,
+        db
     )
     let shamanElementalPreRaid = makePlayer(
         "ElementalPreRaid",
@@ -392,7 +426,8 @@ function main() {
         ShamanElementalPreRaidEquipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions,
+        db
     )
     let shamanElementalP1 = makePlayer(
         "ElementalP1",
@@ -401,7 +436,8 @@ function main() {
         ShamanElementalP1Equipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions,
+        db
     )
     let shamanElementalP2 = makePlayer(
         "ElementalP2",
@@ -410,7 +446,8 @@ function main() {
         ShamanElementalP2Equipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions
+        DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions,
+        db
     )
     let shamanEnhancePreRaid = makePlayer(
         "EnhancePreRaid",
@@ -419,7 +456,8 @@ function main() {
         ShamanEnhancePreRaidEquipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
+        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
+        db
     )
     let shamanEnhanceP1 = makePlayer(
         "EnhanceP1",
@@ -428,7 +466,8 @@ function main() {
         ShamanEnhanceP1Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
+        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
+        db
     )
     let shamanEnhanceP2 = makePlayer(
         "EnhanceP2",
@@ -437,7 +476,8 @@ function main() {
         ShamanEnhanceP2Equipment, 
         DefaultMeleeConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions
+        DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
+        db
     )
     let warlockConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
     warlockConsumes.petFood = "PetFoodSpicedMammothTreats"
@@ -451,7 +491,8 @@ function main() {
         WarlockAfflictionPreRaidEquipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions
+        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions,
+        db
     )
     let warlockAfflictionP1 = makePlayer(
         "AfflictionP1",
@@ -460,7 +501,8 @@ function main() {
         WarlockAfflictionP1Equipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions
+        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions,
+        db
     )
     let warlockAfflictionP2 = makePlayer(
         "AfflictionP2",
@@ -469,7 +511,8 @@ function main() {
         WarlockAfflictionP2Equipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions
+        DefaultPlayerBuffs, WarlockAfflictionGlyphs, "Engineering", "Tailoring", WarlockAfflictionApplyOptions,
+        db
     )
     let warlockDemonologyPreRaid = makePlayer(
         "DemonologyPreRaid",
@@ -478,7 +521,8 @@ function main() {
         WarlockDemonologyPreRaidEquipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions,
+        db
     )
     let warlockDemonologyP1 = makePlayer(
         "DemonologyP1",
@@ -487,7 +531,8 @@ function main() {
         WarlockDemonologyP1Equipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions,
+        db
     )
     let warlockDemonologyP2 = makePlayer(
         "DemonologyP2",
@@ -496,7 +541,8 @@ function main() {
         WarlockDemonologyP2Equipment, 
         warlockConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions
+        DefaultPlayerBuffs, WarlockDemonologyGlyphs, "Engineering", "Tailoring", WarlockDemonologyApplyOptions,
+        db
     )
 
     let warriorConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
@@ -508,7 +554,8 @@ function main() {
         WarriorArmsPreRaidEquipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions,
+        db
     )
     let warriorArmsP1 = makePlayer(
         "ArmsPr1",
@@ -517,7 +564,8 @@ function main() {
         WarriorArmsP1Equipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions,
+        db
     )
     let warriorArmsP2 = makePlayer(
         "ArmsP2",
@@ -526,7 +574,8 @@ function main() {
         WarriorArmsP2Equipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions
+        DefaultPlayerBuffs, WarriorArmsGlyphs, "Engineering", "Jewelcrafting", WarriorArmsApplyOptions,
+        db
     )
 
     let warriorFuryPreRaid = makePlayer(
@@ -536,7 +585,8 @@ function main() {
         WarriorFuryPreRaidEquipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
+        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions,
+        db
     )
     let warriorFuryP1 = makePlayer(
         "FuryP1",
@@ -545,7 +595,8 @@ function main() {
         WarriorFuryP1Equipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
+        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions,
+        db
     )
     let warriorFuryP2 = makePlayer(
         "FuryP2",
@@ -554,7 +605,8 @@ function main() {
         WarriorFuryP2Equipment, 
         warriorConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions
+        DefaultPlayerBuffs, WarriorFuryGlyphs, "Engineering", "Jewelcrafting", WarriorFuryApplyOptions,
+        db
     )
     let shadowPriestConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
     shadowPriestConsumes.food = "FoodFishFeast"
@@ -567,7 +619,8 @@ function main() {
         PriestShadowPreRaidEquipment, 
         shadowPriestConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions,
+        db
     )
     let shadowPriestP1 = makePlayer(
         "ShadowP1",
@@ -576,7 +629,8 @@ function main() {
         PriestShadowP1Equipment, 
         shadowPriestConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions,
+        db
     )
     let shadowPriestP2 = makePlayer(
         "ShadowP2",
@@ -585,7 +639,8 @@ function main() {
         PriestShadowP2Equipment, 
         shadowPriestConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions
+        DefaultPlayerBuffs, PriestShadowGlyphs, "Engineering", "Tailoring", PriestShadowApplyOptions,
+        db
     )
 
     let specs = [
@@ -834,7 +889,9 @@ function main() {
                 msg = "stats"
             }
             let request = makeWowsimsRequestForPlayer(player)
-            jobs.push({msg: msg, id: jobID, status: "waiting", request: request})
+            //if (msg == "raidSim") {
+                jobs.push({msg: msg, id: jobID, status: "waiting", request: request})
+            //}
             cell = row.insertCell(-1)
             cell.id = "result-" + jobID
             cell.classList.add("dps-value")

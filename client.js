@@ -18,7 +18,76 @@ const slotIdToIndex = {
     17: 16
 }
 
-function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, glyphs, profession1, profession2, applyOptions, phase) {
+function makeItem(fullItem) {
+    let item = {}
+    item.id = fullItem.id
+    item.name = fullItem.name
+    item.type = fullItem.type
+    item.armorType = fullItem.armorType
+    item.weaponType = fullItem.weaponType
+    item.handType = fullItem.handType
+    item.rangedWeaponType = fullItem.rangedWeaponType
+    item.stats = fullItem.stats
+    item.gemSockets = fullItem.gemSockets
+    item.socketBonus = fullItem.socketBonus
+    item.weaponDamageMin = fullItem.weaponDamageMin
+    item.weaponDamageMax = fullItem.weaponDamageMax
+    item.weaponSpeed = fullItem.weaponSpeed
+    item.setName = fullItem.setName
+    return item
+}
+
+function makeEnchant(fullEnchant) {
+    let enchant = {}
+    enchant.effectId = fullEnchant.effectId
+    enchant.name = fullEnchant.name
+    enchant.type = fullEnchant.type
+    enchant.stats = fullEnchant.stats
+    return enchant
+}
+
+function makeGem(fullGem) {
+    let gem = {}
+    gem.id = fullGem.id
+    gem.name = fullGem.name
+    gem.color = fullGem.color
+    gem.stats = fullGem.stats
+    return gem
+}
+
+function makeDatabase(fullDB, equipment) {
+    let db = {}
+    db.items = []
+    db.enchants = []
+    db.gems = []
+    for (let item of equipment.items) {
+        let fullItem = fullDB.items.find(e => e.id == item.id)
+        if (fullItem) {
+            db.items.push(makeItem(fullItem))
+        }     
+        if (item.enchant) {
+            let inDb = db.enchants.find(e => e.effectId == item.enchant)
+            if (!inDb) {
+                let enchant = fullDB.enchants.find(e => e.effectId == item.enchant)
+                db.enchants.push(makeEnchant(enchant))
+            }
+        }
+        if (item.gems) {
+            for (let gem of item.gems) {
+                let inDb = db.gems.find(e => e.id == gem)
+                if (!inDb) {
+                    let fullGem = fullDB.gems.find(e => e.id == gem)
+                    if (fullGem) {
+                        db.gems.push(makeGem(fullGem))
+                    }
+                }
+            }
+        }
+    }
+    return db
+}
+
+function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, glyphs, profession1, profession2, applyOptions, fullDB, phase) {
     var player = {}
     player.name = name
     player.race = race
@@ -31,6 +100,7 @@ function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, g
     player.profession1 = profession1
     player.profession2 = profession2
     player = applyOptions(player, phase)
+    player.database = makeDatabase(fullDB, equipment)
     return player
 }
 

@@ -6967,7 +6967,6 @@ const ShamanEnhanceApplyOptions = function(player) {
     rotationType: "Priority",
     lightningboltWeave: true,
     maelstromweaponMinStack: 3,
-    weaveReactionTime: 100,
     weaveFlameShock: true
   }
   player.enhancementShaman.talents = ShamanEnhanceTalents
