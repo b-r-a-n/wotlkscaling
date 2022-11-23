@@ -6,13 +6,15 @@
         <script src="data.js"></script>
         <script src="db.js"></script>
         <script src="client.js"></script>
+        <script src="ItemDump.js"></script>
         <script src="main.js"></script>
         <title>WotLK Class Scaling</title>
     </head>
     <body>
+        <div class="warning-container"><span class="warning">&#9888;</span>Temporary database in use. Primary stats, ratings, and weapon damage match the item data from the PTR. Armor values, feral AP, effects, and others are not updated yet. Configs imported into Wowsims will not reflect updated items until the Wowsims database has been updated.</div>
         <div id="compareContainer" hidden>
             <table id="compareTable" class="compare-table table-sort">
-                <thead><tr><th>Class</th><th>Spec</th><th>% Gain</th><th>P0</th><th>P1</th><th>P2</th><th>P2+</th></th></thead>
+                <thead><tr><th>Class</th><th>Spec</th><th>% Gain</th><th>P0</th><th>P1</th><th>P2</th></tr></thead>
                 <tbody></tbody>
             </table>
             <div id="compareConfig">
@@ -37,13 +39,13 @@
         <div class="faqContainer">
             <h2>FAQ</h2>
             <h3>Q: How does this work?</h3>
-            <p>Gearsets from each phase (columns P0 - P2+) are used to run DPS simulations with the <a href="https://wowsims.github.io/wotlk/">Wowsims</a> backend.</p>
+            <p>Gearsets from each phase (columns P0 - P2) are used to run DPS simulations with the <a href="https://wowsims.github.io/wotlk/">Wowsims</a> backend.</p>
             <h3>Q: What configuration is used for each class?</h3>
             <p>For class/spec specific configuration (e.g. rotation), defaults are used. The gear sets for each phase are intended to be BIS'ish but, especially for phase 2, they are just what I could cobble together from a quick search.</p>
             <p>For global configuration (e.g. buffs and debuffs), everything is assumed to be present.</p>
             <p>You can run an individual sim with the same settings by copying the configuration JSON from the table below and importing it on the Wowsims site.</p>
             <h3>Q: What is P2+?</h3>
-            <p>This is a P2 gear set that has been scaled up to account for the anticipated iLvl increase on Ulduar gear. The gear is scaled by determining the total stats provided by gear and increasing it by 12%. The scaling value is an approximation based on the increased stat budget associated with higher item level.</p>
+            <p>[DEPRECATED] This was a P2 gear set that was scaled up to account for the anticipated iLvl increase on Ulduar gear. The gear was scaled by determining the total stats provided by gear and increasing it by 12%. The scaling value was an approximation based on the increased stat budget associated with higher item level.</p>
             <h3>Q: How can I make this more accurate?</h3>
             <p>If you happen to know about a specific class/spec, check out the individual settings using the technique described above. If you have an improved geartset/rotation export a Wowsims link and dm on Discord: Bran#5964.</p>
             <h3>Q: What are workers?</h3>
@@ -52,7 +54,7 @@
         <div>
             <h2>Sim Settings</h2>
             <table id="settingsTable" class="compare-table">
-                <thead><tr><th>Class</th><th>Spec</th><th>P0</th><th>P1</th><th>P2</th><th>P2+</th></tr></thead>
+                <thead><tr><th>Class</th><th>Spec</th><th>P0</th><th>P1</th><th>P2</th></tr></thead>
                 <tbody></tbody>
             </table>
         </div>

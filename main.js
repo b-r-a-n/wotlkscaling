@@ -58,7 +58,7 @@ function addTrends() {
     for (let row of rows) {
         let values = row.querySelectorAll("td.dps-value")
         let first = parseInt(values[0].innerHTML.replace(/,/g, ''))
-        let last = parseInt(values[3].innerHTML.replace(/,/g, ''))
+        let last = parseInt(values[2].innerHTML.replace(/,/g, ''))
         let amnt = (last - first) / first * 100
         row.querySelector("td.trend-value").innerHTML = amnt.toFixed(1)
     }
@@ -76,6 +76,27 @@ function startSim(encounterDuration, simIterations, workerCount, jobs) {
 
 async function main() {
     let db = await loadDB()
+
+    for (let jsonStr of ItemDumpDB) {
+        let json = JSON.parse(jsonStr)
+        let item = db.items.find(e => e.id == json.id)
+        if (item) {
+            if (json.ilvl > item.ilvl) {
+                if (json.weaponDPS) {
+                    let currDps = (item.weaponDamageMin + item.weaponDamageMax) / (2 * item.weaponSpeed)
+                    let extraDmg = Math.ceil((json.weaponDPS - currDps) / item.weaponSpeed)
+                    item.weaponDamageMin = item.weaponDamageMin + extraDmg
+                    item.weaponDamageMax = item.weaponDamageMax + extraDmg
+                }
+                for (let idx in json.stats) {
+                    if (json.stats[idx] > item.stats[idx]) {
+                        item.stats[idx] = json.stats[idx]
+                    }
+                }
+            }
+        }
+    }
+
     let rogueAssassinationPreRaid = makePlayer(
         "AssassinationPreRaid",
         "RaceOrc", 
@@ -652,7 +673,6 @@ async function main() {
                 {player: dkFrostPreRaid, stats: false}, 
                 {player: dkFrostP1, stats: false}, 
                 {player: dkFrostP2, stats: false},
-                {player: dkFrostP2, stats: true},
             ],
         },
         {
@@ -663,7 +683,6 @@ async function main() {
                 {player: dkUnholyPreRaid, stats: false},
                 {player: dkUnholyP1, stats: false},
                 {player: dkUnholyP2, stats: false},
-                {player: dkUnholyP2, stats: true}
             ]
         },
         {
@@ -674,7 +693,6 @@ async function main() {
                 {player: druidBalancePreRaid, stats: false},
                 {player: druidBalanceP1, stats: false},
                 {player: druidBalanceP2, stats: false},
-                {player: druidBalanceP2, stats: true}
             ]
         },
         {
@@ -685,7 +703,6 @@ async function main() {
                 {player: druidFeralPreRaid, stats: false},
                 {player: druidFeralP1, stats: false},
                 {player: druidFeralP2, stats: false},
-                {player: druidFeralP2, stats: true}
             ]
         },
         {
@@ -696,7 +713,6 @@ async function main() {
                 {player: hunterMMPreRaid, stats: false},
                 {player: hunterMMP1, stats: false},
                 {player: hunterMMP2, stats: false},
-                {player: hunterMMP2, stats: true}
             ]
         },
         {
@@ -707,7 +723,6 @@ async function main() {
                 {player: hunterSurvivalPreRaid, stats: false},
                 {player: hunterSurvivalP1, stats: false},
                 {player: hunterSurvivalP2, stats: false},
-                {player: hunterSurvivalP2, stats: true}
             ]
         },
         {
@@ -718,7 +733,6 @@ async function main() {
                 {player: mageArcanePreRaid, stats: false},
                 {player: mageArcaneP1, stats: false},
                 {player: mageArcaneP2, stats: false},
-                {player: mageArcaneP2, stats: true}
             ]
         },
         {
@@ -729,7 +743,6 @@ async function main() {
                 {player: mageFirePreRaid, stats: false},
                 {player: mageFireP1, stats: false},
                 {player: mageFireP2, stats: false},
-                {player: mageFireP2, stats: true}
             ]
         },
         {
@@ -740,7 +753,6 @@ async function main() {
                 {player: paladinRetPreRaid, stats: false},
                 {player: paladinRetP1, stats: false},
                 {player: paladinRetP2, stats: false},
-                {player: paladinRetP2, stats: true}
             ]
         },
         {
@@ -751,7 +763,6 @@ async function main() {
                 {player: shadowPriestPreRaid, stats: false},
                 {player: shadowPriestP1, stats: false},
                 {player: shadowPriestP2, stats: false},
-                {player: shadowPriestP2, stats: true}
             ]
         },
         {
@@ -762,7 +773,6 @@ async function main() {
                 {player: rogueAssassinationPreRaid, stats: false}, 
                 {player: rogueAssassinationP1, stats: false}, 
                 {player: rogueAssassinationP2, stats: false},
-                {player: rogueAssassinationP2, stats: true},
             ],
         },
         {
@@ -773,7 +783,6 @@ async function main() {
                 {player: rogueCombatPreRaid, stats: false},
                 {player: rogueCombatP1, stats: false},
                 {player: rogueCombatP2, stats: false},
-                {player: rogueCombatP2, stats: true}
             ]
         },
         {
@@ -784,7 +793,6 @@ async function main() {
                 {player: shamanElementalPreRaid, stats: false},
                 {player: shamanElementalP1, stats: false},
                 {player: shamanElementalP2, stats: false},
-                {player: shamanElementalP2, stats: true}
             ]
         },
         {
@@ -795,7 +803,6 @@ async function main() {
                 {player: shamanEnhancePreRaid, stats: false},
                 {player: shamanEnhanceP1, stats: false},
                 {player: shamanEnhanceP2, stats: false},
-                {player: shamanEnhanceP2, stats: true}
             ]
         },
         {
@@ -806,7 +813,6 @@ async function main() {
                 {player: warlockAfflictionPreRaid, stats: false},
                 {player: warlockAfflictionP1, stats: false},
                 {player: warlockAfflictionP2, stats: false},
-                {player: warlockAfflictionP2, stats: true}
             ]
         },
         {
@@ -817,7 +823,6 @@ async function main() {
                 {player: warlockDemonologyPreRaid, stats: false},
                 {player: warlockDemonologyP1, stats: false},
                 {player: warlockDemonologyP2, stats: false},
-                {player: warlockDemonologyP2, stats: true}
             ]
         },
         {
@@ -828,7 +833,6 @@ async function main() {
                 {player: warriorArmsPreRaid, stats: false},
                 {player: warriorArmsP1, stats: false},
                 {player: warriorArmsP2, stats: false},
-                {player: warriorArmsP2, stats: true}
             ]
         },
         {
@@ -839,7 +843,6 @@ async function main() {
                 {player: warriorFuryPreRaid, stats: false},
                 {player: warriorFuryP1, stats: false},
                 {player: warriorFuryP2, stats: false},
-                {player: warriorFuryP2, stats: true}
             ]
         },
 

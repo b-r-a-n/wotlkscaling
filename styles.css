@@ -33,6 +33,14 @@ a:hover, a:active {
     padding: 0px 6px 0px;
 }
 
+span.warning {
+    display: block;
+    float: left;
+    font-size: xx-large;
+    padding: 0px 8px 0px 8px;
+    color: yellow;
+}
+
 .input-item input {
     background-color: #222222;
     border: none;
@@ -102,6 +110,12 @@ a:hover, a:active {
 
 .info-value sup {
     color: gold;
+}
+
+.warning-container {
+    border: 1px solid white;
+    padding: 4px;
+    margin: 0px 0px 8px 0px;
 }
 
 .tooltip {
