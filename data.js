@@ -7,6 +7,7 @@ const CommunityContributedConfigs = {
   "HunterSurvival": "Improved sim configurations provided by Anthrax",
   "PriestShadow": "Improved sim configurations provided by Linelo",
   "DeathKnightFrost": "Improved sim configurations provided by Frosst",
+  "DeathKnightUnholy": "Improved sim configurations provided by RaiN",
 }
 
 const DefaultSettings = {
@@ -1408,95 +1409,95 @@ const DKUnholyPreRaidEquipment = {
 }
 
 const DKUnholyP1Equipment = {
-      "items": [
-        {
-          "id": 44006,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42702
-          ]
-        },
-        {
-          "id": 39421
-        },
-        {
-          "id": 40557,
-          "enchant": 3808,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3831
-        },
-        {
-          "id": 40550,
-          "enchant": 3832,
-          "gems": [
-            42142,
-            39996
-          ]
-        },
-        {
-          "id": 40330,
-          "enchant": 3845,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 40347,
-          "enchant": 3604,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 40278,
-          "gems": [
-            42142,
-            42142
-          ]
-        },
-        {
-          "id": 40294,
-          "enchant": 3823
-        },
-        {
-          "id": 39706,
-          "enchant": 3606,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 39401
-        },
-        {
-          "id": 40075
-        },
-        {
-          "id": 37390
-        },
-        {
-          "id": 42987
-        },
-        {
-          "id": 40402,
-          "enchant": 3368
-        },
-        {
-          "id": 40491,
-          "enchant": 3368
-        },
-        {
-          "id": 42620
-        }
+  "items": [
+    {
+      "id": 44006,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42702
       ]
+    },
+    {
+      "id": 39421
+    },
+    {
+      "id": 40557,
+      "enchant": 3808,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3831
+    },
+    {
+      "id": 40550,
+      "enchant": 3832,
+      "gems": [
+        42142,
+        39996
+      ]
+    },
+    {
+      "id": 40330,
+      "enchant": 3845,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 40347,
+      "enchant": 3604,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 40278,
+      "gems": [
+        42142,
+        42142
+      ]
+    },
+    {
+      "id": 40294,
+      "enchant": 3823
+    },
+    {
+      "id": 39706,
+      "enchant": 3606,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 39401
+    },
+    {
+      "id": 40075
+    },
+    {
+      "id": 37390
+    },
+    {
+      "id": 42987
+    },
+    {
+      "id": 40402,
+      "enchant": 3368
+    },
+    {
+      "id": 40491,
+      "enchant": 3368
+    },
+    {
+      "id": 42620
+    }
+  ]
 }
 
 const DruidFeralPreRaidEquipment = {
@@ -3299,118 +3300,116 @@ const WarriorFuryP2Equipment = {
 }
 
 const DKUnholyP2Equipment = {
-        "items": [
-        {
-          "id": 45472,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42702
-          ]
-        },
-        {
-          "id": 45459,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46037,
-          "enchant": 3808,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45588,
-          "enchant": 3831,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46111,
-          "enchant": 3832,
-          "gems": [
-            42142,
-            39996
-          ]
-        },
-        {
-          "id": 45663,
-          "enchant": 3845,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46113,
-          "enchant": 3604,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 45241,
-          "gems": [
-            42142,
-            39996,
-            42142
-          ]
-        },
-        {
-          "id": 45134,
-          "enchant": 3823,
-          "gems": [
-            39996,
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45599,
-          "enchant": 3606,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45534,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 45469
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 42987
-        },
-        {
-          "id": 46036,
-          "enchant": 3368,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46036,
-          "enchant": 3368,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 45254
-        }
+  "items": [
+    {
+      "id": 45472,
+      "enchant": 3817,
+      "gems": [
+        41400,
+        49110
       ]
+    },
+    {
+      "id": 45459,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46117,
+      "enchant": 3808,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 45588,
+      "enchant": 3831,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46111,
+      "enchant": 3832,
+      "gems": [
+        42142,
+        42142
+      ]
+    },
+    {
+      "id": 45663,
+      "enchant": 3845,
+      "gems": [
+        42142,
+        0
+      ]
+    },
+    {
+      "id": 45481,
+      "enchant": 3604,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 45241,
+      "gems": [
+        39996,
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45134,
+      "enchant": 3823,
+      "gems": [
+        39996,
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45599,
+      "enchant": 1597,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45534,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 45250
+    },
+    {
+      "id": 45609
+    },
+    {
+      "id": 42987
+    },
+    {
+      "id": 46097,
+      "enchant": 3368,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46097,
+      "enchant": 3790,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 45254
+    }
+  ]
 }
 
 const DruidBalanceP1Equipment = {
@@ -6512,6 +6511,7 @@ const DKUnholyApplyOptions = function(player) {
     player.deathknight = {}
     player.deathknight.rotation = {
         frostRotationType: "SingleTarget",
+        armyOfTheDead: "AsMajorCd",
         useEmpowerRuneWeapon: true,
         bloodRuneFiller: "BloodBoil",
         startingPresence: "Unholy",
