@@ -8,6 +8,7 @@ const CommunityContributedConfigs = {
   "PriestShadow": "Improved sim configurations provided by Linelo",
   "DeathKnightFrost": "Improved sim configurations provided by Frosst",
   "DeathKnightUnholy": "Improved sim configurations provided by RaiN",
+  "PaladinRetribution": "Improved sim configurations provided by hexa",
 }
 
 const DefaultSettings = {
@@ -4705,201 +4706,203 @@ const PaladinRetPreRaidEquipment = {
       ]
 }
 const PaladinRetP1Equipment = {
-        "items": [
-        {
-          "id": 40576,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            40037
-          ]
-        },
-        {
-          "id": 44664,
-          "gems": [
-            42142
-          ]
-        },
-        {
-          "id": 40578,
-          "enchant": 3808,
-          "gems": [
-            49110
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 40574,
-          "enchant": 3832,
-          "gems": [
-            42142,
-            39996
-          ]
-        },
-        {
-          "id": 40186,
-          "enchant": 3845,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 40541,
-          "enchant": 3604,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 40205,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 40577,
-          "enchant": 3823,
-          "gems": [
-            42142,
-            40038
-          ]
-        },
-        {
-          "id": 39701,
-          "enchant": 3606
-        },
-        {
-          "id": 40075
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 42987
-        },
-        {
-          "id": 40431
-        },
-        {
-          "id": 40384,
-          "enchant": 3789
-        },
-        {},
-        {
-          "id": 42852
-        }
+  "items": [
+    {
+      "id": 44006,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42702
       ]
+    },
+    {
+      "id": 44664,
+      "gems": [
+        42142
+      ]
+    },
+    {
+      "id": 40578,
+      "enchant": 3808,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 40574,
+      "enchant": 3832,
+      "gems": [
+        42142,
+        39996
+      ]
+    },
+    {
+      "id": 40330,
+      "enchant": 3845,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 40541,
+      "enchant": 3604,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 40278,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 44011,
+      "enchant": 3823,
+      "gems": [
+        42142,
+        39996
+      ]
+    },
+    {
+      "id": 40591,
+      "enchant": 3606
+    },
+    {
+      "id": 40717
+    },
+    {
+      "id": 40075
+    },
+    {
+      "id": 42987
+    },
+    {
+      "id": 40431
+    },
+    {
+      "id": 40384,
+      "enchant": 3789
+    },
+    {},
+    {
+      "id": 42852
+    }
+  ]
 }
 const PaladinRetP2Equipment = {
-        "items": [
-        {
-          "id": 46156,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            40003
-          ]
-        },
-        {
-          "id": 45517,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46152,
-          "enchant": 3808,
-          "gems": [
-            40059
-          ]
-        },
-        {
-          "id": 45461,
-          "enchant": 3605,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46154,
-          "enchant": 3832,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45611,
-          "enchant": 3845,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46155,
-          "enchant": 3604,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46095,
-          "gems": [
-            39996,
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45134,
-          "enchant": 3823,
-          "gems": [
-            42142,
-            42142,
-            42142
-          ]
-        },
-        {
-          "id": 45599,
-          "enchant": 3606,
-          "gems": [
-            40003,
-            49110
-          ]
-        },
-        {
-          "id": 45456,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 45525
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 45522
-        },
-        {
-          "id": 45533,
-          "enchant": 3789,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {},
-        {
-          "id": 42852
-        }
+  "items": [
+    {
+      "id": 46156,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        39996
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46152,
+      "enchant": 3808,
+      "gems": [
+        40038
+      ]
+    },
+    {
+      "id": 45461,
+      "enchant": 3605,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46154,
+      "enchant": 3832,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45663,
+      "enchant": 3845,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 46155,
+      "enchant": 3604,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 45241,
+      "gems": [
+        42142,
+        42142,
+        42142
+      ]
+    },
+    {
+      "id": 45134,
+      "enchant": 3823,
+      "gems": [
+        40037,
+        39996,
+        42702
+      ]
+    },
+    {
+      "id": 45599,
+      "enchant": 3606,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {
+      "id": 45540
+    },
+    {
+      "id": 45534,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 45609
+    },
+    {
+      "id": 42987
+    },
+    {
+      "id": 45516,
+      "enchant": 3789,
+      "gems": [
+        39996,
+        39996
+      ]
+    },
+    {},
+    {
+      "id": 42852
+    }
+  ]
 }
 
 const ShamanElementalPreRaidEquipment = {
@@ -6480,6 +6483,43 @@ const PaladinRetApplyOptions = function(player) {
     player.talentsString = "050501-05-05232051203331302133231331"
     player.retributionPaladin.options = {
       aura: "RetributionAura"
+    }
+    player.cooldowns =  {
+      "cooldowns": [
+        {
+          "id": {
+            "spellId": 54758
+          },
+          "timings": [
+            1
+          ]
+        },
+        {
+          "id": {
+            "tag": -1,
+            "spellId": 2825
+          },
+          "timings": [
+            3
+          ]
+        },
+        {
+          "id": {
+            "spellId": 31884
+          },
+          "timings": [
+            4
+          ]
+        },
+        {
+          "id": {
+            "itemId": 42641
+          },
+          "timings": [
+            4
+          ]
+        }
+      ]
     }
     return player
 }
