@@ -230,7 +230,7 @@ async function main() {
         DefaultCasterConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
-        db
+        db, 0
     )
     let druidBalanceP1 = makePlayer(
         "BalanceP1",
@@ -240,7 +240,7 @@ async function main() {
         DefaultCasterConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
-        db
+        db, 1
     )
     let druidBalanceP2 = makePlayer(
         "BalanceP1",
@@ -249,8 +249,8 @@ async function main() {
         DruidBalanceP2Equipment, 
         DefaultCasterConsumes, 
         makeWeights(),
-        DefaultPlayerBuffs, DruidBalanceGlyphs, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
-        db
+        DefaultPlayerBuffs, DruidBalanceGlyphsP2, "Engineering", "Jewelcrafting", DruidBalanceApplyOptions,
+        db, 2
     )
 
     let druidFeralPreRaid = makePlayer(

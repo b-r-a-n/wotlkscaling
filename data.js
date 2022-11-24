@@ -9,6 +9,7 @@ const CommunityContributedConfigs = {
   "DeathKnightFrost": "Improved sim configurations provided by Frosst",
   "DeathKnightUnholy": "Improved sim configurations provided by RaiN",
   "PaladinRetribution": "Improved sim configurations provided by hexa",
+  "DruidBalance": "Improved sim configurations provided by Lastcares",
 }
 
 const DefaultSettings = {
@@ -3413,97 +3414,97 @@ const DKUnholyP2Equipment = {
 }
 
 const DruidBalanceP1Equipment = {
-        "items": [
-        {
-          "id": 40467,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            42144
-          ]
-        },
-        {
-          "id": 44661,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 40470,
-          "enchant": 3810,
-          "gems": [
-            42144
-          ]
-        },
-        {
-          "id": 44005,
-          "enchant": 3859,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 40469,
-          "enchant": 3832,
-          "gems": [
-            42144,
-            39998
-          ]
-        },
-        {
-          "id": 44008,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 40466,
-          "enchant": 3604,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 40561,
-          "enchant": 3601,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 40560,
-          "enchant": 3719
-        },
-        {
-          "id": 40519,
-          "enchant": 3606
-        },
-        {
-          "id": 40399
-        },
-        {
-          "id": 40080
-        },
-        {
-          "id": 40255
-        },
-        {
-          "id": 40432
-        },
-        {
-          "id": 40395,
-          "enchant": 3834
-        },
-        {
-          "id": 40192
-        },
-        {
-          "id": 40321
-        }
+  "items": [
+    {
+      "id": 40467,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        42144
       ]
+    },
+    {
+      "id": 44661,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 40470,
+      "enchant": 3810,
+      "gems": [
+        42144
+      ]
+    },
+    {
+      "id": 44005,
+      "enchant": 3859,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 40469,
+      "enchant": 3832,
+      "gems": [
+        42144,
+        39998
+      ]
+    },
+    {
+      "id": 44008,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 40466,
+      "enchant": 3604,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 40561,
+      "enchant": 3601,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 40560,
+      "enchant": 3719
+    },
+    {
+      "id": 40519,
+      "enchant": 3606
+    },
+    {
+      "id": 40399
+    },
+    {
+      "id": 40080
+    },
+    {
+      "id": 40255
+    },
+    {
+      "id": 40432
+    },
+    {
+      "id": 40395,
+      "enchant": 3834
+    },
+    {
+      "id": 40192
+    },
+    {
+      "id": 40321
+    }
+  ]
 }
 
 const DruidBalancePreRaidEquipment = {
@@ -4506,114 +4507,118 @@ const  HunterSurvivalP2Equipment = {
 }
 
 const DruidBalanceP2Equipment = {
-        "items": [
-        {
-          "id": 46191,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            40049
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46196,
-          "enchant": 3810,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 45242,
-          "enchant": 3859,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46194,
-          "enchant": 3832,
-          "gems": [
-            42144,
-            40051
-          ]
-        },
-        {
-          "id": 45446,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3604,
-          "gems": [
-            40026,
-            40051,
-            0
-          ]
-        },
-        {
-          "id": 45619,
-          "enchant": 3601,
-          "gems": [
-            40014,
-            40051,
-            42144
-          ]
-        },
-        {
-          "id": 46192,
-          "enchant": 3719,
-          "gems": [
-            40051,
-            40026
-          ]
-        },
-        {
-          "id": 45537,
-          "enchant": 3606,
-          "gems": [
-            42144,
-            40026
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 40399
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 45308
-        },
-        {
-          "id": 45612,
-          "enchant": 3834,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 45617
-        },
-        {
-          "id": 40321
-        }
+  "items": [
+    {
+      "id": 45497,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        42144
       ]
+    },
+    {
+      "id": 45133,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46196,
+      "enchant": 3810,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 45242,
+      "enchant": 3859,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45519,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        42144,
+        39998
+      ]
+    },
+    {
+      "id": 45446,
+      "enchant": 2332,
+      "gems": [
+        42144,
+        0
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        39998,
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45616,
+      "enchant": 3601,
+      "gems": [
+        39998,
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 46192,
+      "enchant": 3719,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45537,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        40026
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45495,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 40255
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 46035,
+      "enchant": 3834,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45617
+    },
+    {
+      "id": 40321
+    }
+  ]
 }
 
 const PaladinRetPreRaidEquipment = {
@@ -5848,6 +5853,15 @@ const DruidBalanceGlyphs = {
   minor3: 43335
 }
 
+const DruidBalanceGlyphsP2 = {
+  major1: 40923,
+  major2: 40916,
+  major3: 40921,
+  minor1: 44922,
+  minor2: 43331,
+  minor3: 43335
+}
+
 const WarriorFuryGlyphs = {
   major1: 43432,
   major2: 43418,
@@ -5980,6 +5994,40 @@ const DruidBalanceTalents = {
 
   improvedMarkOfTheWild: 2,
   furor: 5,
+  naturalShapeshifter: 3,
+  omenOfClarity: true,
+  masterShapeshifter: 2,
+}
+
+const DruidBalanceTalentsP2 = {
+  starlightWrath: 5,
+  moonglow: 1,
+  naturesMajesty: 2,
+  improvedMoonfire: 2,
+  naturesGrace: 3,
+  naturesSplendor: true,
+  naturesReach: 1,
+  vengeance: 5,
+  celestialFocus: 3,
+  lunarGuidance: 3,
+  insectSwarm: true,
+  improvedInsectSwarm: 3,
+  moonfury: 3,
+  balanceOfPower: 2,
+  moonkinForm: true,
+  improvedMoonkinForm: 3,
+  improvedFaerieFire: 3,
+  wrathOfCenarius: 5,
+  eclipse: 3,
+  typhoon: true,
+  forceOfNature: true,
+  galeWinds: 2,
+  earthAndMoon: 3,
+  starfall: true,
+
+  improvedMarkOfTheWild: 2,
+  furor: 5,
+  naturalShapeshifter: 3,
   omenOfClarity: true,
   masterShapeshifter: 2,
 }
@@ -6567,18 +6615,49 @@ const DKUnholyApplyOptions = function(player) {
     return player
 }
 
-const DruidBalanceApplyOptions = function(player) {
+const DruidBalanceApplyOptions = function(player, phase) {
   player.balanceDruid = {}
-  player.balanceDruid.rotation = {
-    type: "Adaptive",
-    useIs: true,
-    isInsideEclipseThreshold: 15,
-    useSmartCooldowns: true,
-    maximizeIsUptime: true,
+  if (phase < 2) {
+    player.balanceDruid.rotation = {
+      type: "Manual",
+      useWrath: true,
+      useStarfire: true,
+      useIs: true,
+      useSmartCooldowns: true,
+      maximizeIsUptime: true,
+      playerLatency: 200,
+    }
+    player.balanceDruid.talents = DruidBalanceTalents
+    player.talentsString = "5032003115331303213305311231--205003012"
+  } else {
+    player.balanceDruid.rotation = {
+      type: "Manual",
+      useWrath: true,
+      useStarfire: true,
+      useMf: true,
+      mfInsideEclipseThreshold: 15,
+      useSmartCooldowns: true,
+      maximizeMfUptime: true,
+      playerLatency: 200,
+    }
+    player.balanceDruid.talents = DruidBalanceTalentsP2
+    player.talentsString = "5012203115331303213305311231--205003012"
+
   }
-  player.balanceDruid.talents = DruidBalanceTalents
-  player.talentsString = "5032003115331303213305311231--205003012"
-  player.balanceDruid.options = {
+  player.balanceDruid.options = {}
+  player.distanceFromTarget = 18
+  player.cooldowns = {
+    "cooldowns": [
+      {
+        "id": {
+          "tag": -1,
+          "spellId": 2825
+        },
+        "timings": [
+          2
+        ]
+      }
+    ]
   }
   return player
 }
