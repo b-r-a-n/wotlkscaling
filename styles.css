@@ -116,6 +116,7 @@ span.warning {
     border: 1px solid white;
     padding: 4px;
     margin: 0px 0px 8px 0px;
+    max-width: 800px;
 }
 
 .tooltip {
