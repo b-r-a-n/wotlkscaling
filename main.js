@@ -76,27 +76,6 @@ function startSim(encounterDuration, simIterations, workerCount, jobs) {
 
 async function main() {
     let db = await loadDB()
-
-    for (let jsonStr of ItemDumpDB) {
-        let json = JSON.parse(jsonStr)
-        let item = db.items.find(e => e.id == json.id)
-        if (item) {
-            if (json.ilvl > item.ilvl) {
-                if (json.weaponDPS) {
-                    let currDps = (item.weaponDamageMin + item.weaponDamageMax) / (2 * item.weaponSpeed)
-                    let extraDmg = Math.ceil((json.weaponDPS - currDps) / item.weaponSpeed)
-                    item.weaponDamageMin = item.weaponDamageMin + extraDmg
-                    item.weaponDamageMax = item.weaponDamageMax + extraDmg
-                }
-                for (let idx in json.stats) {
-                    if (json.stats[idx] > item.stats[idx]) {
-                        item.stats[idx] = json.stats[idx]
-                    }
-                }
-            }
-        }
-    }
-
     let rogueAssassinationPreRaid = makePlayer(
         "AssassinationPreRaid",
         "RaceOrc", 

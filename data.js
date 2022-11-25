@@ -5231,7 +5231,7 @@ const PriestShadowPreRaidEquipment = {
           "enchant": 3722
         },
         {
-          "id": 43792,
+          "id": 39523,
           "enchant": 1144,
           "gems": [
             39998,
