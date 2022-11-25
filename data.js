@@ -7180,7 +7180,8 @@ const WarriorFuryApplyOptions = function(player) {
   player.warrior.talents = WarriorFuryTalents
   player.talentsString = "30202301233-305053000520310053120500351"
   player.warrior.options = {
-    useRecklessness: true
+    useRecklessness: true,
+    munch: true,
   }
   player.cooldowns = WarriorFuryCooldowns
   return player
@@ -7205,7 +7206,8 @@ const WarriorArmsApplyOptions = function(player) {
   player.warrior.talents = WarriorArmsTalents
   player.talentsString = "3022032023335100102012213231251-305-2033"
   player.warrior.options = {
-    shout: "WarriorShoutCommanding"
+    shout: "WarriorShoutCommanding",
+    munch: true
   }
   return player
 }
