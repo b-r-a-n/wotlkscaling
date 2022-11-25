@@ -6622,9 +6622,8 @@ const DruidBalanceApplyOptions = function(player, phase) {
       type: "Manual",
       useWrath: true,
       useStarfire: true,
-      useIs: true,
+      isUsage: "MaximizeIs",
       useSmartCooldowns: true,
-      maximizeIsUptime: true,
       playerLatency: 200,
     }
     player.balanceDruid.talents = DruidBalanceTalents
@@ -6634,10 +6633,8 @@ const DruidBalanceApplyOptions = function(player, phase) {
       type: "Manual",
       useWrath: true,
       useStarfire: true,
-      useMf: true,
-      mfInsideEclipseThreshold: 15,
+      mfUsage: "MaximizeMf",
       useSmartCooldowns: true,
-      maximizeMfUptime: true,
       playerLatency: 200,
     }
     player.balanceDruid.talents = DruidBalanceTalentsP2
