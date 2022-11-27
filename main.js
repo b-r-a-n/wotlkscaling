@@ -53,6 +53,7 @@ function clearValues() {
     for (let node of document.querySelectorAll(".trend-value")) { node.innerHTML = "" }
 }
 
+const enhanceDisclaimer = "DPS is lower than expected. Simming enhance requires several runs with different settings. Only one is used in this table."
 function addTrends() {
     let rows = document.querySelectorAll("#compareTable tbody tr")
     for (let row of rows) {
@@ -60,7 +61,12 @@ function addTrends() {
         let first = parseInt(values[0].innerHTML.replace(/,/g, ''))
         let last = parseInt(values[2].innerHTML.replace(/,/g, ''))
         let amnt = (last - first) / first * 100
-        row.querySelector("td.trend-value").innerHTML = amnt.toFixed(1)
+        let cell = row.querySelector("td.trend-value")
+        if (cell.classList.contains("tooltip")) {
+            cell.innerHTML = amnt.toFixed(1)+"<sup>*</sup><span class='tooltiptext'>" + enhanceDisclaimer + "</span>"
+        } else {
+            cell.innerHTML = amnt.toFixed(1)
+        }
     }
 }
 
@@ -449,12 +455,15 @@ async function main() {
         DefaultPlayerBuffs, ShamanElementalGlyphs, "Engineering", "Tailoring", ShamanElementalApplyOptions,
         db
     )
+    let enhanceConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
+    enhanceConsumes.prepopPotion = "PotionOfWildMagic"
+    enhanceConsumes.food = "FoodFishFeast"
     let shamanEnhancePreRaid = makePlayer(
         "EnhancePreRaid",
         "RaceOrc", 
         "ClassShaman", 
         ShamanEnhancePreRaidEquipment, 
-        DefaultMeleeConsumes, 
+        enhanceConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
         db
@@ -464,7 +473,7 @@ async function main() {
         "RaceOrc", 
         "ClassShaman", 
         ShamanEnhanceP1Equipment, 
-        DefaultMeleeConsumes, 
+        enhanceConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
         db
@@ -474,7 +483,7 @@ async function main() {
         "RaceOrc", 
         "ClassShaman", 
         ShamanEnhanceP2Equipment, 
-        DefaultMeleeConsumes, 
+        enhanceConsumes, 
         makeWeights(),
         DefaultPlayerBuffs, ShamanEnhanceGlyphs, "Engineering", "Jewelcrafting", ShamanEnhanceApplyOptions,
         db
@@ -858,6 +867,9 @@ async function main() {
 
         cell = row.insertCell(2)
         cell.classList.add("trend-value")
+        if (spec.name == "Enhancement") {
+            cell.classList.add("tooltip")
+        }
 
         settingsCell = settingsRow.insertCell(1)
         settingsCell.classList.add("info-value")
@@ -871,9 +883,7 @@ async function main() {
                 msg = "stats"
             }
             let request = makeWowsimsRequestForPlayer(player)
-            //if (msg == "raidSim") {
-                jobs.push({msg: msg, id: jobID, status: "waiting", request: request})
-            //}
+            jobs.push({msg: msg, id: jobID, status: "waiting", request: request})
             cell = row.insertCell(-1)
             cell.id = "result-" + jobID
             cell.classList.add("dps-value")

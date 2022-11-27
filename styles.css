@@ -133,6 +133,8 @@ span.warning {
     border-radius: 4px;
     position: absolute;
     z-index: 1;
+    white-space: normal;
+    inline-size: 240px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -141,7 +143,6 @@ span.warning {
 
 .trend-value {
     min-width: 125px;
-    overflow: hidden;
     white-space: nowrap;
     border: 1px solid #333;
     text-align: center;

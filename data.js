@@ -10,6 +10,7 @@ const CommunityContributedConfigs = {
   "DeathKnightUnholy": "Improved sim configurations provided by RaiN",
   "PaladinRetribution": "Improved sim configurations provided by hexa",
   "DruidBalance": "Improved sim configurations provided by Lastcares",
+  "ShamanEnhancement": "Improved sim configurations provided by Hardan & NIJannon from Shaman Classic"
 }
 
 const DefaultSettings = {
@@ -229,7 +230,7 @@ const ShamanEnhanceTalents = {
   improvedFireNova: 2,
 
   enhancingTotems: 3,
-  ancestralKnowledge: 4,
+  ancestralKnowledge: 3,
   thunderingStrikes: 5,
   elementalWeapons: 3,
   shamanisticFocus: true,
@@ -244,6 +245,7 @@ const ShamanEnhanceTalents = {
   stormstrike: true,
   staticShock: 3,
   lavaLash: true,
+  improvedStormstrike: 1,
   mentalQuickness: 3,
   shamanisticRage: true,
   maelstromWeapon: 5,
@@ -2469,215 +2471,215 @@ const ShamanEnhancePreRaidEquipment = {
 }
 
 const ShamanEnhanceP1Equipment = {
-      "items": [
-        {
-          "id": 40543,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            40014
-          ]
-        },
-        {
-          "id": 44661,
-          "gems": [
-            40014
-          ]
-        },
-        {
-          "id": 40524,
-          "enchant": 3808,
-          "gems": [
-            40014
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 40523,
-          "enchant": 3832,
-          "gems": [
-            40003,
-            40014
-          ]
-        },
-        {
-          "id": 40282,
-          "enchant": 3845,
-          "gems": [
-            42702,
-            0
-          ]
-        },
-        {
-          "id": 40520,
-          "enchant": 3604,
-          "gems": [
-            42154,
-            0
-          ]
-        },
-        {
-          "id": 40275,
-          "gems": [
-            42156
-          ]
-        },
-        {
-          "id": 40522,
-          "enchant": 3823,
-          "gems": [
-            39999,
-            42156
-          ]
-        },
-        {
-          "id": 40367,
-          "enchant": 3606,
-          "gems": [
-            40058
-          ]
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 40074
-        },
-        {
-          "id": 40684
-        },
-        {
-          "id": 37390
-        },
-        {
-          "id": 39763,
-          "enchant": 3789
-        },
-        {
-          "id": 39468,
-          "enchant": 3789
-        },
-        {
-          "id": 40322
-        }
+  "items": [
+    {
+      "id": 40543,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        40014
       ]
+    },
+    {
+      "id": 44661,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 40524,
+      "enchant": 3808,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 40523,
+      "enchant": 3832,
+      "gems": [
+        39999,
+        40014
+      ]
+    },
+    {
+      "id": 40282,
+      "enchant": 3845,
+      "gems": [
+        42702,
+        0
+      ]
+    },
+    {
+      "id": 40520,
+      "enchant": 3604,
+      "gems": [
+        36766,
+        0
+      ]
+    },
+    {
+      "id": 40275,
+      "gems": [
+        42156
+      ]
+    },
+    {
+      "id": 40522,
+      "enchant": 3823,
+      "gems": [
+        39999,
+        42156
+      ]
+    },
+    {
+      "id": 40367,
+      "enchant": 3606,
+      "gems": [
+        40053
+      ]
+    },
+    {
+      "id": 40474
+    },
+    {
+      "id": 40074
+    },
+    {
+      "id": 40684
+    },
+    {
+      "id": 37390
+    },
+    {
+      "id": 39763,
+      "enchant": 3789
+    },
+    {
+      "id": 39468,
+      "enchant": 3789
+    },
+    {
+      "id": 40322
+    }
+  ]
 }
 
 const ShamanEnhanceP2Equipment = {
-        "items": [
-        {
-          "id": 46212,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            39999
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40014
-          ]
-        },
-        {
-          "id": 46203,
-          "enchant": 3808,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 45873,
-          "enchant": 3605
-        },
-        {
-          "id": 45473,
-          "enchant": 3832,
-          "gems": [
-            40014,
-            40029,
-            39999
-          ]
-        },
-        {
-          "id": 45611,
-          "enchant": 3845,
-          "gems": [
-            42702,
-            0
-          ]
-        },
-        {
-          "id": 46200,
-          "enchant": 3604,
-          "gems": [
-            40053,
-            0
-          ]
-        },
-        {
-          "id": 45553,
-          "gems": [
-            36766,
-            40029,
-            42156
-          ]
-        },
-        {
-          "id": 46208,
-          "enchant": 3823,
-          "gems": [
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45244,
-          "enchant": 3606,
-          "gems": [
-            36766,
-            39999
-          ]
-        },
-        {
-          "id": 45456,
-          "gems": [
-            40014
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40014
-          ]
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 45522
-        },
-        {
-          "id": 45612,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 46097,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 40322
-        }
+  "items": [
+    {
+      "id": 46212,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        39999
       ]
+    },
+    {
+      "id": 45133,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 46203,
+      "enchant": 3808,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45873,
+      "enchant": 3605
+    },
+    {
+      "id": 45473,
+      "enchant": 3832,
+      "gems": [
+        40014,
+        40029,
+        39999
+      ]
+    },
+    {
+      "id": 45611,
+      "enchant": 3845,
+      "gems": [
+        42702,
+        0
+      ]
+    },
+    {
+      "id": 46200,
+      "enchant": 3604,
+      "gems": [
+        40053,
+        0
+      ]
+    },
+    {
+      "id": 45553,
+      "gems": [
+        36766,
+        40029,
+        42156
+      ]
+    },
+    {
+      "id": 46208,
+      "enchant": 3823,
+      "gems": [
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45244,
+      "enchant": 3606,
+      "gems": [
+        36766,
+        39999
+      ]
+    },
+    {
+      "id": 45456,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        40014
+      ]
+    },
+    {
+      "id": 45609
+    },
+    {
+      "id": 45522
+    },
+    {
+      "id": 45612,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 46097,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 40322
+    }
+  ]
 }
 
 const WarlockAfflictionPreRaidEquipment = {
@@ -5964,7 +5966,7 @@ const MageFireGlyphs = {
 const ShamanEnhanceGlyphs = {
   major1: 41539,
   major2: 41532,
-  major3: 45771
+  major3: 41530
 }
 
 const DruidBalanceTalents = {
@@ -7071,6 +7073,8 @@ const ShamanElementalApplyOptions = function(player) {
 
 const ShamanEnhanceApplyOptions = function(player) {
   player.enhancementShaman = {}
+  player.enhancementShaman.talents = ShamanEnhanceTalents
+  player.talentsString = "053030152-30305003105021333031131131051"
   player.enhancementShaman.rotation = {
     totems: {
       earth: "StrengthOfEarthTotem",
@@ -7082,15 +7086,14 @@ const ShamanEnhanceApplyOptions = function(player) {
     rotationType: "Priority",
     lightningboltWeave: true,
     maelstromweaponMinStack: 3,
-    weaveFlameShock: true
+    weaveFlameShock: true,
+    primaryShock: "Earth",
   }
-  player.enhancementShaman.talents = ShamanEnhanceTalents
-  player.talentsString = "053030152-30405003105021333031131031051"
   player.enhancementShaman.options = {
     shield: "LightningShield",
     bloodlust: true,
     syncType: "SyncMainhandOffhandSwings",
-    imbueMh: "WindfuryWeapon",
+    imbueMh: "FlametongueWeaponDownrank",
     imbueOh: "FlametongueWeapon",
   }
   return player
