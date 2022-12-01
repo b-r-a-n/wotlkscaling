@@ -11,7 +11,8 @@ const CommunityContributedConfigs = {
   "PaladinRetribution": "Improved sim configurations provided by hexa",
   "DruidBalance": "Improved sim configurations provided by Lastcares",
   "ShamanEnhancement": "Improved sim configurations provided by Hardan & NIJannon from Shaman Classic",
-  "MageArcane": "Improved sim configurations provided by ThreeOspades"
+  "MageArcane": "Improved sim configurations provided by ThreeOspades",
+  "DruidFeral": "Improved sim configurations provided by Mobmentality",
 }
 
 const DefaultSettings = {
@@ -1678,116 +1679,117 @@ const DruidFeralP1Equipment = {
 }
 
 const DruidFeralP2Equipment = {
-        "items": [
-        {
-          "id": 46161,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            39996
-          ]
-        },
-        {
-          "id": 45945,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46157,
-          "enchant": 3808,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 46159,
-          "enchant": 3832,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45869,
-          "enchant": 3845,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46158,
-          "enchant": 3604,
-          "gems": [
-            39996,
-            0
-          ]
-        },
-        {
-          "id": 46095,
-          "gems": [
-            42142,
-            42142,
-            42142
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            39996,
-            39996,
-            49110
-          ]
-        },
-        {
-          "id": 45564,
-          "enchant": 3606,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {
-          "id": 45608,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 46048,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 45931
-        },
-        {
-          "id": 45613,
-          "enchant": 3789,
-          "gems": [
-            39996,
-            39996
-          ]
-        },
-        {},
-        {
-          "id": 39757
-        }
+  "items": [
+    {
+      "id": 45993,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        40002
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        40002
+      ]
+    },
+    {
+      "id": 46157,
+      "enchant": 3808,
+      "gems": [
+        40002
+      ]
+    },
+    {
+      "id": 46032,
+      "enchant": 3605,
+      "gems": [
+        40002,
+        40038
+      ]
+    },
+    {
+      "id": 45473,
+      "enchant": 3832,
+      "gems": [
+        40002,
+        40002,
+        40002
+      ]
+    },
+    {
+      "id": 45869,
+      "enchant": 3845,
+      "gems": [
+        40038,
+        0
+      ]
+    },
+    {
+      "id": 46158,
+      "enchant": 3604,
+      "gems": [
+        40002,
+        0
+      ]
+    },
+    {
+      "id": 46095,
+      "gems": [
+        42153,
+        42153,
+        42153
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        40038,
+        40002,
+        49110
+      ]
+    },
+    {
+      "id": 45564,
+      "enchant": 3606,
+      "gems": [
+        39996,
+        40002
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46048,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 45931
+    },
+    {
+      "id": 45533,
+      "enchant": 3789,
+      "gems": [
+        40002,
+        40002
+      ]
+    },
+    {},
+    {
+      "id": 39757
+    }
+  ]
 }
 
 const HunterMMPreRaidEquipment = {
