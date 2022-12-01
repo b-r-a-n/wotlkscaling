@@ -10,7 +10,8 @@ const CommunityContributedConfigs = {
   "DeathKnightUnholy": "Improved sim configurations provided by RaiN",
   "PaladinRetribution": "Improved sim configurations provided by hexa",
   "DruidBalance": "Improved sim configurations provided by Lastcares",
-  "ShamanEnhancement": "Improved sim configurations provided by Hardan & NIJannon from Shaman Classic"
+  "ShamanEnhancement": "Improved sim configurations provided by Hardan & NIJannon from Shaman Classic",
+  "MageArcane": "Improved sim configurations provided by ThreeOspades"
 }
 
 const DefaultSettings = {
@@ -2271,115 +2272,122 @@ const MageArcaneP1Equipment = {
 }
 
 const MageArcaneP2Equipment = {
-      "items": [
-        {
-          "id": 46129,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            39998
-          ]
-        },
-        {
-          "id": 45243,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 46134,
-          "enchant": 3810,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 45618,
-          "enchant": 3722,
-          "gems": [
-            40026
-          ]
-        },
-        {
-          "id": 46130,
-          "enchant": 3832,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45446,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3604,
-          "gems": [
-            40026,
-            40051,
-            0
-          ]
-        },
-        {
-          "id": 45619,
-          "gems": [
-            40049,
-            40049,
-            39998
-          ]
-        },
-        {
-          "id": 46133,
-          "enchant": 3719,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45135,
-          "enchant": 3606,
-          "gems": [
-            39998,
-            40026
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40049
-          ]
-        },
-        {
-          "id": 45495,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 45490
-        },
-        {
-          "id": 45620,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45271
-        },
-        {
-          "id": 39712
-        }
+  "items": [
+    {
+      "id": 45497,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        39998
       ]
+    },
+    {
+      "id": 45243,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46134,
+      "enchant": 3810,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45618,
+      "enchant": 3859,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 46130,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45446,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        40026,
+        40051,
+        0
+      ]
+    },
+    {
+      "id": 45619,
+      "gems": [
+        40051,
+        40051,
+        39998
+      ]
+    },
+    {
+      "id": 45488,
+      "enchant": 3719,
+      "gems": [
+        39998,
+        40049,
+        40026
+      ]
+    },
+    {
+      "id": 45135,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        40051
+      ]
+    },
+    {
+      "id": 46046,
+      "enchant": 3840,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45495,
+      "enchant": 3840,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45466
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 45620,
+      "enchant": 3834,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45617
+    },
+    {
+      "id": 45294,
+      "gems": [
+        40051
+      ]
+    }
+  ]
 }
 
 const ShamanEnhancePreRaidEquipment = {
@@ -4528,7 +4536,7 @@ const DruidBalanceP2Equipment = {
       "id": 46196,
       "enchant": 3810,
       "gems": [
-        40026
+        39998
       ]
     },
     {
@@ -4542,9 +4550,9 @@ const DruidBalanceP2Equipment = {
       "id": 45519,
       "enchant": 3832,
       "gems": [
-        39998,
+        40049,
         42144,
-        39998
+        40026
       ]
     },
     {
@@ -4565,8 +4573,7 @@ const DruidBalanceP2Equipment = {
       ]
     },
     {
-      "id": 45616,
-      "enchant": 3601,
+      "id": 45619,
       "gems": [
         39998,
         39998,
@@ -4602,13 +4609,13 @@ const DruidBalanceP2Equipment = {
       ]
     },
     {
-      "id": 40255
+      "id": 45466
     },
     {
       "id": 45518
     },
     {
-      "id": 46035,
+      "id": 45620,
       "enchant": 3834,
       "gems": [
         39998
@@ -7016,9 +7023,10 @@ const MageArcaneApplyOptions = function(player) {
   player.mage.rotation = {
     type: "Arcane",
     minBlastBeforeMissiles: 4,
-    num4StackBlastsToMissilesGamble: 12,
+    num4StackBlastsToMissilesGamble: 6,
     num4StackBlastsToEarlyMissiles: 6,
-    extraBlastsDuringFirstAp: 2
+    extraBlastsDuringFirstAp: 2,
+    optimizeCdsForExecute: true,
   }
   player.mage.talents = MageArcaneTalents
   player.talentsString = "23000513310033015032310250532-03-023303001"
