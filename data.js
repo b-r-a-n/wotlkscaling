@@ -14,6 +14,7 @@ const CommunityContributedConfigs = {
   "MageArcane": "Improved sim configurations provided by ThreeOspades",
   "DruidFeral": "Improved sim configurations provided by Mobmentality",
   "ShamanElemental": "Improved sim configurations provided by Panthyren",
+  "MageFire": "Improved sim configurations provided by ThreeOspades",
 }
 
 const DefaultSettings = {
@@ -3982,115 +3983,119 @@ const MageFireP1Equipment = {
 }
 
 const MageFireP2Equipment = {
-      "items": [
-        {
-          "id": 46129,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            39998
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46134,
-          "enchant": 3810,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 45242,
-          "enchant": 3722,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 46130,
-          "enchant": 3832,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45275,
-          "enchant": 2332,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3604,
-          "gems": [
-            40026,
-            40051,
-            0
-          ]
-        },
-        {
-          "id": 45619,
-          "gems": [
-            40051,
-            40051,
-            39998
-          ]
-        },
-        {
-          "id": 46133,
-          "enchant": 3719,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45537,
-          "enchant": 3606,
-          "gems": [
-            39998,
-            40026
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40051
-          ]
-        },
-        {
-          "id": 45495,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45308
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 45620,
-          "enchant": 3790,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 45617
-        },
-        {
-          "id": 39712
-        }
+  "items": [
+    {
+      "id": 46129,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        39998
       ]
+    },
+    {
+      "id": 45133,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 46134,
+      "enchant": 3810,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45242,
+      "enchant": 3722,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 46130,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45446,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        40026,
+        40051,
+        0
+      ]
+    },
+    {
+      "id": 45619,
+      "gems": [
+        40051,
+        40051,
+        39998
+      ]
+    },
+    {
+      "id": 46133,
+      "enchant": 3719,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45537,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        40026
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        40051
+      ]
+    },
+    {
+      "id": 45495,
+      "gems": [
+        40026
+      ]
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 45466
+    },
+    {
+      "id": 45620,
+      "enchant": 3834,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45617
+    },
+    {
+      "id": 45294,
+      "gems": [
+        40051
+      ]
+    }
+  ]
 }
 
 const WarlockDemonologyPreRaidEquipment = {
@@ -6280,7 +6285,7 @@ const MageFireTalents = {
   arcaneSubtlety: 2,
   arcaneFocus: 3,
   arcaneConcentration: 5,
-  spellImpact: 4,
+  spellImpact: 3,
   studentOfTheMind: 1,
   focusMagic: true,
   tormentTheWeak: 3,
@@ -6290,7 +6295,7 @@ const MageFireTalents = {
   pyroblast: true,
   burningSoul: 1,
   improvedScorch: 3,
-  masterOfElements: 2,
+  masterOfElements: 3,
   playingWithFire:3,
   criticalMass: 3,
   blastWave: true,
@@ -6299,7 +6304,7 @@ const MageFireTalents = {
   combustion: true,
   moltenFury: 2,
   empoweredFire: 3,
-  firestarter: 2,
+  firestarter: 1,
   dragonsBreath: true,
   hotStreak: 3,
   burnout: 5,
@@ -7049,7 +7054,7 @@ const MageFireApplyOptions = function(player) {
     extraBlastsDuringFirstAp: 2
   }
   player.mage.talents = MageFireTalents
-  player.talentsString = "23000503110003-0055030011302331053120321351"
+  player.talentsString = "23000503110003-0055030011303331053120311351"
   player.mage.options = {
     armor: "MoltenArmor",
     focusMagicPercentUptime: 99,
