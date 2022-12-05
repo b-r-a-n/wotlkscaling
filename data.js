@@ -15,6 +15,7 @@ const CommunityContributedConfigs = {
   "DruidFeral": "Improved sim configurations provided by Mobmentality",
   "ShamanElemental": "Improved sim configurations provided by Panthyren",
   "MageFire": "Improved sim configurations provided by ThreeOspades",
+  "RogueCombat": "Improved sim configurations provided by Apoc",
 }
 
 const DefaultSettings = {
@@ -889,120 +890,126 @@ const RogueCombatP1Equipment = {
 }
 
 const RogueCombatP2Equipment = {
-        "items": [
-        {
-          "id": 46125,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            39999
-          ]
-        },
-        {
-          "id": 45517,
-          "gems": [
-            42702
-          ]
-        },
-        {
-          "id": 46127,
-          "enchant": 3808,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 46032,
-          "enchant": 3605,
-          "gems": [
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 46123,
-          "enchant": 3832,
-          "gems": [
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45869,
-          "enchant": 3845,
-          "gems": [
-            39999,
-            0
-          ]
-        },
-        {
-          "id": 46124,
-          "enchant": 3604,
-          "gems": [
-            39999,
-            0
-          ]
-        },
-        {
-          "id": 45555,
-          "gems": [
-            39999,
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45536,
-          "enchant": 3823,
-          "gems": [
-            39999,
-            39999,
-            39999
-          ]
-        },
-        {
-          "id": 45162,
-          "enchant": 3606
-        },
-        {
-          "id": 46048,
-          "gems": [
-            36766
-          ]
-        },
-        {
-          "id": 45608,
-          "gems": [
-            36766
-          ]
-        },
-        {
-          "id": 45609
-        },
-        {
-          "id": 45931
-        },
-        {
-          "id": 45132,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 45494,
-          "enchant": 3789,
-          "gems": [
-            39999
-          ]
-        },
-        {
-          "id": 45296,
-          "gems": [
-            39999
-          ]
-        }
+  "items": [
+    {
+      "id": 46125,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        36766
       ]
+    },
+    {
+      "id": 45517,
+      "gems": [
+        42702
+      ]
+    },
+    {
+      "id": 45245,
+      "enchant": 3808,
+      "gems": [
+        39999,
+        36766
+      ]
+    },
+    {
+      "id": 46032,
+      "enchant": 3605,
+      "gems": [
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45473,
+      "enchant": 3832,
+      "gems": [
+        39999,
+        36766,
+        39999
+      ]
+    },
+    {
+      "id": 45869,
+      "enchant": 3845,
+      "gems": [
+        39999,
+        0
+      ]
+    },
+    {
+      "id": 46124,
+      "enchant": 3604,
+      "gems": [
+        39999,
+        0
+      ]
+    },
+    {
+      "id": 46095,
+      "gems": [
+        39999,
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45536,
+      "enchant": 3823,
+      "gems": [
+        39999,
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 45564,
+      "enchant": 3606,
+      "gems": [
+        39999,
+        39999
+      ]
+    },
+    {
+      "id": 46048,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45608,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45609
+    },
+    {
+      "id": 46038
+    },
+    {
+      "id": 45132,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45484,
+      "enchant": 3789,
+      "gems": [
+        39999
+      ]
+    },
+    {
+      "id": 45296,
+      "gems": [
+        39999
+      ]
+    }
+  ]
 }
 
 const DKFrostPreRaidEquipment = {
