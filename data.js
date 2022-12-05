@@ -13,6 +13,7 @@ const CommunityContributedConfigs = {
   "ShamanEnhancement": "Improved sim configurations provided by Hardan & NIJannon from Shaman Classic",
   "MageArcane": "Improved sim configurations provided by ThreeOspades",
   "DruidFeral": "Improved sim configurations provided by Mobmentality",
+  "ShamanElemental": "Improved sim configurations provided by Panthyren",
 }
 
 const DefaultSettings = {
@@ -5103,117 +5104,119 @@ const ShamanElementalP1Equipment = {
       ]
 }
 const ShamanElementalP2Equipment = {
-        "items": [
-        {
-          "id": 46209,
-          "enchant": 3820,
-          "gems": [
-            41285,
-            40048
-          ]
-        },
-        {
-          "id": 45133,
-          "gems": [
-            40048
-          ]
-        },
-        {
-          "id": 46211,
-          "enchant": 3810,
-          "gems": [
-            39998
-          ]
-        },
-        {
-          "id": 44005,
-          "enchant": 3722,
-          "gems": [
-            40027
-          ]
-        },
-        {
-          "id": 46206,
-          "enchant": 3832,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45460,
-          "enchant": 2332,
-          "gems": [
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 45665,
-          "enchant": 3246,
-          "gems": [
-            39998,
-            39998,
-            0
-          ]
-        },
-        {
-          "id": 45557,
-          "gems": [
-            39998,
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 46210,
-          "enchant": 3721,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 45537,
-          "enchant": 3826,
-          "gems": [
-            39998,
-            39998
-          ]
-        },
-        {
-          "id": 46046,
-          "gems": [
-            40049
-          ]
-        },
-        {
-          "id": 40399
-        },
-        {
-          "id": 40432
-        },
-        {
-          "id": 45518
-        },
-        {
-          "id": 46035,
-          "enchant": 3834,
-          "gems": [
-            40048
-          ]
-        },
-        {
-          "id": 45470,
-          "enchant": 1128,
-          "gems": [
-            40027
-          ]
-        },
-        {
-          "id": 40267
-        }
+  "items": [
+    {
+      "id": 46209,
+      "enchant": 3820,
+      "gems": [
+        41285,
+        40048
       ]
+    },
+    {
+      "id": 45933,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46211,
+      "enchant": 3810,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45242,
+      "enchant": 3722,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46206,
+      "enchant": 3832,
+      "gems": [
+        39998,
+        39998
+      ]
+    },
+    {
+      "id": 45460,
+      "enchant": 2332,
+      "gems": [
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45665,
+      "enchant": 3604,
+      "gems": [
+        39998,
+        39998,
+        0
+      ]
+    },
+    {
+      "id": 45151,
+      "enchant": 3599,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 46210,
+      "enchant": 3721,
+      "gems": [
+        39998,
+        40027
+      ]
+    },
+    {
+      "id": 45537,
+      "enchant": 3606,
+      "gems": [
+        39998,
+        40027
+      ]
+    },
+    {
+      "id": 46046,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45495,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45518
+    },
+    {
+      "id": 40255
+    },
+    {
+      "id": 46035,
+      "enchant": 3834,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 45470,
+      "enchant": 1128,
+      "gems": [
+        39998
+      ]
+    },
+    {
+      "id": 40267
+    }
+  ]
 }
 
 const PriestShadowPreRaidEquipment = {
@@ -6337,16 +6340,16 @@ const PaladinRetTalents = {
 }
 
 const ShamanElementalTalents = {
+  convection: 3,
   concussion: 5,
   callOfFlame: 3,
-  elementalWarding: 2,
   elementalFocus: true,
   elementalFury: 5,
   improvedFireNova: 2,
   eyeOfTheStorm: 3,
   elementalReach: 2,
   callOfThunder: true,
-  unrelentingStorm: 2,
+  unrelentingStorm: 3,
   elementalPrecision: 3,
   lightningMastery: 5,
   elementalMastery: true,
@@ -6361,7 +6364,6 @@ const ShamanElementalTalents = {
 
   ancestralKnowledge: 5,
   thunderingStrikes: 5,
-  improvedGhostWolf: 2,
   elementalWeapons: 3,
   shamanisticRage: true
 }
@@ -7063,20 +7065,36 @@ const ShamanElementalApplyOptions = function(player) {
     totems: {
       earth: "StrengthOfEarthTotem",
       air: "WrathOfAirTotem",
-      fire: "TotemOfWrath",
+      fire: "SearingTotem",
       water: "ManaSpringTotem",
       useFireElemental: true,
     },
-    type: "Adaptive",
-    fnMinManaPer: 66,
-    clMinManaPer: 33,
+    type: "Manual",
+    inThunderstormRange: true,
+    useChainLightning: true,
+    useClOnlyGap: true,
+    alwaysCritLvb: true,
+    clMinManaPer: 10,
     useThunderstorm: true,
   }
   player.elementalShaman.talents = ShamanElementalTalents
-  player.talentsString = "0532001523212351322301351-005052031"
+  player.talentsString = "3530001523213351322301351-005050031"
   player.elementalShaman.options = {
     shield: "WaterShield",
     bloodlust: true,
+  }
+  player.cooldowns = {
+    "cooldowns": [
+      {
+        "id": {
+          "tag": -1,
+          "spellId": 2825
+        },
+        "timings": [
+          2
+        ]
+      }
+    ]
   }
   return player
 }
