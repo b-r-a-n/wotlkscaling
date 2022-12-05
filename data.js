@@ -1,6 +1,6 @@
 const CommunityContributedConfigs = {
   "WarriorFury": "Improved sim configurations provided by Beanna from Fight Club",
-  "WarriorArms": "Improved sim configurations provided by Falfa from Fight Club",
+  "WarriorArms": "Improved sim configurations provided by Falfa & Drakodan from Fight Club",
   "WarlockAffliction": "Improved sim configurations provided by Whiskeypig, Neem|eth",
   "RogueAssassination": "Improved sim configurations provided by hexa",
   "HunterMarksman": "Improved sim configurations provided by Anthrax",
@@ -5617,96 +5617,96 @@ const WarriorArmsPreRaidEquipment = {
 }
 
 const WarriorArmsP1Equipment = {
-        "items": [
-        {
-          "id": 40528,
-          "enchant": 3817,
-          "gems": [
-            41398,
-            42153
-          ]
-        },
-        {
-          "id": 44664,
-          "gems": [
-            39996
-          ]
-        },
-        {
-          "id": 40530,
-          "enchant": 3808,
-          "gems": [
-            40038
-          ]
-        },
-        {
-          "id": 40403,
-          "enchant": 3605
-        },
-        {
-          "id": 40539,
-          "enchant": 3832,
-          "gems": [
-            42153
-          ]
-        },
-        {
-          "id": 40330,
-          "enchant": 3845,
-          "gems": [
-            40002,
-            0
-          ]
-        },
-        {
-          "id": 40541,
-          "enchant": 3604,
-          "gems": [
-            0
-          ]
-        },
-        {
-          "id": 40205,
-          "gems": [
-            42153
-          ]
-        },
-        {
-          "id": 40318,
-          "enchant": 3823,
-          "gems": [
-            49110,
-            40038
-          ]
-        },
-        {
-          "id": 40591,
-          "enchant": 3606
-        },
-        {
-          "id": 43993,
-          "gems": [
-            40002
-          ]
-        },
-        {
-          "id": 40474
-        },
-        {
-          "id": 42987
-        },
-        {
-          "id": 40256
-        },
-        {
-          "id": 40384,
-          "enchant": 3789
-        },
-        {},
-        {
-          "id": 40385
-        }
+  "items": [
+    {
+      "id": 40528,
+      "enchant": 3817,
+      "gems": [
+        41398,
+        42142
       ]
+    },
+    {
+      "id": 44664,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 40530,
+      "enchant": 3808,
+      "gems": [
+        40038
+      ]
+    },
+    {
+      "id": 40403,
+      "enchant": 3605
+    },
+    {
+      "id": 40539,
+      "enchant": 3832,
+      "gems": [
+        42142
+      ]
+    },
+    {
+      "id": 40330,
+      "enchant": 3845,
+      "gems": [
+        39996,
+        0
+      ]
+    },
+    {
+      "id": 40541,
+      "enchant": 3604,
+      "gems": [
+        0
+      ]
+    },
+    {
+      "id": 40205,
+      "gems": [
+        42142
+      ]
+    },
+    {
+      "id": 40318,
+      "enchant": 3823,
+      "gems": [
+        49110,
+        40038
+      ]
+    },
+    {
+      "id": 40591,
+      "enchant": 3606
+    },
+    {
+      "id": 43993,
+      "gems": [
+        39996
+      ]
+    },
+    {
+      "id": 40474
+    },
+    {
+      "id": 42987
+    },
+    {
+      "id": 40256
+    },
+    {
+      "id": 40384,
+      "enchant": 3789
+    },
+    {},
+    {
+      "id": 40190
+    }
+  ]
 }
 
 const WarriorArmsP2Equipment = {
@@ -7227,13 +7227,12 @@ const WarriorArmsApplyOptions = function(player) {
     useRend: true,
     useMs: true,
     prioritizeWw: true,
-    hsRageThreshold: 40,
+    hsRageThreshold: 55,
     msRageThreshold: 30,
     rendRageThresholdBelow: 70,
     slamRageThreshold: 15,
     useHsDuringExecute: true,
     useBtDuringExecute: true,
-    spamExecute: true,
     useWwDuringExecute: true,
     useSlamOverExecute: true,
   }

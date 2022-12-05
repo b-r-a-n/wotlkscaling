@@ -560,6 +560,7 @@ async function main() {
 
     let warriorConsumes = JSON.parse(JSON.stringify(DefaultMeleeConsumes))
     warriorConsumes.food = "FoodDragonfinFilet"
+    warriorConsumes.prepopPotion = "IndestructiblePotion"
     let warriorArmsPreRaid = makePlayer(
         "ArmsPreRaid",
         "RaceOrc", 
