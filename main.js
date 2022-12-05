@@ -335,6 +335,10 @@ async function main() {
 
     let mageConsumes = JSON.parse(JSON.stringify(DefaultCasterConsumes))
     mageConsumes.defaultConjured = "ConjuredDarkRune"
+    mageConsumes.flask = "FlaskOfTheFrostWyrm"
+    mageConsumes.food = "FoodFirecrackerSalmon"
+    mageConsumes.defaultPotion = "PotionOfSpeed"
+    mageConsumes.prepopPotion = "PotionOfWildMagic"
     let mageArcanePreRaid = makePlayer(
         "ArcanePreRaid",
         "RaceTroll",

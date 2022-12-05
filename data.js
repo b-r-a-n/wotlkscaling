@@ -2299,7 +2299,7 @@ const MageArcaneP2Equipment = {
     },
     {
       "id": 45618,
-      "enchant": 3859,
+      "enchant": 3722,
       "gems": [
         40026
       ]
@@ -2356,14 +2356,12 @@ const MageArcaneP2Equipment = {
     },
     {
       "id": 46046,
-      "enchant": 3840,
       "gems": [
         40051
       ]
     },
     {
       "id": 45495,
-      "enchant": 3840,
       "gems": [
         39998
       ]
