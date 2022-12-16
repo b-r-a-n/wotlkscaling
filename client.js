@@ -40,8 +40,6 @@ function makeItem(fullItem) {
 function makeEnchant(fullEnchant) {
     let enchant = {}
     enchant.effectId = fullEnchant.effectId
-    enchant.name = fullEnchant.name
-    enchant.type = fullEnchant.type
     enchant.stats = fullEnchant.stats
     return enchant
 }
@@ -105,10 +103,14 @@ function makePlayer(name, race, clazz, equipment, consumes, bonusStats, buffs, g
 }
 
 function makeWeights() {
-    var epWeights = [
+    let bonusStats = {}
+    var stats = [
         0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
     ]
-    return epWeights
+    var pseudoStats = [0,0,0,0]
+    bonusStats.stats = stats
+    bonusStats.pseudoStats = pseudoStats
+    return bonusStats
 }
 
 function makeWowsimsImport(settings, buffs, debuffs, player, encounter) {
