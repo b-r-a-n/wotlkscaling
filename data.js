@@ -1690,23 +1690,24 @@ const DruidFeralP1Equipment = {
 const DruidFeralP2Equipment = {
   "items": [
     {
-      "id": 45993,
+      "id": 46161,
       "enchant": 3817,
       "gems": [
         41398,
-        40002
+        42153
       ]
     },
     {
       "id": 45517,
       "gems": [
-        40002
+        42153
       ]
     },
     {
-      "id": 46157,
+      "id": 45245,
       "enchant": 3808,
       "gems": [
+        40002,
         40002
       ]
     },
@@ -1715,7 +1716,7 @@ const DruidFeralP2Equipment = {
       "enchant": 3605,
       "gems": [
         40002,
-        40038
+        40058
       ]
     },
     {
@@ -1724,14 +1725,14 @@ const DruidFeralP2Equipment = {
       "gems": [
         40002,
         40002,
-        40002
+        42153
       ]
     },
     {
       "id": 45869,
       "enchant": 3845,
       "gems": [
-        40038,
+        40037,
         0
       ]
     },
@@ -1746,18 +1747,18 @@ const DruidFeralP2Equipment = {
     {
       "id": 46095,
       "gems": [
-        42153,
-        42153,
-        42153
+        39996,
+        39996,
+        39996
       ]
     },
     {
       "id": 45536,
       "enchant": 3823,
       "gems": [
-        40038,
-        40002,
-        49110
+        39996,
+        39996,
+        39996
       ]
     },
     {
@@ -1765,7 +1766,13 @@ const DruidFeralP2Equipment = {
       "enchant": 3606,
       "gems": [
         39996,
-        40002
+        39996
+      ]
+    },
+    {
+      "id": 46048,
+      "gems": [
+        45862
       ]
     },
     {
@@ -1775,28 +1782,22 @@ const DruidFeralP2Equipment = {
       ]
     },
     {
-      "id": 46048,
-      "gems": [
-        39996
-      ]
-    },
-    {
-      "id": 46038
+      "id": 45609
     },
     {
       "id": 45931
     },
     {
-      "id": 45533,
+      "id": 45613,
       "enchant": 3789,
       "gems": [
-        40002,
-        40002
+        40037,
+        42702
       ]
     },
     {},
     {
-      "id": 39757
+      "id": 40713
     }
   ]
 }
