@@ -1987,24 +1987,24 @@ const HunterMMP1Equipment = {
 const HunterMMP2Equipment = {
   "items": [
     {
-      "id": 46143,
+      "id": 45610,
       "enchant": 3817,
       "gems": [
         41398,
-        42143
+        42702
       ]
     },
     {
       "id": 45517,
       "gems": [
-        39997
+        42143
       ]
     },
     {
       "id": 45300,
       "enchant": 3808,
       "gems": [
-        39997
+        40043
       ]
     },
     {
@@ -2016,9 +2016,10 @@ const HunterMMP2Equipment = {
       ]
     },
     {
-      "id": 46141,
+      "id": 45473,
       "enchant": 3832,
       "gems": [
+        39997,
         39997,
         39997
       ]
@@ -2036,12 +2037,13 @@ const HunterMMP2Equipment = {
       "enchant": 3604,
       "gems": [
         42143,
-        42702,
+        39997,
         0
       ]
     },
     {
       "id": 45467,
+      "enchant": 3601,
       "gems": [
         39997
       ]
@@ -2056,7 +2058,7 @@ const HunterMMP2Equipment = {
       ]
     },
     {
-      "id": 45562,
+      "id": 45244,
       "enchant": 3606,
       "gems": [
         39997,
@@ -2070,22 +2072,22 @@ const HunterMMP2Equipment = {
       ]
     },
     {
-      "id": 46048,
+      "id": 46322,
       "gems": [
         39997
       ]
     },
     {
-      "id": 46038
+      "id": 45931
     },
     {
-      "id": 45931
+      "id": 46038
     },
     {
       "id": 45613,
       "enchant": 3827,
       "gems": [
-        39997,
+        45879,
         39997
       ]
     },
@@ -4423,7 +4425,7 @@ const  HunterSurvivalP2Equipment = {
       "enchant": 3817,
       "gems": [
         41398,
-        42702
+        40023
       ]
     },
     {
@@ -4443,8 +4445,8 @@ const  HunterSurvivalP2Equipment = {
       "id": 46032,
       "enchant": 3605,
       "gems": [
-        42143,
-        40043
+        39997,
+        40044
       ]
     },
     {
@@ -4453,13 +4455,14 @@ const  HunterSurvivalP2Equipment = {
       "gems": [
         39997,
         39997,
-        42143
+        45879
       ]
     },
     {
-      "id": 45108,
+      "id": 45869,
       "enchant": 3845,
       "gems": [
+        39997,
         0
       ]
     },
@@ -4467,15 +4470,17 @@ const  HunterSurvivalP2Equipment = {
       "id": 45444,
       "enchant": 3604,
       "gems": [
-        42143,
         39997,
+        40023,
         0
       ]
     },
     {
-      "id": 45467,
+      "id": 46095,
       "gems": [
-        39997
+        42143,
+        42143,
+        42143
       ]
     },
     {
@@ -4492,7 +4497,7 @@ const  HunterSurvivalP2Equipment = {
       "enchant": 3606,
       "gems": [
         39997,
-        39997
+        40023
       ]
     },
     {
@@ -4502,7 +4507,7 @@ const  HunterSurvivalP2Equipment = {
       ]
     },
     {
-      "id": 45456,
+      "id": 46322,
       "gems": [
         39997
       ]
@@ -4514,7 +4519,7 @@ const  HunterSurvivalP2Equipment = {
       "id": 46038
     },
     {
-      "id": 46033,
+      "id": 45613,
       "enchant": 3827,
       "gems": [
         39997,
@@ -5942,8 +5947,8 @@ const DruidFeralGlyphs = {
 
 const HunterMMGlyphs = {
     major1: 42912,
-    major2: 45733,
-    major3: 45625,
+    major2: 42914,
+    major3: 45733,
     minor1: 43351,
     minor2: 43338,
     minor3: 43350
@@ -6121,7 +6126,6 @@ const HunterMMTalentsP2 = {
   improvedAspectOfTheHawk: 5,
   focusedFire: 2,
 
-  focusedAim: 1,
   lethalShots: 5,
   carefulAim: 3,
   improvedHuntersMark: 3,
@@ -6139,7 +6143,7 @@ const HunterMMTalentsP2 = {
   rapidRecuperation: 1,
   wildQuiver: 3,
   silencingShot: true,
-  improvedSteadyShot: 1,
+  improvedSteadyShot: 2,
   markedForDeath: 5,
   chimeraShot: true,
 
@@ -6205,13 +6209,11 @@ const HunterSurvivalTalentsP1 = {
 }
 
 const HunterSurvivalTalentsP2 = {
-  improvedAspectOfTheHawk: 5,
-  focusedFire: 1,
-  
   lethalShots: 5,
   carefulAim: 3,
   mortalShots: 5,
   goForTheThroat: 1,
+  aimedShot: true,
 
   improvedTracking: 5,
   trapMastery: 3,
@@ -6225,11 +6227,12 @@ const HunterSurvivalTalentsP2 = {
   resourcefulness: 3,
   exposeWeakness: 1,
   wyvernSting: true,
-  thrillOfTheHunt: 1,
+  thrillOfTheHunt: 3,
   masterTactician: 5,
   noxiousStings: 3,
   blackArrow: true,
   sniperTraining: 3,
+  huntingParty: 3,
   explosiveShot: true
 }
 
@@ -6727,9 +6730,6 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           spell: 5
         },
         {
-          spell: 9
-        },
-        {
           spell: 3
         },
         {
@@ -6741,7 +6741,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
       ]
     },
     viperStartManaPercent: 0.05,
-    viperStopManaPercent: 0.2
+    viperStopManaPercent: 0.15
   }
   if (phase == 0) {
     player.talentsString = "3-0353051-5000032500033330532105301301"
@@ -6750,7 +6750,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
     player.talentsString = "501-0053051-5000032500033330532105301301"
     player.hunter.talents = HunterSurvivalTalentsP1
   } else {
-    player.talentsString = "501-0053051-5000032500033330531115301301"
+    player.talentsString = "-005305101-5000032500033330531135301331"
     player.hunter.talents = HunterSurvivalTalentsP2
   }
   player.hunter.options = {
@@ -6778,7 +6778,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 33697
         },
         "timings": [
-          1.5
+          3
         ]
       },
       {
@@ -6786,16 +6786,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 3045
         },
         "timings": [
-          1.5,
-          15.9
-        ]
-      },
-      {
-        "id": {
-          "spellId": 23989
-        },
-        "timings": [
-          4.5
+          3
         ]
       },
       {
@@ -6804,7 +6795,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 2825
         },
         "timings": [
-          0
+          3
         ]
       },
       {
@@ -6812,15 +6803,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 54758
         },
         "timings": [
-          1.5
-        ]
-      },
-      {
-        "id": {
-          "itemId": 22788
-        },
-        "timings": [
-          1.5
+          3
         ]
       },
       {
@@ -6828,7 +6811,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 53434
         },
         "timings": [
-          1.5
+          3
         ]
       },
       {
@@ -6836,7 +6819,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 34026
         },
         "timings": [
-          1.5
+          0
         ]
       },
       {
@@ -6844,15 +6827,7 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 53401
         },
         "timings": [
-          1.5
-        ]
-      },
-      {
-        "id": {
-          "itemId": 40211
-        },
-        "timings": [
-          61.5
+          0
         ]
       },
       {
@@ -6860,8 +6835,23 @@ const HunterSurvivalApplyOptions = function(player, phase) {
           "spellId": 64495
         },
         "timings": [
-          1.5
+          3
         ]
+      },
+      {
+        "id": {
+          "itemId": 40211
+        }
+      },
+      {
+        "id": {
+          "itemId": 42545
+        }
+      },
+      {
+        "id": {
+          "itemId": 22788
+        }
       }
     ]
   }
@@ -6882,7 +6872,7 @@ const HunterMMApplyOptions = function(player, phase) {
           "spell": 7
         },
         {
-          "spell": 10
+          "spell": 11
         },
         {
           "spell": 5
@@ -6894,16 +6884,13 @@ const HunterMMApplyOptions = function(player, phase) {
           "spell": 3
         },
         {
-          "spell": 11
-        },
-        {
           "spell": 4
         },
         {
-          "spell": 2
+          "spell": 1
         },
         {
-          "spell": 1
+          "spell": 2
         }
       ]
     },
@@ -6914,7 +6901,7 @@ const HunterMMApplyOptions = function(player, phase) {
     player.talentsString = "502-035335101030013233035031051-5000032"
     player.hunter.talents = HunterMMTalentsP0
   } else {
-    player.talentsString = "502-015335101030013233035131151-5000032"
+    player.talentsString = "502-005335101030013233035131251-5000032"
     player.hunter.talents = HunterMMTalentsP2
   }
   player.hunter.options = {
